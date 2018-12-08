@@ -44,7 +44,9 @@ namespace roundbeargames
 
                 if (ChasePlayer())
                 {
-
+                    AI_CONTROL.FindPathToPlayer();
+                    characterStateController.ChangeState((int)AxeEnemyState.AxeWalkForward);
+                    return;
                 }
             }
         }
@@ -61,9 +63,8 @@ namespace roundbeargames
                     {
                         if (!AI_CONTROL.PlayerIsDead())
                         {
-                            characterStateController.ChangeState((int)AxeEnemyState.AxeWalkForward);
+                            return true;
                         }
-
                     }
                 }
             }

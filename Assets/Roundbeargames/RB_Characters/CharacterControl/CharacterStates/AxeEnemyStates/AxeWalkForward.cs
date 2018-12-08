@@ -10,19 +10,7 @@ namespace roundbeargames
         {
             ANIMATION_DATA.DesignatedAnimation = AxeEnemyState.AxeWalkForward.ToString();
 
-            AI_CONTROL.TargetPath.Clear();
 
-            if (MOVEMENT_DATA.LastWayPoint != null)
-            {
-                if (AI_CONTROL.GetLastPlayerWayPoint() != null)
-                {
-                    List<WayPoint> newPath = move.FindClosestPathTo(MOVEMENT_DATA.LastWayPoint, AI_CONTROL.GetLastPlayerWayPoint());
-                    foreach (WayPoint w in newPath)
-                    {
-                        AI_CONTROL.TargetPath.Add(w);
-                    }
-                }
-            }
         }
 
         public override void RunFixedUpdate()

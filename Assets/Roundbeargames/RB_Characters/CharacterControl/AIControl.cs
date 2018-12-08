@@ -98,5 +98,21 @@ namespace roundbeargames
 
             return characterManager.Player.moveData.LastWayPoint;
         }
+
+        public void FindPathToPlayer()
+        {
+            TargetPath.Clear();
+            if (moveData.LastWayPoint != null)
+            {
+                if (GetLastPlayerWayPoint() != null)
+                {
+                    List<WayPoint> newPath = characterStateController.CurrentState.move.FindClosestPathTo(moveData.LastWayPoint, GetLastPlayerWayPoint());
+                    foreach (WayPoint w in newPath)
+                    {
+                        TargetPath.Add(w);
+                    }
+                }
+            }
+        }
     }
 }
