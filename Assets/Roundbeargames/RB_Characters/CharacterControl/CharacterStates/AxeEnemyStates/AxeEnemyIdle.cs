@@ -36,17 +36,26 @@ namespace roundbeargames
                     return;
                 }
 
-                if (turnToPlayer.StartTurning())
-                {
-                    characterStateController.ChangeState((int)AxeEnemyState.StandingTurnToRight90);
-                    return;
-                }
-
                 if (ChasePlayer())
                 {
                     AI_CONTROL.FindPathToPlayer();
-                    characterStateController.ChangeState((int)AxeEnemyState.AxeWalkForward);
-                    return;
+
+                    if (AI_CONTROL.TargetPath != null)
+                    {
+                        if (AI_CONTROL.TargetPath.Count > 0)
+                        {
+                            if (!AI_CONTROL.IsFacingPath)
+                            {
+                                characterStateController.ChangeState((int)AxeEnemyState.StandingTurnToRight90);
+                                return;
+                            }
+                            else
+                            {
+                                characterStateController.ChangeState((int)AxeEnemyState.AxeWalkForward);
+                                return;
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -55,19 +64,19 @@ namespace roundbeargames
 
         bool ChasePlayer()
         {
-            if (AI_CONTROL.IsFacingPlayer())
+            //if (AI_CONTROL.IsFacingPlayer())
+            //{
+            if (AI_CONTROL.GetLastPlayerWayPoint() != null)
             {
-                if (AI_CONTROL.GetLastPlayerWayPoint() != null)
+                if (AI_CONTROL.PlayerIsClose(10f))
                 {
-                    if (AI_CONTROL.PlayerIsClose(10f))
+                    if (!AI_CONTROL.PlayerIsDead())
                     {
-                        if (!AI_CONTROL.PlayerIsDead())
-                        {
-                            return true;
-                        }
+                        return true;
                     }
                 }
             }
+            //}
             return false;
         }
     }

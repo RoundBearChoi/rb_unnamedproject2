@@ -10,6 +10,7 @@ namespace roundbeargames
         public List<WayPoint> TargetPath;
         CharacterManager characterManager;
         Vector3 PlayerDir;
+        public bool IsFacingPath;
 
         void Awake()
         {
@@ -113,6 +114,55 @@ namespace roundbeargames
                     }
                 }
             }
+
+            UpdateStartPath();
+        }
+
+        void UpdateStartPath()
+        {
+            if (TargetPath.Count < 2)
+            {
+                return;
+            }
+
+            WayPoint first = TargetPath[TargetPath.Count - 1];
+            WayPoint second = TargetPath[TargetPath.Count - 2];
+
+            Vector3 pathDir = second.transform.position - first.transform.position;
+            pathDir.Normalize();
+
+            //Debug.Log("first waypoint dir: " + pathDir);
+
+            Vector3 orientation = first.transform.position - this.transform.position;
+            orientation.Normalize();
+
+            //Debug.Log("orientation: " + orientation);
+
+            if (orientation.x * pathDir.x < 0f)
+            {
+                if (IsFacing(TargetPath[TargetPath.Count - 2].transform.position))
+                {
+                    IsFacingPath = true;
+                }
+                else
+                {
+                    IsFacingPath = false;
+                }
+
+                TargetPath.RemoveAt(TargetPath.Count - 1);
+            }
+            else
+            {
+                if (IsFacing(TargetPath[TargetPath.Count - 1].transform.position))
+                {
+                    IsFacingPath = true;
+                }
+                else
+                {
+                    IsFacingPath = false;
+                }
+            }
+
         }
     }
 }

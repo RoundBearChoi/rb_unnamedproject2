@@ -17,17 +17,10 @@ namespace roundbeargames
         {
             if (ANIMATION_DATA.AnimationNameMatches)
             {
-                if (AI_CONTROL.IsFacingPlayer())
+                if (!AI_CONTROL.PlayerIsDead())
                 {
-                    if (!AI_CONTROL.PlayerIsDead())
-                    {
-                        MOVEMENT_DATA.Turn = move.GetTurn();
-                        move.MoveForward(MOVEMENT_DATA.WalkSpeed, MOVEMENT_DATA.Turn);
-                    }
-                    else
-                    {
-                        characterStateController.ChangeState((int)AxeEnemyState.AxeIdle);
-                    }
+                    MOVEMENT_DATA.Turn = move.GetTurn();
+                    move.MoveForward(MOVEMENT_DATA.WalkSpeed, MOVEMENT_DATA.Turn);
                 }
                 else
                 {
