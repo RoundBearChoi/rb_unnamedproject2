@@ -2,59 +2,43 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace roundbeargames
-{
-    public class AxeEnemyIdle : CharacterState
-    {
-        public override void InitState()
-        {
-            ANIMATION_DATA.DesignatedAnimation = AxeEnemyState.AxeIdle.ToString();
+namespace roundbeargames {
+    public class AxeEnemyIdle : CharacterState {
+        public override void InitState () {
+            ANIMATION_DATA.DesignatedAnimation = AxeEnemyState.AxeIdle.ToString ();
 
-            if (pathFinder == null)
-            {
-                pathFinder = GameObject.FindObjectOfType<PathFinder>();
+            if (pathFinder == null) {
+                pathFinder = GameObject.FindObjectOfType<PathFinder> ();
             }
         }
 
-        public override void RunFixedUpdate()
-        {
+        public override void RunFixedUpdate () {
 
         }
 
-        public override void ClearState()
-        {
+        public override void ClearState () {
 
         }
 
-        public override void RunFrameUpdate()
-        {
-            if (UpdateAnimation())
-            {
-                if (findPlayer.TriggerAttack())
-                {
-                    characterStateController.ChangeState((int)AxeEnemyState.AxeAttackDownward);
+        public override void RunFrameUpdate () {
+            if (UpdateAnimation ()) {
+                if (findPlayer.TriggerAttack ()) {
+                    characterStateController.ChangeState ((int) AxeEnemyState.AxeAttackDownward);
                     return;
                 }
 
-                if (ChasePlayer())
-                {
-                    AI_CONTROL.FindPathToPlayer();
+                if (ChasePlayer ()) {
+                    AI_CONTROL.FindPathToPlayer ();
 
-                    if (AI_CONTROL.TargetPath != null)
-                    {
-                        if (AI_CONTROL.TargetPath.Count > 0)
-                        {
-                            if (!AI_CONTROL.IsFacingPath)
-                            {
-                                characterStateController.ChangeState((int)AxeEnemyState.StandingTurnToRight90);
-                                return;
-                            }
-                            else
-                            {
-                                characterStateController.ChangeState((int)AxeEnemyState.AxeWalkForward);
-                                return;
-                            }
-                        }
+                    switch (AI_CONTROL.GetPathFindMethod ()) {
+                        case PathFindMethod.NONE:
+                            break;
+                        case PathFindMethod.WALK:
+                            characterStateController.ChangeState ((int) AxeEnemyState.AxeWalkForward);
+                            return;
+                        case PathFindMethod.TURN:
+                            characterStateController.ChangeState ((int) AxeEnemyState.StandingTurnToRight90);
+                            return;
                     }
                 }
             }
@@ -62,21 +46,14 @@ namespace roundbeargames
 
         private PathFinder pathFinder;
 
-        bool ChasePlayer()
-        {
-            //if (AI_CONTROL.IsFacingPlayer())
-            //{
-            if (AI_CONTROL.GetLastPlayerWayPoint() != null)
-            {
-                if (AI_CONTROL.PlayerIsClose(10f))
-                {
-                    if (!AI_CONTROL.PlayerIsDead())
-                    {
+        bool ChasePlayer () {
+            if (AI_CONTROL.GetLastPlayerWayPoint () != null) {
+                if (AI_CONTROL.PlayerIsClose (10f)) {
+                    if (!AI_CONTROL.PlayerIsDead ()) {
                         return true;
                     }
                 }
             }
-            //}
             return false;
         }
     }
