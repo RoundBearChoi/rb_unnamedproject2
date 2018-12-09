@@ -20,6 +20,13 @@ namespace roundbeargames {
 				if (ANIMATION_DATA.PlayTime > jump.JumpTime + 0.5f) {
 					if (MOVEMENT_DATA.IsGrounded) {
 						characterStateController.ChangeState ((int) AxeEnemyState.AxeFallingToLanding);
+						return;
+					}
+
+					if (AI_CONTROL.transform.position.y > AI_CONTROL.GetNextWayPoint ().transform.position.y) {
+						if (Mathf.Abs (AI_CONTROL.transform.position.x - AI_CONTROL.GetNextWayPoint ().transform.position.x) < 1f) {
+							move.MoveForward (MOVEMENT_DATA.WalkSpeed, CHARACTER_TRANSFORM.rotation.eulerAngles.y);
+						}
 					}
 				}
 			}

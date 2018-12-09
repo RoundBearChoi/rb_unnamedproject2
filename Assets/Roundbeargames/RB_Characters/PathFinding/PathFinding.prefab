@@ -2054,7 +2054,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pathFindMethod: 3
-  GroundName: TempFloor
+  GroundName: TempObstacle
   Neighbors:
   - {fileID: 114129780346373180}
   KnownDistance: 1000

@@ -93,12 +93,16 @@ namespace roundbeargames {
         }
 
         public void UpdateStartPath () {
+            if (TargetPath == null) {
+                return;
+            }
+
             if (TargetPath.Count == 0) {
                 return;
             }
 
             if (TargetPath.Count == 1) {
-                if (IsFacing (TargetPath[TargetPath.Count - 1].transform.position)) {
+                if (IsFacing (GetNextWayPoint ().transform.position)) {
                     IsFacingPath = true;
                 } else {
                     IsFacingPath = false;
@@ -106,7 +110,7 @@ namespace roundbeargames {
                 return;
             }
 
-            WayPoint first = TargetPath[TargetPath.Count - 1];
+            WayPoint first = GetNextWayPoint ();
             WayPoint second = TargetPath[TargetPath.Count - 2];
 
             Vector3 pathDir = second.transform.position - first.transform.position;
@@ -128,7 +132,7 @@ namespace roundbeargames {
 
                 TargetPath.RemoveAt (TargetPath.Count - 1);
             } else {
-                if (IsFacing (TargetPath[TargetPath.Count - 1].transform.position)) {
+                if (IsFacing (GetNextWayPoint ().transform.position)) {
                     IsFacingPath = true;
                 } else {
                     IsFacingPath = false;
@@ -145,14 +149,14 @@ namespace roundbeargames {
                 return PathFindMethod.NONE;
             }
 
-            if (TargetPath[TargetPath.Count - 1].pathFindMethod == PathFindMethod.JUMP) {
+            if (GetNextWayPoint ().pathFindMethod == PathFindMethod.JUMP) {
                 return PathFindMethod.JUMP;
             }
 
             if (!IsFacingPath) {
                 return PathFindMethod.TURN;
             } else {
-                if (TargetPath[TargetPath.Count - 1].pathFindMethod == PathFindMethod.WALK) {
+                if (GetNextWayPoint ().pathFindMethod == PathFindMethod.WALK) {
                     return PathFindMethod.WALK;
                 }
             }
@@ -176,6 +180,18 @@ namespace roundbeargames {
                     }
                 }
             }
+        }
+
+        public WayPoint GetNextWayPoint () {
+            if (TargetPath == null) {
+                return null;
+            }
+
+            if (TargetPath.Count == 0) {
+                return null;
+            }
+
+            return TargetPath[TargetPath.Count - 1];
         }
     }
 }
