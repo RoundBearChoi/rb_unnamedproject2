@@ -30,6 +30,7 @@ public enum AxeEnemyState {
     StandingTurnToRight90,
     AxeWalkForward,
     AxeJumpingUp,
+    AxeFallingToLanding,
 }
 
 namespace roundbeargames {

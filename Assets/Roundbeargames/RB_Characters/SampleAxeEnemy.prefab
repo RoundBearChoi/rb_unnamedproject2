@@ -321,6 +321,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1162782340489918
+GameObject:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4425861608187762}
+  - component: {fileID: 114780128308226070}
+  m_Layer: 9
+  m_Name: AxeFallingToLanding
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1174329315723620
 GameObject:
   m_ObjectHideFlags: 1
@@ -2694,6 +2710,7 @@ Transform:
   - {fileID: 4033157392299502}
   - {fileID: 4491739242526652}
   - {fileID: 4582626347939782}
+  - {fileID: 4425861608187762}
   m_Father: {fileID: 4306093989170620}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2960,6 +2977,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4324302764577890}
   m_RootOrder: 17
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4425861608187762
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1162782340489918}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4277768819179454}
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4427109770974298
 Transform:
@@ -4470,6 +4500,7 @@ MonoBehaviour:
     - {fileID: 114436034993405696}
     - {fileID: 114637017166860710}
     - {fileID: 114212143670217050}
+    - {fileID: 114780128308226070}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -4488,7 +4519,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 12
-      Data: 6
+      Data: 7
     - Name: 
       Entry: 7
       Data: 
@@ -4558,6 +4589,18 @@ MonoBehaviour:
     - Name: 
       Entry: 10
       Data: 5
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 3
+      Data: 5
+    - Name: 
+      Entry: 10
+      Data: 6
     - Name: 
       Entry: 8
       Data: 
@@ -4774,6 +4817,25 @@ MonoBehaviour:
   turnToPlayer: {fileID: 0}
   findPlayer: {fileID: 0}
   Duration: 0
+--- !u!114 &114780128308226070
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1162782340489918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44a9f6862d5fd104fbf3b956ae09ff9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterStateController: {fileID: 0}
+  move: {fileID: 0}
+  slowDown: {fileID: 0}
+  attack: {fileID: 0}
+  jump: {fileID: 0}
+  turnToPlayer: {fileID: 0}
+  findPlayer: {fileID: 0}
+  Duration: 0.5
 --- !u!114 &114807190823774702
 MonoBehaviour:
   m_ObjectHideFlags: 1

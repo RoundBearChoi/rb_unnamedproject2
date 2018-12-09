@@ -5,7 +5,6 @@ using UnityEngine;
 namespace roundbeargames {
 	public class AxeJumpingUp : CharacterState {
 		public override void InitState () {
-			//AI_CONTROL.TargetPath.Clear ();
 			MOVEMENT_DATA.IsJumped = false;
 			ANIMATION_DATA.DesignatedAnimation = AxeEnemyState.AxeJumpingUp.ToString ();
 		}
@@ -20,7 +19,7 @@ namespace roundbeargames {
 			if (UpdateAnimation ()) {
 				if (ANIMATION_DATA.PlayTime > jump.JumpTime + 0.5f) {
 					if (MOVEMENT_DATA.IsGrounded) {
-						//Debug.Log ("landed");
+						characterStateController.ChangeState ((int) AxeEnemyState.AxeFallingToLanding);
 					}
 				}
 			}
