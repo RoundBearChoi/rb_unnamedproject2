@@ -11,12 +11,11 @@ namespace roundbeargames {
 
 		public override void RunFixedUpdate () {
 			if (ANIMATION_DATA.AnimationNameMatches) {
-				jump.JumpUp (JumpForce);
+				jump.JumpUp (JumpForce, true);
 				jump.CheckLedgeGrab ();
 
 				if (Mathf.Abs (MANUAL_CONTROL.RIGIDBODY.velocity.y) > 0.0001f) {
 					MOVEMENT_DATA.Turn = move.GetTurn ();
-					//move.MoveWithoutTurning (MOVEMENT_DATA.AirWalkSpeed, MOVEMENT_DATA.Turn);
 					move.AirMove ();
 				}
 			}

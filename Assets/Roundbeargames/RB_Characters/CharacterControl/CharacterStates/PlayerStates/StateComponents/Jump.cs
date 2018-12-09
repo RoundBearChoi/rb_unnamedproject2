@@ -15,18 +15,24 @@ namespace roundbeargames {
 			return false;
 		}
 
-		public void JumpUp (float JumpForce) {
+		public void JumpUp (float JumpForce, bool showJumpSmoke) {
 			if (!movementData.IsJumped) {
 				if (IsJumpTime ()) {
-					Vector3 footPos = new Vector3 (controlMechanism.BodyPartDictionary[BodyPart.RIGHT_FOOT].position.x, controlMechanism.BodyPartDictionary[BodyPart.RIGHT_FOOT].position.y + 0.1f, 0f);
-					vfxManager.ShowSimpleEffect (SimpleEffectType.GROUND_SHOCK, footPos);
-					vfxManager.ShowSimpleEffect (SimpleEffectType.GROUND_SMOKE, footPos);
-					controlMechanism.BodyTrailDictionary[BodyTrail.BODY].gameObject.SetActive (false);
-					controlMechanism.BodyTrailDictionary[BodyTrail.BODY].gameObject.SetActive (true);
+					if (showJumpSmoke) {
+						ShowJumpSmoke ();
+					}
 					controlMechanism.RIGIDBODY.AddForce (Vector3.up * JumpForce);
 					movementData.IsJumped = true;
 				}
 			}
+		}
+
+		void ShowJumpSmoke () {
+			Vector3 footPos = new Vector3 (controlMechanism.BodyPartDictionary[BodyPart.RIGHT_FOOT].position.x, controlMechanism.BodyPartDictionary[BodyPart.RIGHT_FOOT].position.y + 0.1f, 0f);
+			vfxManager.ShowSimpleEffect (SimpleEffectType.GROUND_SHOCK, footPos);
+			vfxManager.ShowSimpleEffect (SimpleEffectType.GROUND_SMOKE, footPos);
+			controlMechanism.BodyTrailDictionary[BodyTrail.BODY].gameObject.SetActive (false);
+			controlMechanism.BodyTrailDictionary[BodyTrail.BODY].gameObject.SetActive (true);
 		}
 
 		public void CheckLedgeGrab () {
