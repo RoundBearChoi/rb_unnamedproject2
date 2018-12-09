@@ -10,6 +10,10 @@ namespace roundbeargames {
 
         public override void RunFixedUpdate () {
             if (ANIMATION_DATA.AnimationNameMatches) {
+                if (!MOVEMENT_DATA.IsGrounded) {
+                    characterStateController.ChangeState ((int) AxeEnemyState.AxeFallingIdle);
+                }
+
                 if (!AI_CONTROL.PlayerIsDead ()) {
                     MOVEMENT_DATA.Turn = move.GetTurn ();
                     move.MoveForward (MOVEMENT_DATA.WalkSpeed, MOVEMENT_DATA.Turn);
@@ -49,6 +53,7 @@ namespace roundbeargames {
                         characterStateController.ChangeState ((int) AxeEnemyState.AxeJumpingUp);
                         return;
                 }
+
             }
         }
 
