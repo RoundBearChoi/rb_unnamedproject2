@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace roundbeargames {
 	public class WayPoint : MonoBehaviour {
+		public PathFindMethod pathFindMethod;
 		public string GroundName;
 		public List<WayPoint> Neighbors;
 		public int KnownDistance = 1000;

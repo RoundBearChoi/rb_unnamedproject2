@@ -90,14 +90,16 @@ namespace roundbeargames {
                     }
                 }
             }
-
-            UpdateStartPath ();
         }
 
-        void UpdateStartPath () {
+        public void UpdateStartPath () {
             if (TargetPath.Count < 2) {
                 return;
             }
+
+            //if (TargetPath[TargetPath.Count - 1].pathFindMethod == PathFindMethod.JUMP) {
+            //    return;
+            //}
 
             WayPoint first = TargetPath[TargetPath.Count - 1];
             WayPoint second = TargetPath[TargetPath.Count - 2];
@@ -134,15 +136,41 @@ namespace roundbeargames {
                 return PathFindMethod.NONE;
             }
 
-            if (TargetPath.Count > 0) {
-                if (!IsFacingPath) {
-                    return PathFindMethod.TURN;
-                } else {
+            if (TargetPath.Count == 0) {
+                return PathFindMethod.NONE;
+            }
+
+            if (TargetPath[TargetPath.Count - 1].pathFindMethod == PathFindMethod.JUMP) {
+                return PathFindMethod.JUMP;
+            }
+
+            if (!IsFacingPath) {
+                return PathFindMethod.TURN;
+            } else {
+                if (TargetPath[TargetPath.Count - 1].pathFindMethod == PathFindMethod.WALK) {
                     return PathFindMethod.WALK;
                 }
             }
 
             return PathFindMethod.NONE;
+        }
+
+        public void UpdatePathStatus () {
+            if (TargetPath.Count == 0) {
+                return;
+            }
+
+            List<TouchDetector> listDet = characterStateController.characterData.GetTouchDetector (TouchDetectorType.WAY_POINT_DETECTOR);
+            foreach (TouchDetector d in listDet) {
+                if (d.TouchablesDictionary.ContainsKey (TouchableType.WAYPOINT)) {
+                    foreach (Touchable touchable in d.TouchablesDictionary[TouchableType.WAYPOINT]) {
+                        if (touchable.gameObject.GetComponent<WayPoint> () == TargetPath[TargetPath.Count - 1]) {
+                            TargetPath.RemoveAt (TargetPath.Count - 1);
+                            return;
+                        }
+                    }
+                }
+            }
         }
     }
 }

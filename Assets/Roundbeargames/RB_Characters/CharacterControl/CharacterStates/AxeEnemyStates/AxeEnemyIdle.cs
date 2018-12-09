@@ -10,6 +10,8 @@ namespace roundbeargames {
             if (pathFinder == null) {
                 pathFinder = GameObject.FindObjectOfType<PathFinder> ();
             }
+
+            AI_CONTROL.TargetPath.Clear ();
         }
 
         public override void RunFixedUpdate () {
@@ -28,7 +30,11 @@ namespace roundbeargames {
                 }
 
                 if (ChasePlayer ()) {
-                    AI_CONTROL.FindPathToPlayer ();
+                    if (AI_CONTROL.TargetPath.Count == 0) {
+                        AI_CONTROL.FindPathToPlayer ();
+                    }
+
+                    AI_CONTROL.UpdateStartPath ();
 
                     switch (AI_CONTROL.GetPathFindMethod ()) {
                         case PathFindMethod.NONE:
@@ -38,6 +44,8 @@ namespace roundbeargames {
                             return;
                         case PathFindMethod.TURN:
                             characterStateController.ChangeState ((int) AxeEnemyState.StandingTurnToRight90);
+                            return;
+                        case PathFindMethod.JUMP:
                             return;
                     }
                 }
