@@ -30,6 +30,11 @@ namespace roundbeargames {
                 AI_CONTROL.UpdatePathStatus ();
                 AI_CONTROL.UpdateStartPath ();
 
+                if (AI_CONTROL.TargetPath.Count == 0) {
+                    characterStateController.ChangeState ((int) AxeEnemyState.AxeIdle);
+                    return;
+                }
+
                 switch (AI_CONTROL.GetPathFindMethod ()) {
                     case PathFindMethod.NONE:
                         //characterStateController.ChangeState ((int) AxeEnemyState.AxeIdle);
