@@ -93,13 +93,18 @@ namespace roundbeargames {
         }
 
         public void UpdateStartPath () {
-            if (TargetPath.Count < 2) {
+            if (TargetPath.Count == 0) {
                 return;
             }
 
-            //if (TargetPath[TargetPath.Count - 1].pathFindMethod == PathFindMethod.JUMP) {
-            //    return;
-            //}
+            if (TargetPath.Count == 1) {
+                if (IsFacing (TargetPath[TargetPath.Count - 1].transform.position)) {
+                    IsFacingPath = true;
+                } else {
+                    IsFacingPath = false;
+                }
+                return;
+            }
 
             WayPoint first = TargetPath[TargetPath.Count - 1];
             WayPoint second = TargetPath[TargetPath.Count - 2];
