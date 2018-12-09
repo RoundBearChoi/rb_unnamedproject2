@@ -56,7 +56,7 @@ namespace roundbeargames {
 
         bool ChasePlayer () {
             if (AI_CONTROL.GetLastPlayerWayPoint () != null) {
-                if (AI_CONTROL.PlayerIsClose (10f)) {
+                if (AI_CONTROL.PlayerIsClose (20f)) {
                     if (!AI_CONTROL.PlayerIsDead ()) {
                         return true;
                     }

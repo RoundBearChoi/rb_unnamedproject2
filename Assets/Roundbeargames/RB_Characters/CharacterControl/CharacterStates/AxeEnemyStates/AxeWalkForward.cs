@@ -6,7 +6,6 @@ namespace roundbeargames {
     public class AxeWalkForward : CharacterState {
         public override void InitState () {
             ANIMATION_DATA.DesignatedAnimation = AxeEnemyState.AxeWalkForward.ToString ();
-
         }
 
         public override void RunFixedUpdate () {
@@ -46,8 +45,8 @@ namespace roundbeargames {
                         characterStateController.ChangeState ((int) AxeEnemyState.StandingTurnToRight90);
                         return;
                     case PathFindMethod.JUMP:
-                        Debug.Log ("time to jump");
-                        //characterStateController.ChangeState ((int) AxeEnemyState.AxeIdle);
+                        //Debug.Log ("time to jump");
+                        characterStateController.ChangeState ((int) AxeEnemyState.AxeJumpingUp);
                         return;
                 }
             }
