@@ -150,14 +150,22 @@ namespace roundbeargames {
             }
 
             if (GetNextWayPoint ().pathFindMethod == PathFindMethod.JUMP) {
-                return PathFindMethod.JUMP;
+                if (!GetNextWayPoint ().GroundName.Equals (moveData.GroundName)) {
+                    return PathFindMethod.JUMP;
+                }
             }
+
+            WayPoint testing = GetNextWayPoint ();
 
             if (!IsFacingPath) {
                 return PathFindMethod.TURN;
             } else {
                 if (GetNextWayPoint ().pathFindMethod == PathFindMethod.WALK) {
                     return PathFindMethod.WALK;
+                } else {
+                    if (GetNextWayPoint ().GroundName.Equals (moveData.GroundName)) {
+                        return PathFindMethod.WALK;
+                    }
                 }
             }
 
