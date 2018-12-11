@@ -2680,7 +2680,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1382540918812880}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.91, y: 1.15, z: 0}
+  m_LocalPosition: {x: -1.15, y: 6.52, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4548758764177712}
@@ -5010,6 +5010,7 @@ MonoBehaviour:
   turnToPlayer: {fileID: 0}
   findPlayer: {fileID: 0}
   Duration: 0.95
+  FallCheck: 0.65
 --- !u!114 &114402861509797356
 MonoBehaviour:
   m_ObjectHideFlags: 1

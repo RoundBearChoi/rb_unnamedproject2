@@ -39,6 +39,26 @@ namespace roundbeargames
         public List<WayPoint> Unvisited;
         public List<WayPoint> ResultPath;
 
+        [HorizontalGroup("Split", 0.5f)]
+        [Button(ButtonSizes.Large), GUIColor(0.4f, 0.8f, 1)]
+        private void CreateWayPointFarLeft()
+        {
+            GetLatestWayPoint().CreateWayPointLeft();
+        }
+
+        [VerticalGroup("Split/right")]
+        [Button(ButtonSizes.Large), GUIColor(0, 1, 0)]
+        private void CreateWayPointFarRight()
+        {
+            GetLatestWayPoint().CreateWayPointRight();
+        }
+
+        public WayPoint GetLatestWayPoint()
+        {
+            WayPoint[] wArray = this.gameObject.GetComponentsInChildren<WayPoint>();
+            return wArray[wArray.Length - 1];
+        }
+
         private void ResetUnvisited()
         {
             Unvisited.Clear();

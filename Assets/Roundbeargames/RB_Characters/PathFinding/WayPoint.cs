@@ -8,6 +8,8 @@ namespace roundbeargames
     public class WayPoint : MonoBehaviour
     {
         public PathFindMethod pathFindMethod;
+        public float RequiredJumpForce;
+        public float AirWalkSpeedMultiplier;
         public string GroundName;
         public List<WayPoint> Neighbors;
         public int KnownDistance = 1000;
@@ -26,14 +28,14 @@ namespace roundbeargames
 
         [HorizontalGroup("Split", 0.5f)]
         [Button(ButtonSizes.Large), GUIColor(0.4f, 0.8f, 1)]
-        private void CreateWayPointLeft()
+        public void CreateWayPointLeft()
         {
-
+            CreateWayPointPrefab(new Vector3(-0.6f, 0f, 0f));
         }
 
         [VerticalGroup("Split/right")]
         [Button(ButtonSizes.Large), GUIColor(0, 1, 0)]
-        private void CreateWayPointRight()
+        public void CreateWayPointRight()
         {
             CreateWayPointPrefab(new Vector3(0.6f, 0f, 0f));
         }
@@ -44,6 +46,10 @@ namespace roundbeargames
             {
                 pathFinder = this.gameObject.GetComponentInParent<PathFinder>();
             }
+
+            string latestName = pathFinder.GetLatestWayPoint().gameObject.name;
+            int latestNum = int.Parse(latestName.Replace("point - ", ""));
+
             GameObject w = GameObject.Instantiate(pathFinder.WayPointPrefab) as GameObject;
             w.transform.parent = this.transform.parent.transform;
             w.name = "point";
@@ -54,6 +60,12 @@ namespace roundbeargames
             wp.Neighbors = new List<WayPoint>();
             wp.Neighbors.Add(this);
             wp.GroundName = GroundName;
+
+            //Debug.Log("latest name: " + latestName);
+            //Debug.Log("latest num: " + latestNum.ToString());
+
+            wp.gameObject.name = "point - " + (latestNum + 1).ToString();
+
             Neighbors.Add(wp);
         }
 
