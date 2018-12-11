@@ -4330,7 +4330,7 @@ MonoBehaviour:
   characterData: {fileID: 0}
   movementData: {fileID: 0}
   vfxManager: {fileID: 0}
-  AttackTriggerDistance: 3
+  AttackTriggerDistance: 2.5
 --- !u!114 &114087861396621366
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4779,7 +4779,7 @@ MonoBehaviour:
   characterData: {fileID: 0}
   movementData: {fileID: 0}
   vfxManager: {fileID: 0}
-  AttackTriggerDistance: 3
+  AttackTriggerDistance: 2.5
 --- !u!114 &114613305900506486
 MonoBehaviour:
   m_ObjectHideFlags: 1
