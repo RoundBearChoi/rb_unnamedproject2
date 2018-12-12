@@ -81,12 +81,22 @@ namespace roundbeargames {
         }
 
         public void CalcNeighborDistance () {
+            if (this.gameObject.name.Contains ("48") || this.gameObject.name.Contains ("49")) {
+                Debug.Log ("checking");
+            }
             foreach (WayPoint n in Neighbors) {
+                int distance = 1;
+                if (pathFindMethod == PathFindMethod.JUMP) {
+                    distance = 10;
+                }
                 //Debug.Log ("calculating " + this.gameObject.name + " to " + n.gameObject.name);
-                if (KnownDistance + 1 < n.KnownDistance) {
+                if (KnownDistance + distance < n.KnownDistance) {
+                    if (n.gameObject.name.Contains ("48") || n.gameObject.name.Contains ("49")) {
+                        Debug.Log ("checking");
+                    }
                     n.PreviousPoint = this;
-                    n.KnownDistance = KnownDistance + 1;
-                    //Debug.Log ("new path found! to " + n.gameObject.name);
+                    n.KnownDistance = KnownDistance + distance;
+                    n.CalcNeighborDistance ();
                 }
             }
         }

@@ -78,11 +78,7 @@ namespace roundbeargames {
         private void AddResult (WayPoint start, WayPoint end) {
             ResultPath.Add (end);
             if (start != end) {
-                try {
-                    AddResult (start, end.PreviousPoint);
-                } catch (System.Exception e) {
-                    Debug.LogError (e);
-                }
+                AddResult (start, end.PreviousPoint);
             }
         }
 
