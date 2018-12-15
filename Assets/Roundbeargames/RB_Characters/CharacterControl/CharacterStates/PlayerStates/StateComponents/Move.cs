@@ -164,19 +164,6 @@ namespace roundbeargames {
             }
         }
 
-        /*public void CheckFall () {
-            if (characterData == null) {
-                return;
-            }
-
-            if (Mathf.Abs (controlMechanism.RIGIDBODY.velocity.y) > 0.025f) {
-                if (!characterData.characterMovementData.IsGrounded) {
-                    controlMechanism.RIGIDBODY.useGravity = true;
-                    characterStateController.ChangeState ((int) PlayerState.FallALoop);
-                }
-            }
-        }*/
-
         public List<WayPoint> FindClosestPathTo (WayPoint from, WayPoint to) {
             if (pathFinder == null) {
                 pathFinder = GameObject.FindObjectOfType<PathFinder> ();
