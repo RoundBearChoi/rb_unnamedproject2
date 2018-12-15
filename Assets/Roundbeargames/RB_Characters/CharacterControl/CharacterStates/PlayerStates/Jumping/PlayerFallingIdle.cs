@@ -11,24 +11,26 @@ namespace roundbeargames {
 		public override void RunFixedUpdate () {
 			MOVEMENT_DATA.Turn = move.GetTurn ();
 			move.AirMove ();
+
+			if (MOVEMENT_DATA.IsGrounded) {
+				CONTROL_MECHANISM.ClearVelocity ();
+				characterStateController.ChangeState ((int) PlayerState.FallingToLanding);
+			}
+
+			if (ANIMATION_DATA.AnimationNameMatches) {
+
+				if (jump.IsGrabbingLedge ()) {
+					characterStateController.ChangeState ((int) PlayerState.HangingIdle);
+					CONTROL_MECHANISM.RIGIDBODY.velocity = Vector3.zero;
+					CONTROL_MECHANISM.RIGIDBODY.angularVelocity = Vector3.zero;
+					CONTROL_MECHANISM.RIGIDBODY.useGravity = false;
+				}
+			}
 		}
 
 		public override void RunFrameUpdate () {
 			if (UpdateAnimation ()) {
-				if (MOVEMENT_DATA.IsGrounded) {
-					if (RollAfterRunningJump ()) {
-						//do nothing until state change
-					} else {
-						characterStateController.ChangeState ((int) PlayerState.FallingToLanding);
-					}
-				} else {
-					if (jump.IsGrabbingLedge ()) {
-						characterStateController.ChangeState ((int) PlayerState.HangingIdle);
-						CONTROL_MECHANISM.RIGIDBODY.velocity = Vector3.zero;
-						CONTROL_MECHANISM.RIGIDBODY.angularVelocity = Vector3.zero;
-						CONTROL_MECHANISM.RIGIDBODY.useGravity = false;
-					}
-				}
+
 			}
 		}
 

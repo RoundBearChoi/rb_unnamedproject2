@@ -14,7 +14,13 @@ namespace roundbeargames {
 				jump.JumpUp (JumpForce, true);
 				jump.CheckLedgeGrab ();
 
-				if (Mathf.Abs (MANUAL_CONTROL.RIGIDBODY.velocity.y) > 0.0001f) {
+				if (ANIMATION_DATA.PlayTime > 0.5f) {
+					if (MOVEMENT_DATA.IsGrounded || move.IsGoingToLand ()) {
+						characterStateController.ChangeState ((int) PlayerState.FallingToLanding);
+					}
+				}
+
+				if (Mathf.Abs (MANUAL_CONTROL.RIGIDBODY.velocity.y) > 0.25f) {
 					MOVEMENT_DATA.Turn = move.GetTurn ();
 					move.AirMove ();
 				}

@@ -16,17 +16,20 @@ namespace roundbeargames {
 		}
 
 		public override void RunFixedUpdate () {
+			MOVEMENT_DATA.Turn = move.GetTurn ();
+			move.AirMove ();
+
 			if (ANIMATION_DATA.AnimationNameMatches) {
 				jump.JumpUp (JumpForce, true);
 				jump.CheckLedgeGrab ();
 
-				if (Mathf.Abs (MANUAL_CONTROL.RIGIDBODY.velocity.y) > 0.0001f) {
-					MOVEMENT_DATA.Turn = move.GetTurn ();
-					move.AirMove ();
+				if (ANIMATION_DATA.PlayTime > 0.1f) {
+					if (MOVEMENT_DATA.IsGrounded || move.IsGoingToLand ()) {
+						CONTROL_MECHANISM.ClearVelocity ();
+						characterStateController.ChangeState ((int) PlayerState.FallingToLanding);
+						return;
+					}
 				}
-			} else {
-				MOVEMENT_DATA.Turn = move.GetTurn ();
-				move.AirMove ();
 			}
 		}
 
@@ -34,7 +37,14 @@ namespace roundbeargames {
 			if (UpdateAnimation ()) {
 				//Debug.Log (ANIMATION_DATA.PlayTime);
 				if (DurationTimePassed ()) {
-					characterStateController.ChangeState ((int) PlayerState.FallALoop);
+					if (MOVEMENT_DATA.IsGrounded) {
+						CONTROL_MECHANISM.ClearVelocity ();
+						characterStateController.ChangeState ((int) PlayerState.FallingToLanding);
+						return;
+					} else {
+						characterStateController.ChangeState ((int) PlayerState.FallALoop);
+						return;
+					}
 				}
 			}
 		}

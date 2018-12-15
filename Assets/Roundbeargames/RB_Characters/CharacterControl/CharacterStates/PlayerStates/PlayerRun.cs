@@ -22,7 +22,11 @@ namespace roundbeargames {
 			MOVEMENT_DATA.Turn = move.GetTurn ();
 
 			if (ANIMATION_DATA.AnimationNameMatches) {
-				move.CheckFall ();
+				if (CONTROL_MECHANISM.IsFalling ()) {
+					characterStateController.ChangeState ((int) PlayerState.FallALoop);
+					return;
+				}
+
 				UpdateRun ();
 			} else {
 				move.MoveForward (MOVEMENT_DATA.RunSpeed * 0.9f, CHARACTER_TRANSFORM.rotation.eulerAngles.y);

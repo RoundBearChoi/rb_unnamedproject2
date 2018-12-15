@@ -10,7 +10,10 @@ namespace roundbeargames {
 
 		public override void RunFixedUpdate () {
 			if (ANIMATION_DATA.AnimationNameMatches) {
-				move.CheckFall ();
+				if (CONTROL_MECHANISM.IsFalling ()) {
+					characterStateController.ChangeState ((int) PlayerState.FallALoop);
+					return;
+				}
 				UpdateCrouchWalk ();
 			} else {
 				MOVEMENT_DATA.Turn = move.GetTurn ();

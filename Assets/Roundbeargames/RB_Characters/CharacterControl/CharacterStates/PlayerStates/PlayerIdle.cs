@@ -13,7 +13,10 @@ namespace roundbeargames {
 			MOVEMENT_DATA.Turn = move.GetTurn ();
 
 			if (ANIMATION_DATA.AnimationNameMatches) {
-				move.CheckFall ();
+				if (CONTROL_MECHANISM.IsFalling ()) {
+					characterStateController.ChangeState ((int) PlayerState.FallALoop);
+					return;
+				}
 
 				if (MOVEMENT_DATA.Turn != CHARACTER_TRANSFORM.rotation.eulerAngles.y) {
 					CHARACTER_TRANSFORM.rotation = Quaternion.Euler (0, MOVEMENT_DATA.Turn, 0);

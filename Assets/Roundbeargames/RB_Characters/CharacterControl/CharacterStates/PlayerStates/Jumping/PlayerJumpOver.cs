@@ -21,16 +21,21 @@ namespace roundbeargames {
 				Roll ();
 
 				if (ANIMATION_DATA.PlayTime > FallTime) {
-					if (!IsLandingOnGround ()) {
+					if (!move.IsGoingToLand ()) {
 						if (CONTROL_MECHANISM.IsFacingForward ()) {
 							MOVEMENT_DATA.AirMomentum = 3f;
 						} else {
 							MOVEMENT_DATA.AirMomentum = -3f;
 						}
 
-						if (IsDiving) {
-							move.CheckFall ();
-						}
+						//if (IsDiving) {
+						//	if (CONTROL_MECHANISM.IsFalling()){}
+						//}
+					}
+
+					if (CONTROL_MECHANISM.IsFalling ()) {
+						characterStateController.ChangeState ((int) PlayerState.FallALoop);
+						return;
 					}
 				}
 			} else {
@@ -43,6 +48,7 @@ namespace roundbeargames {
 				//Debug.Log (ANIMATION_DATA.PlayTime);
 
 				if (DurationTimePassed ()) {
+
 					switch (move.GetMoveTransition ()) {
 						case MoveTransitionStates.RUN:
 							characterStateController.ChangeState ((int) PlayerState.HumanoidRun);
@@ -82,22 +88,6 @@ namespace roundbeargames {
 		public bool DiveChecked;
 		public bool StopAnimationTriggered;
 
-		private bool IsLandingOnGround () {
-			List<TouchDetector> tList = CHARACTER_DATA.GetTouchDetector (TouchDetectorType.GROUND_ROLL);
-
-			if (tList == null) {
-				return true;
-			}
-
-			TouchDetector landDet = tList[0];
-
-			if (landDet.GeneralObjects.Count > 0) {
-				return true;
-			} else {
-				return false;
-			}
-		}
-
 		private void CheckDive () {
 			if (DiveChecked) {
 				return;
@@ -105,7 +95,7 @@ namespace roundbeargames {
 
 			if (ANIMATION_DATA.PlayTime >= DiveCheckTime) {
 				DiveChecked = true;
-				if (!IsLandingOnGround ()) {
+				if (!move.IsGoingToLand ()) {
 					CONTROL_MECHANISM.RIGIDBODY.useGravity = true;
 					IsDiving = true;
 				}
@@ -144,7 +134,7 @@ namespace roundbeargames {
 		private void Roll () {
 			//check for ground collision
 			if (!ANIMATION_DATA.AnimationIsPlaying ()) {
-				if (IsLandingOnGround () || MOVEMENT_DATA.IsGrounded) {
+				if (move.IsGoingToLand () || MOVEMENT_DATA.IsGrounded) {
 					CONTROL_MECHANISM.ClearVelocity ();
 					ANIMATION_DATA.PlayAnimation ();
 				}

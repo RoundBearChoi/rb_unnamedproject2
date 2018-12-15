@@ -17,7 +17,11 @@ namespace roundbeargames {
 			MOVEMENT_DATA.Turn = move.GetTurn ();
 
 			if (ANIMATION_DATA.AnimationNameMatches) {
-				move.CheckFall ();
+				if (CONTROL_MECHANISM.IsFalling ()) {
+					characterStateController.ChangeState ((int) PlayerState.FallALoop);
+					return;
+				}
+
 				UpdateWalk ();
 			} else {
 				if (characterStateController.PrevState.GetType () != typeof (PlayerCrouchSneakLeft)) {

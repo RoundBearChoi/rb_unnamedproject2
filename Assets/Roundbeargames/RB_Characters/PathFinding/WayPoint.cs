@@ -81,9 +81,9 @@ namespace roundbeargames {
         }
 
         public void CalcNeighborDistance () {
-            if (this.gameObject.name.Contains ("48") || this.gameObject.name.Contains ("49")) {
-                Debug.Log ("checking");
-            }
+            //if (this.gameObject.name.Contains ("48") || this.gameObject.name.Contains ("49")) {
+            //    Debug.Log ("checking");
+            //}
             foreach (WayPoint n in Neighbors) {
                 int distance = 1;
                 if (pathFindMethod == PathFindMethod.JUMP) {
@@ -91,9 +91,9 @@ namespace roundbeargames {
                 }
                 //Debug.Log ("calculating " + this.gameObject.name + " to " + n.gameObject.name);
                 if (KnownDistance + distance < n.KnownDistance) {
-                    if (n.gameObject.name.Contains ("48") || n.gameObject.name.Contains ("49")) {
-                        Debug.Log ("checking");
-                    }
+                    //if (n.gameObject.name.Contains ("48") || n.gameObject.name.Contains ("49")) {
+                    //    Debug.Log ("checking");
+                    //}
                     n.PreviousPoint = this;
                     n.KnownDistance = KnownDistance + distance;
                     n.CalcNeighborDistance ();

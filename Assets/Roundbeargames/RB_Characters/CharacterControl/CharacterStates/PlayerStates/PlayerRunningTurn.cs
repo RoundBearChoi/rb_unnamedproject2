@@ -11,7 +11,11 @@ namespace roundbeargames {
 
 		public override void RunFixedUpdate () {
 			if (ANIMATION_DATA.AnimationNameMatches) {
-				move.CheckFall ();
+				if (CONTROL_MECHANISM.IsFalling ()) {
+					characterStateController.ChangeState ((int) PlayerState.FallALoop);
+					return;
+				}
+
 				if (!MOVEMENT_DATA.IsGrounded) {
 					characterStateController.ChangeState ((int) PlayerState.FallALoop);
 				}

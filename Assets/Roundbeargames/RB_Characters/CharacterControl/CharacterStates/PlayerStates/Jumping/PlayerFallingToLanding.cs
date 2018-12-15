@@ -6,11 +6,15 @@ namespace roundbeargames {
 	public class PlayerFallingToLanding : CharacterState {
 		public override void InitState () {
 			ANIMATION_DATA.DesignatedAnimation = PlayerState.FallingToLanding.ToString ();
-			//MANUAL_CONTROL.RIGIDBODY.velocity = Vector3.zero;
 		}
 
 		public override void RunFixedUpdate () {
-
+			if (ANIMATION_DATA.AnimationNameMatches) {
+				if (CONTROL_MECHANISM.IsFalling ()) {
+					characterStateController.ChangeState ((int) PlayerState.FallALoop);
+					return;
+				}
+			}
 		}
 
 		public override void RunFrameUpdate () {
