@@ -13,8 +13,15 @@ namespace roundbeargames {
 			move.AirMove ();
 
 			if (MOVEMENT_DATA.IsGrounded) {
-				CONTROL_MECHANISM.ClearVelocity ();
-				characterStateController.ChangeState ((int) PlayerState.FallingToLanding);
+				if (RollAfterJump ()) {
+					characterStateController.ChangeState ((int) PlayerState.StandToRoll);
+					return;
+				} else {
+					CONTROL_MECHANISM.ClearVelocity ();
+					characterStateController.ChangeState ((int) PlayerState.FallingToLanding);
+					return;
+				}
+
 			}
 
 			if (ANIMATION_DATA.AnimationNameMatches) {
@@ -34,33 +41,25 @@ namespace roundbeargames {
 			}
 		}
 
-		private bool RollAfterRunningJump () {
-			if (characterStateController.PrevState.GetType () != typeof (PlayerRunningJump)) {
+		private bool RollAfterJump () {
+			if (MOVEMENT_DATA.AirMomentum < 3.6f) {
 				return false;
 			}
 
-			switch (move.GetMoveTransition ()) {
-				case MoveTransitionStates.JUMP:
-					if (MOVEMENT_DATA.MoveForward || MOVEMENT_DATA.MoveBack) {
-						characterStateController.ChangeState ((int) PlayerState.StandToRoll);
-						return true;
-					}
-					break;
-				case MoveTransitionStates.NONE:
-					break;
-				case MoveTransitionStates.RUN:
-				case MoveTransitionStates.WALK:
-					characterStateController.ChangeState ((int) PlayerState.StandToRoll);
+			if (CONTROL_MECHANISM.IsFacingForward ()) {
+				if (MOVEMENT_DATA.MoveForward) {
 					return true;
+				}
+			} else if (!CONTROL_MECHANISM.IsFacingForward ()) {
+				if (MOVEMENT_DATA.MoveBack) {
+					return true;
+				}
 			}
-
 			return false;
 		}
 
 		public override void ClearState () {
-			if (characterStateController.PrevState.GetType () != typeof (PlayerRunningJump)) {
-				MOVEMENT_DATA.AirMomentum = 0f;
-			}
+
 		}
 	}
 }

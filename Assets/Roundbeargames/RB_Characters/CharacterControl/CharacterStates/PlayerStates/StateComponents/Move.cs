@@ -138,9 +138,7 @@ namespace roundbeargames {
 
             if (!movementData.MoveForward && !movementData.MoveBack) {
                 movementData.AirMomentum = Mathf.Lerp (movementData.AirMomentum, 0f, Time.deltaTime * AirSpeedGain * 0.2f);
-            }
-
-            if (movementData.MoveForward) {
+            } else if (MoveDirectionMatches ()) {
                 if (!characterData.IsTouchingGeneralObject (TouchDetectorType.FRONT)) {
                     if (movementData.AirMomentum >= AirMaxSpeed) {
                         movementData.AirMomentum = Mathf.Lerp (movementData.AirMomentum, AirMaxSpeed, Time.deltaTime * AirSpeedGain * 0.5f);
@@ -148,9 +146,7 @@ namespace roundbeargames {
                         movementData.AirMomentum += Time.deltaTime * AirSpeedGain;
                     }
                 }
-            }
-
-            if (movementData.MoveBack) {
+            } else if (!MoveDirectionMatches ()) {
                 if (!characterData.IsTouchingGeneralObject (TouchDetectorType.BACK)) {
                     if (movementData.AirMomentum <= AirMaxSpeed * -1f) {
                         movementData.AirMomentum = Mathf.Lerp (movementData.AirMomentum, AirMaxSpeed * -1f, Time.deltaTime * AirSpeedGain * 0.5f);
@@ -160,11 +156,17 @@ namespace roundbeargames {
                 }
             }
 
-            if (movementData.AirMomentum > 0f) {
-                SimpleMove (movementData.AirMomentum, controlMechanism.IsFacingForward ());
-            } else if (movementData.AirMomentum < 0f) {
-                SimpleMove (movementData.AirMomentum, controlMechanism.IsFacingForward ());
+            SimpleMove (movementData.AirMomentum, true);
+        }
+
+        private bool MoveDirectionMatches () {
+            if (movementData.MoveForward && controlMechanism.IsFacingForward ()) {
+                return true;
+            } else if (movementData.MoveBack && !controlMechanism.IsFacingForward ()) {
+                return true;
             }
+
+            return false;
         }
 
         public List<WayPoint> FindClosestPathTo (WayPoint from, WayPoint to) {

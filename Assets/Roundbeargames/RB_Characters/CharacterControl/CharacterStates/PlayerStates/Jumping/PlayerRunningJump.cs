@@ -8,11 +8,7 @@ namespace roundbeargames {
 			MOVEMENT_DATA.IsJumped = false;
 			ANIMATION_DATA.DesignatedAnimation = PlayerState.RunningJump.ToString ();
 
-			if (CONTROL_MECHANISM.IsFacingForward ()) {
-				MOVEMENT_DATA.AirMomentum = 3f;
-			} else {
-				MOVEMENT_DATA.AirMomentum = -3f;
-			}
+			MOVEMENT_DATA.AirMomentum = 3f;
 		}
 
 		public override void RunFixedUpdate () {
