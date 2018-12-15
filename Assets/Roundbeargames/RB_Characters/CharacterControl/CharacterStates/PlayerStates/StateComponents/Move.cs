@@ -136,25 +136,28 @@ namespace roundbeargames {
 
             Transform characterTransform = controlMechanism.transform;
 
-            if (movementData.MoveBack) {
-                if (movementData.AirMomentum <= AirMaxSpeed * -1f) {
-                    movementData.AirMomentum = Mathf.Lerp (movementData.AirMomentum, AirMaxSpeed * -1f, Time.deltaTime * AirSpeedGain * 0.5f);
-                } else if (movementData.AirMomentum > (AirMaxSpeed * -1f)) {
-                    movementData.AirMomentum -= Time.deltaTime * AirSpeedGain;
-                }
+            if (!movementData.MoveForward && !movementData.MoveBack) {
+                movementData.AirMomentum = Mathf.Lerp (movementData.AirMomentum, 0f, Time.deltaTime * AirSpeedGain * 0.2f);
             }
 
             if (movementData.MoveForward) {
-
-                if (movementData.AirMomentum >= AirMaxSpeed) {
-                    movementData.AirMomentum = Mathf.Lerp (movementData.AirMomentum, AirMaxSpeed, Time.deltaTime * AirSpeedGain * 0.5f);
-                } else if (movementData.AirMomentum < (AirMaxSpeed)) {
-                    movementData.AirMomentum += Time.deltaTime * AirSpeedGain;
+                if (!characterData.IsTouchingGeneralObject (TouchDetectorType.FRONT)) {
+                    if (movementData.AirMomentum >= AirMaxSpeed) {
+                        movementData.AirMomentum = Mathf.Lerp (movementData.AirMomentum, AirMaxSpeed, Time.deltaTime * AirSpeedGain * 0.5f);
+                    } else if (movementData.AirMomentum < (AirMaxSpeed)) {
+                        movementData.AirMomentum += Time.deltaTime * AirSpeedGain;
+                    }
                 }
             }
 
-            if (!movementData.MoveForward && !movementData.MoveBack) {
-                movementData.AirMomentum = Mathf.Lerp (movementData.AirMomentum, 0f, Time.deltaTime * AirSpeedGain * 0.5f);
+            if (movementData.MoveBack) {
+                if (!characterData.IsTouchingGeneralObject (TouchDetectorType.BACK)) {
+                    if (movementData.AirMomentum <= AirMaxSpeed * -1f) {
+                        movementData.AirMomentum = Mathf.Lerp (movementData.AirMomentum, AirMaxSpeed * -1f, Time.deltaTime * AirSpeedGain * 0.5f);
+                    } else if (movementData.AirMomentum > (AirMaxSpeed * -1f)) {
+                        movementData.AirMomentum -= Time.deltaTime * AirSpeedGain * 0.5f;
+                    }
+                }
             }
 
             if (movementData.AirMomentum > 0f) {

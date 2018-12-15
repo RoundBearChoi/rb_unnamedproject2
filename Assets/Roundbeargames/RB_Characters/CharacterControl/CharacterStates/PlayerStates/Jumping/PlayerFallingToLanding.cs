@@ -6,6 +6,7 @@ namespace roundbeargames {
 	public class PlayerFallingToLanding : CharacterState {
 		public override void InitState () {
 			ANIMATION_DATA.DesignatedAnimation = PlayerState.FallingToLanding.ToString ();
+			MOVEMENT_DATA.AirMomentum = 0f;
 		}
 
 		public override void RunFixedUpdate () {
@@ -42,7 +43,7 @@ namespace roundbeargames {
 		}
 
 		public override void ClearState () {
-			MOVEMENT_DATA.AirMomentum = 0f;
+
 		}
 	}
 }

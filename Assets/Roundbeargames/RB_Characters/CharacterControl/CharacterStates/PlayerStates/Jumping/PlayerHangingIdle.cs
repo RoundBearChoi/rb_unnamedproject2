@@ -6,6 +6,7 @@ namespace roundbeargames {
 	public class PlayerHangingIdle : CharacterState {
 		public override void InitState () {
 			ANIMATION_DATA.DesignatedAnimation = PlayerState.HangingIdle.ToString ();
+			MOVEMENT_DATA.AirMomentum = 0f;
 		}
 
 		public override void RunFixedUpdate () {
