@@ -130,6 +130,10 @@ namespace roundbeargames {
                 return;
             }
 
+            if (characterData.IsTouchingGeneralObject (TouchDetectorType.FRONT)) {
+                return;
+            }
+
             Transform characterTransform = controlMechanism.transform;
 
             if (movementData.MoveBack) {
@@ -185,17 +189,9 @@ namespace roundbeargames {
                 return false;
             }
 
-            List<TouchDetector> tList = characterData.GetTouchDetector (TouchDetectorType.GROUND_ROLL);
-
-            if (tList == null) {
-                return false;
-            }
-
-            foreach (TouchDetector detector in tList) {
-                if (detector.GeneralObjects.Count > 0) {
-                    movementData.IsGrounded = true;
-                    return true;
-                }
+            if (characterData.IsTouchingGeneralObject (TouchDetectorType.GROUND_ROLL)) {
+                movementData.IsGrounded = true;
+                return true;
             }
 
             return false;
