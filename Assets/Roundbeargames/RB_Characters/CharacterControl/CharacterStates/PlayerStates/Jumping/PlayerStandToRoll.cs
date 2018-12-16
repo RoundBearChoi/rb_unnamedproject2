@@ -47,16 +47,9 @@ namespace roundbeargames
                     switch (move.GetMoveTransition())
                     {
                         case MoveTransitionStates.JUMP:
-                            if (MOVEMENT_DATA.MoveForward || MOVEMENT_DATA.MoveBack)
+                            if (MOVEMENT_DATA.Run)
                             {
-                                if (MOVEMENT_DATA.Run)
-                                {
-                                    characterStateController.ChangeState((int)PlayerState.HumanoidRun);
-                                }
-                                else
-                                {
-                                    characterStateController.ChangeState((int)PlayerState.HumanoidWalk);
-                                }
+                                characterStateController.ChangeState((int)PlayerState.RunningJump);
                             }
                             else
                             {

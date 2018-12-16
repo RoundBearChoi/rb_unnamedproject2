@@ -924,8 +924,8 @@ GameObject:
   - component: {fileID: 114235360763595836}
   - component: {fileID: 95231138161378708}
   - component: {fileID: 114005817594335544}
-  m_Layer: 9
-  m_Name: FrontDetector
+  m_Layer: 0
+  m_Name: FrontDetector - Default Layer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1161,6 +1161,23 @@ GameObject:
   m_Name: Move
   m_TagString: Untagged
   m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1563677592392090
+GameObject:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4834921551115838}
+  - component: {fileID: 136005304920020622}
+  - component: {fileID: 114370911338421504}
+  m_Layer: 9
+  m_Name: PlayerTouchable_Legs
+  m_TagString: Untagged
+  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -2680,7 +2697,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1382540918812880}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.4, y: 1.53, z: 0}
+  m_LocalPosition: {x: 1.33, y: 6.26, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4548758764177712}
@@ -3347,7 +3364,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1731348316316476}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: 0.114, z: -0.018}
+  m_LocalPosition: {x: 0, y: 0.146, z: -0.018}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4431581604902954}
@@ -3550,6 +3567,19 @@ Transform:
   m_Father: {fileID: 4407574085090560}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4834921551115838
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1563677592392090}
+  m_LocalRotation: {x: -0.052890558, y: -0.9956517, z: -0.065552264, w: 0.039789323}
+  m_LocalPosition: {x: 0.044051833, y: -0.6316389, z: -0.11654868}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4963524435379384}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 86.031006, y: 101.993004, z: 108.941}
 --- !u!4 &4834982362368678
 Transform:
   m_ObjectHideFlags: 1
@@ -3879,6 +3909,7 @@ Transform:
   m_Children:
   - {fileID: 4056974993024464}
   - {fileID: 4409820311335746}
+  - {fileID: 4834921551115838}
   m_Father: {fileID: 4626175116399094}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4537,7 +4568,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  NonKillable: 1
+  NonKillable: 0
   CurrentState: {fileID: 114066811523182172}
   PrevState: {fileID: 114038878225016258}
   characterData: {fileID: 114478040808728464}
@@ -4936,6 +4967,19 @@ MonoBehaviour:
   vfxManager: {fileID: 0}
   AirMaxSpeed: 0
   AirSpeedGain: 0
+--- !u!114 &114370911338421504
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1563677592392090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcb183ae0c465974884b550169dd4526, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  touchableType: 1
+  controlMechanism: {fileID: 0}
 --- !u!114 &114375471206073340
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5858,7 +5902,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.14
+  m_Radius: 0.23
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!135 &135812185648675294
 SphereCollider:
@@ -5872,6 +5916,19 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.26
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!136 &136005304920020622
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1563677592392090}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.13
+  m_Height: 0.83
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!136 &136148667082068560
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -5881,7 +5938,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.18
+  m_Radius: 0.34
   m_Height: 1.62
   m_Direction: 1
   m_Center: {x: 0, y: 1.71, z: 0}

@@ -66,6 +66,18 @@ namespace roundbeargames
             }
         }
 
+        public bool IsDead()
+        {
+            if (characterStateController.CurrentState.GetType() == typeof(CharacterDeath))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         public bool PlayerIsClose(float distance)
         {
             CheckPlayerDistance();
@@ -221,6 +233,12 @@ namespace roundbeargames
 
             if (GetNextWayPoint().pathFindMethod == PathFindMethod.JUMP)
             {
+                if (!IsFacing(GetNextWayPoint().transform.position))
+                {
+                    //IsFacingPath = false;
+                    return PathFindMethod.TURN;
+                }
+
                 if (!GetNextWayPoint().GroundName.Equals(moveData.GroundName))
                 {
                     if (this.transform.position.y < GetNextWayPoint().transform.position.y)
@@ -230,7 +248,7 @@ namespace roundbeargames
                 }
             }
 
-            WayPoint testing = GetNextWayPoint();
+            //WayPoint testing = GetNextWayPoint();
 
             if (!IsFacingPath)
             {

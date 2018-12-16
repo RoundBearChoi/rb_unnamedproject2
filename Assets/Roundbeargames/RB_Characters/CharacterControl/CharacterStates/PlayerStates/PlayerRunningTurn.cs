@@ -9,7 +9,16 @@ namespace roundbeargames
         public override void InitState()
         {
             ANIMATION_DATA.DesignatedAnimation = PlayerState.RunningTurn.ToString();
-            slowDown.SetBaseSpeed(MOVEMENT_DATA.RunSpeed * 0.9f);
+
+
+            if (move.CanInstantTurn(characterStateController.PrevState.GetType()))
+            {
+                slowDown.SetBaseSpeed(MOVEMENT_DATA.RunSpeed * 0.9f);
+            }
+            else
+            {
+                slowDown.SetBaseSpeed(MOVEMENT_DATA.RunSpeed * 0.38f);
+            }
         }
 
         public override void RunFixedUpdate()

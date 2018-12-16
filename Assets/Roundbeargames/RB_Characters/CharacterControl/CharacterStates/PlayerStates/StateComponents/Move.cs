@@ -104,7 +104,7 @@ namespace roundbeargames
             }
         }
 
-        public void MoveForward(float Speed, float yAngle)
+        public void MoveForward(float speed, float yAngle)
         {
             if (controlMechanism == null)
             {
@@ -115,9 +115,9 @@ namespace roundbeargames
 
             characterTransform.rotation = Quaternion.Euler(0, yAngle, 0);
 
-            if (!characterData.IsTouchingGeneralObject(TouchDetectorType.FRONT))
+            if (characterData.CanMoveThrough(TouchDetectorType.FRONT))
             {
-                characterTransform.Translate(Vector3.right * Speed * Time.deltaTime);
+                characterTransform.Translate(Vector3.right * speed * Time.deltaTime);
             }
         }
 
@@ -132,14 +132,14 @@ namespace roundbeargames
 
             if (goForward)
             {
-                if (!characterData.IsTouchingGeneralObject(TouchDetectorType.FRONT))
+                if (characterData.CanMoveThrough(TouchDetectorType.FRONT))
                 {
                     characterTransform.Translate(Vector3.right * Speed * Time.deltaTime);
                 }
             }
             else
             {
-                if (!characterData.IsTouchingGeneralObject(TouchDetectorType.BACK))
+                if (characterData.CanMoveThrough(TouchDetectorType.BACK))
                 {
                     characterTransform.Translate(-Vector3.right * Speed * Time.deltaTime);
                 }
@@ -175,7 +175,7 @@ namespace roundbeargames
                 return;
             }
 
-            if (characterData.IsTouchingGeneralObject(TouchDetectorType.FRONT))
+            if (!characterData.CanMoveThrough(TouchDetectorType.FRONT))
             {
                 return;
             }
@@ -188,7 +188,7 @@ namespace roundbeargames
             }
             else if (MoveDirectionMatches())
             {
-                if (!characterData.IsTouchingGeneralObject(TouchDetectorType.FRONT))
+                if (characterData.CanMoveThrough(TouchDetectorType.FRONT))
                 {
                     if (movementData.AirMomentum >= AirMaxSpeed)
                     {
@@ -202,7 +202,7 @@ namespace roundbeargames
             }
             else if (!MoveDirectionMatches())
             {
-                if (!characterData.IsTouchingGeneralObject(TouchDetectorType.BACK))
+                if (characterData.CanMoveThrough(TouchDetectorType.BACK))
                 {
                     if (movementData.AirMomentum <= AirMaxSpeed * -1f)
                     {

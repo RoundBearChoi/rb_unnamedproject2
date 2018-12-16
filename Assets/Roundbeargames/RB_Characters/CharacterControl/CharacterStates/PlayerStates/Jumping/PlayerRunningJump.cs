@@ -23,14 +23,13 @@ namespace roundbeargames
             {
                 jump.JumpUp(JumpForce, true);
 
-
                 if (jump.GrabLedge())
                 {
                     characterStateController.ChangeState((int)PlayerState.HangingIdle);
                     return;
                 }
 
-                if (ANIMATION_DATA.PlayTime > 0.1f)
+                if (ANIMATION_DATA.PlayTime > 0.25f)
                 {
                     if (MOVEMENT_DATA.IsGrounded || move.IsGoingToLand())
                     {

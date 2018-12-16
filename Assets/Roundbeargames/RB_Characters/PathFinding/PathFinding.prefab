@@ -9390,11 +9390,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pathFindMethod: 3
-  RequiredJumpForce: 480
-  AirWalkSpeedMultiplier: 1.5
+  RequiredJumpForce: 500
+  AirWalkSpeedMultiplier: 2
   GroundName: TempLedge (1)
   Neighbors:
-  - {fileID: 114698203410502828}
+  - {fileID: 114593240715664090}
   - {fileID: 114435447725409856}
   KnownDistance: 1000
   PreviousPoint: {fileID: 0}
@@ -10643,6 +10643,7 @@ MonoBehaviour:
   Neighbors:
   - {fileID: 114260156810736210}
   - {fileID: 114698203410502828}
+  - {fileID: 114269969975632234}
   KnownDistance: 1000
   PreviousPoint: {fileID: 0}
   pathFinder: {fileID: 114371821095738048}
@@ -11109,7 +11110,6 @@ MonoBehaviour:
   Neighbors:
   - {fileID: 114593240715664090}
   - {fileID: 114417205358264338}
-  - {fileID: 114269969975632234}
   KnownDistance: 1000
   PreviousPoint: {fileID: 0}
   pathFinder: {fileID: 114371821095738048}

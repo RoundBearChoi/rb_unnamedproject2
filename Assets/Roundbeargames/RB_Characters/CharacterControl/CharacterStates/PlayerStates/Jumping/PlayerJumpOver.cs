@@ -93,7 +93,14 @@ namespace roundbeargames
                             }
                             return;
                         case MoveTransitionStates.JUMP:
-                            characterStateController.ChangeState((int)PlayerState.JumpingUp);
+                            if (MOVEMENT_DATA.Run)
+                            {
+                                characterStateController.ChangeState((int)PlayerState.RunningJump);
+                            }
+                            else
+                            {
+                                characterStateController.ChangeState((int)PlayerState.JumpingUp);
+                            }
                             return;
                         case MoveTransitionStates.NONE:
                             if (MOVEMENT_DATA.MoveDown)
