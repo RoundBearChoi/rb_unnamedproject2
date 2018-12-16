@@ -41,6 +41,7 @@ GameObject:
   - component: {fileID: 23808316003112204}
   - component: {fileID: 65656331582269882}
   - component: {fileID: 114273417912146356}
+  - component: {fileID: 114923477612551796}
   m_Layer: 0
   m_Name: LedgeGrabbable
   m_TagString: Untagged
@@ -55,7 +56,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1101653192021764}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.78, y: 8.55, z: 0}
+  m_LocalPosition: {x: -1.59, y: 4.88, z: 0}
   m_LocalScale: {x: 6.56, y: 1.05, z: 2}
   m_Children:
   - {fileID: 4226568004596872}
@@ -196,3 +197,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   touchableType: 0
   controlMechanism: {fileID: 0}
+--- !u!114 &114923477612551796
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1767325347830150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67d265013905957438fe592a4e124182, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GrabPosition: {x: -0.55, y: -1.9, z: 0}

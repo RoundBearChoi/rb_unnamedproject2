@@ -2,64 +2,81 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace roundbeargames {
-	public class PlayerFallingIdle : CharacterState {
-		public override void InitState () {
-			ANIMATION_DATA.DesignatedAnimation = PlayerState.FallALoop.ToString ();
-		}
+namespace roundbeargames
+{
+    public class PlayerFallingIdle : CharacterState
+    {
+        public override void InitState()
+        {
+            ANIMATION_DATA.DesignatedAnimation = PlayerState.FallALoop.ToString();
+        }
 
-		public override void RunFixedUpdate () {
-			MOVEMENT_DATA.Turn = move.GetTurn ();
-			move.AirMove ();
+        public override void RunFixedUpdate()
+        {
+            MOVEMENT_DATA.Turn = move.GetTurn();
+            move.AirMove();
 
-			if (MOVEMENT_DATA.IsGrounded) {
-				if (RollAfterJump ()) {
-					characterStateController.ChangeState ((int) PlayerState.StandToRoll);
-					return;
-				} else {
-					CONTROL_MECHANISM.ClearVelocity ();
-					characterStateController.ChangeState ((int) PlayerState.FallingToLanding);
-					return;
-				}
+            if (MOVEMENT_DATA.IsGrounded)
+            {
+                if (RollAfterJump())
+                {
+                    characterStateController.ChangeState((int)PlayerState.StandToRoll);
+                    return;
+                }
+                else
+                {
+                    CONTROL_MECHANISM.ClearVelocity();
+                    characterStateController.ChangeState((int)PlayerState.FallingToLanding);
+                    return;
+                }
 
-			}
+            }
 
-			if (ANIMATION_DATA.AnimationNameMatches) {
+            if (ANIMATION_DATA.AnimationNameMatches)
+            {
+                if (jump.GrabLedge())
+                {
+                    characterStateController.ChangeState((int)PlayerState.HangingIdle);
+                    return;
+                }
+            }
+        }
 
-				if (jump.IsGrabbingLedge ()) {
-					characterStateController.ChangeState ((int) PlayerState.HangingIdle);
-					CONTROL_MECHANISM.RIGIDBODY.velocity = Vector3.zero;
-					CONTROL_MECHANISM.RIGIDBODY.angularVelocity = Vector3.zero;
-					CONTROL_MECHANISM.RIGIDBODY.useGravity = false;
-				}
-			}
-		}
+        public override void RunFrameUpdate()
+        {
+            if (UpdateAnimation())
+            {
 
-		public override void RunFrameUpdate () {
-			if (UpdateAnimation ()) {
+            }
+        }
 
-			}
-		}
+        private bool RollAfterJump()
+        {
+            if (MOVEMENT_DATA.AirMomentum < 3.6f)
+            {
+                return false;
+            }
 
-		private bool RollAfterJump () {
-			if (MOVEMENT_DATA.AirMomentum < 3.6f) {
-				return false;
-			}
+            if (CONTROL_MECHANISM.IsFacingForward())
+            {
+                if (MOVEMENT_DATA.MoveForward)
+                {
+                    return true;
+                }
+            }
+            else if (!CONTROL_MECHANISM.IsFacingForward())
+            {
+                if (MOVEMENT_DATA.MoveBack)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
 
-			if (CONTROL_MECHANISM.IsFacingForward ()) {
-				if (MOVEMENT_DATA.MoveForward) {
-					return true;
-				}
-			} else if (!CONTROL_MECHANISM.IsFacingForward ()) {
-				if (MOVEMENT_DATA.MoveBack) {
-					return true;
-				}
-			}
-			return false;
-		}
+        public override void ClearState()
+        {
 
-		public override void ClearState () {
-
-		}
-	}
+        }
+    }
 }

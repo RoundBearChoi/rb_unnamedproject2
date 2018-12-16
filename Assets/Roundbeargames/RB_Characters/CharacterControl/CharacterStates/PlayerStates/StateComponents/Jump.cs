@@ -7,6 +7,7 @@ namespace roundbeargames
     public class Jump : StateComponent
     {
         public float JumpTime;
+        public Ledge GrabbedLedge;
 
         public bool IsJumpTime()
         {
@@ -45,15 +46,17 @@ namespace roundbeargames
             controlMechanism.BodyTrailDictionary[BodyTrail.BODY].gameObject.SetActive(true);
         }
 
-        public void CheckLedgeGrab()
+        public bool GrabLedge()
         {
             if (IsGrabbingLedge())
             {
-                controlMechanism.RIGIDBODY.velocity = Vector3.zero;
-                controlMechanism.RIGIDBODY.angularVelocity = Vector3.zero;
+                //Debug.Log(GrabbedLedge.gameObject.name);
                 controlMechanism.RIGIDBODY.useGravity = false;
-                characterStateController.ChangeState((int)PlayerState.HangingIdle);
+                controlMechanism.RIGIDBODY.MovePosition(GrabbedLedge.transform.position + GrabbedLedge.GrabPosition);
+                controlMechanism.ClearVelocity();
+                return true;
             }
+            return false;
         }
 
         public bool IsGrabbingLedge()
@@ -74,7 +77,11 @@ namespace roundbeargames
                         {
                             if (d.TouchablesDictionary[TouchableType.LEDGE].Count > 0)
                             {
-                                return true;
+                                foreach (Touchable touchable in d.TouchablesDictionary[TouchableType.LEDGE])
+                                {
+                                    GrabbedLedge = touchable.gameObject.GetComponent<Ledge>();
+                                    return true;
+                                }
                             }
                         }
                     }

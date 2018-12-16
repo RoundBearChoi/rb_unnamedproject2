@@ -4236,6 +4236,7 @@ MonoBehaviour:
   movementData: {fileID: 0}
   vfxManager: {fileID: 0}
   JumpTime: 0.425
+  GrabbedLedge: {fileID: 0}
 --- !u!114 &114104038244042082
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4972,6 +4973,7 @@ MonoBehaviour:
   movementData: {fileID: 0}
   vfxManager: {fileID: 0}
   JumpTime: 0
+  GrabbedLedge: {fileID: 0}
 --- !u!114 &114387466380687818
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5470,6 +5472,7 @@ MonoBehaviour:
   movementData: {fileID: 0}
   vfxManager: {fileID: 0}
   JumpTime: 0
+  GrabbedLedge: {fileID: 0}
 --- !u!114 &114679735577926942
 MonoBehaviour:
   m_ObjectHideFlags: 1
