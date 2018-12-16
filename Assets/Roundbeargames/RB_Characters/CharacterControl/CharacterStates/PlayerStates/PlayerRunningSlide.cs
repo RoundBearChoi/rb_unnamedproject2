@@ -55,6 +55,7 @@ namespace roundbeargames
                             }
                             return;
                         case MoveTransitionStates.JUMP:
+                            characterStateController.ChangeState((int)PlayerState.JumpingUp);
                             return;
                         case MoveTransitionStates.NONE:
                             characterStateController.ChangeState((int)PlayerState.HumanoidIdle);
