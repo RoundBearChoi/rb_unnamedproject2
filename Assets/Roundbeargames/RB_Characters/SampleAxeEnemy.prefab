@@ -5036,6 +5036,7 @@ MonoBehaviour:
   movementData: {fileID: 0}
   vfxManager: {fileID: 0}
   JumpTime: 0.425
+  GrabbedLedge: {fileID: 0}
 --- !u!135 &135812812688504168
 SphereCollider:
   m_ObjectHideFlags: 1
