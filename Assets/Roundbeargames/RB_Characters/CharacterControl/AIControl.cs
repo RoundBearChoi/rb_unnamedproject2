@@ -19,7 +19,7 @@ namespace roundbeargames
         public List<WayPoint> TargetPath;
         CharacterManager characterManager;
         Vector3 PlayerDir;
-        public bool IsFacingPath;
+        //public bool IsFacingPath;
 
         void Awake()
         {
@@ -149,32 +149,14 @@ namespace roundbeargames
             }
         }
 
-        public void UpdateStartPath()
+        public void InitStartPath()
         {
             if (TargetPath == null)
             {
                 return;
             }
 
-            if (TargetPath.Count == 0)
-            {
-                return;
-            }
-
-            if (TargetPath.Count == 1)
-            {
-                if (IsFacing(GetNextWayPoint().transform.position))
-                {
-                    IsFacingPath = true;
-                }
-                else
-                {
-                    IsFacingPath = false;
-                }
-                return;
-            }
-
-            if (!moveData.GroundName.Equals(GetNextWayPoint().GroundName))
+            if (TargetPath.Count <= 1)
             {
                 return;
             }
@@ -185,37 +167,13 @@ namespace roundbeargames
             Vector3 pathDir = second.transform.position - first.transform.position;
             pathDir.Normalize();
 
-            //Debug.Log("first waypoint dir: " + pathDir);
-
             Vector3 orientation = first.transform.position - this.transform.position;
             orientation.Normalize();
 
-            //Debug.Log("orientation: " + orientation);
-
             if (orientation.x * pathDir.x < 0f)
             {
-                if (IsFacing(TargetPath[TargetPath.Count - 2].transform.position))
-                {
-                    IsFacingPath = true;
-                }
-                else
-                {
-                    IsFacingPath = false;
-                }
-
                 TargetPath.RemoveAt(TargetPath.Count - 1);
-                UpdateStartPath();
-            }
-            else
-            {
-                if (IsFacing(GetNextWayPoint().transform.position))
-                {
-                    IsFacingPath = true;
-                }
-                else
-                {
-                    IsFacingPath = false;
-                }
+                InitStartPath();
             }
         }
 
@@ -235,7 +193,6 @@ namespace roundbeargames
             {
                 if (!IsFacing(GetNextWayPoint().transform.position))
                 {
-                    //IsFacingPath = false;
                     return PathFindMethod.TURN;
                 }
 
@@ -248,18 +205,24 @@ namespace roundbeargames
                 }
             }
 
-            //WayPoint testing = GetNextWayPoint();
-
-            if (!IsFacingPath)
+            if (!IsFacing(GetNextWayPoint().transform.position))
             {
-                if (moveData.GroundName.Equals(GetNextWayPoint().GroundName))
+                return PathFindMethod.TURN;
+
+                /*if (moveData.GroundName.Equals(GetNextWayPoint().GroundName))
                 {
                     return PathFindMethod.TURN;
                 }
+                else if (GetNextWayPoint().transform.position.y < this.transform.position.y)
+                {
+                    return PathFindMethod.TURN;
+                }*/
             }
             else
             {
-                if (GetNextWayPoint().pathFindMethod == PathFindMethod.WALK)
+                return PathFindMethod.WALK;
+
+                /*if (GetNextWayPoint().pathFindMethod == PathFindMethod.WALK)
                 {
                     return PathFindMethod.WALK;
                 }
@@ -269,7 +232,7 @@ namespace roundbeargames
                     {
                         return PathFindMethod.WALK;
                     }
-                }
+                }*/
             }
 
             return PathFindMethod.NONE;

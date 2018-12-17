@@ -55,7 +55,6 @@ namespace roundbeargames
                 }
 
                 AI_CONTROL.UpdatePathStatus();
-                AI_CONTROL.UpdateStartPath();
 
                 if (AI_CONTROL.TargetPath.Count == 0)
                 {
