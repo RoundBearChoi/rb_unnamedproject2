@@ -4568,7 +4568,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  NonKillable: 0
+  NonKillable: 1
   CurrentState: {fileID: 114066811523182172}
   PrevState: {fileID: 114038878225016258}
   characterData: {fileID: 114478040808728464}
