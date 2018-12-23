@@ -267,6 +267,48 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1267233197}
   m_Script: {fileID: 11500000, guid: bb05d94c8990020499f424685bed513c, type: 3}
+--- !u!1001 &383748455
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4881339661270398, guid: dd592a57b9f74154fbf88e25d0d2b542, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4881339661270398, guid: dd592a57b9f74154fbf88e25d0d2b542, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -100
+      objectReference: {fileID: 0}
+    - target: {fileID: 4881339661270398, guid: dd592a57b9f74154fbf88e25d0d2b542, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4881339661270398, guid: dd592a57b9f74154fbf88e25d0d2b542, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4881339661270398, guid: dd592a57b9f74154fbf88e25d0d2b542, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4881339661270398, guid: dd592a57b9f74154fbf88e25d0d2b542, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4881339661270398, guid: dd592a57b9f74154fbf88e25d0d2b542, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4881339661270398, guid: dd592a57b9f74154fbf88e25d0d2b542, type: 2}
+      propertyPath: m_RootOrder
+      value: 14
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: dd592a57b9f74154fbf88e25d0d2b542, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!114 &411466137 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114635551025194348, guid: eca59c81064c47a4c9d4805342b4830c,
