@@ -203,16 +203,15 @@ namespace roundbeargames {
                 return;
             }
 
-            List<TouchDetector> listDet = characterStateController.characterData.GetTouchDetector (TouchDetectorType.WAY_POINT_DETECTOR);
-            foreach (TouchDetector d in listDet) {
-                if (d.TouchablesDictionary.ContainsKey (TouchableType.WAYPOINT)) {
-                    foreach (Touchable touchable in d.TouchablesDictionary[TouchableType.WAYPOINT]) {
-                        if (touchable.gameObject.GetComponent<WayPoint> () == TargetPath[TargetPath.Count - 1]) {
-                            TargetPath.RemoveAt (TargetPath.Count - 1);
-                            PathUpdateCount++;
-                            //Debug.Log("updating path: " + PathUpdateCount.ToString());
-                            return;
-                        }
+            TouchDetector t = characterStateController.characterData.GetTouchDetector (TouchDetectorType.WAY_POINT_DETECTOR);
+
+            if (t.TouchablesDictionary.ContainsKey (TouchableType.WAYPOINT)) {
+                foreach (Touchable touchable in t.TouchablesDictionary[TouchableType.WAYPOINT]) {
+                    if (touchable.gameObject.GetComponent<WayPoint> () == TargetPath[TargetPath.Count - 1]) {
+                        TargetPath.RemoveAt (TargetPath.Count - 1);
+                        PathUpdateCount++;
+                        //Debug.Log("updating path: " + PathUpdateCount.ToString());
+                        return;
                     }
                 }
             }

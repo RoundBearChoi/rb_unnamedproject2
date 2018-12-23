@@ -5176,8 +5176,8 @@ MonoBehaviour:
     SerializationNodes:
     - Name: TouchDetectors
       Entry: 7
-      Data: 0|System.Collections.Generic.Dictionary`2[[TouchDetectorType, Assembly-CSharp],[System.Collections.Generic.List`1[[roundbeargames.TouchDetector,
-        Assembly-CSharp]], mscorlib]], mscorlib
+      Data: 0|System.Collections.Generic.Dictionary`2[[TouchDetectorType, Assembly-CSharp],[roundbeargames.TouchDetector,
+        Assembly-CSharp]], mscorlib
     - Name: comparer
       Entry: 7
       Data: 1|System.Collections.Generic.EqualityComparer`1+DefaultComparer[[TouchDetectorType,
