@@ -116,7 +116,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1253047008048778}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -68, y: 7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4281074287588182}
@@ -129,7 +129,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1428890299323698}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 493, y: -307, z: 0}
+  m_LocalPosition: {x: 560, y: -297, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4235799213964616}
@@ -171,7 +171,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1742885684139724}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -25.000885, z: 0}
+  m_LocalPosition: {x: -68, y: -20, z: 0}
   m_LocalScale: {x: 1.0008199, y: 1.0008199, z: 1.0008199}
   m_Children: []
   m_Father: {fileID: 4281074287588182}
@@ -185,7 +185,7 @@ Transform:
   m_GameObject: {fileID: 1504410599819834}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -100, z: 0}
-  m_LocalScale: {x: 0.0027816412, y: 0.0027816412, z: 0.0027816412}
+  m_LocalScale: {x: 0.0027777778, y: 0.0027777778, z: 0.0027777778}
   m_Children:
   - {fileID: 4282254258083006}
   - {fileID: 4727656694192464}
@@ -319,14 +319,14 @@ MonoBehaviour:
   updateAnchors: 1
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
-  mWidth: 246
-  mHeight: 30
+  mWidth: 382
+  mHeight: 52
   mDepth: 0
   mMat: {fileID: 0}
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 8.2
+  aspectRatio: 7.3461537
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 12800000, guid: b040708d5afa789479620f5895fad2cf, type: 3}
   mFont: {fileID: 0}
@@ -369,7 +369,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c5ecb5660b11414fb042fb826e03b73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scalingStyle: 0
+  scalingStyle: 1
   manualWidth: 1280
   manualHeight: 720
   minimumHeight: 320
@@ -506,19 +506,19 @@ MonoBehaviour:
   updateAnchors: 1
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
-  mWidth: 246
-  mHeight: 30
+  mWidth: 382
+  mHeight: 34
   mDepth: 0
   mMat: {fileID: 0}
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 8.2
+  aspectRatio: 11.235294
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 12800000, guid: b040708d5afa789479620f5895fad2cf, type: 3}
   mFont: {fileID: 0}
   mText: early prototype
-  mFontSize: 14
+  mFontSize: 15
   mFontStyle: 0
   mAlignment: 2
   mEncoding: 1
