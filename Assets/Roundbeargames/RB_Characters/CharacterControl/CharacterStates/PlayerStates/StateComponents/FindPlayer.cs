@@ -12,7 +12,9 @@ namespace roundbeargames {
 
 			if (characterState.AI_CONTROL.PlayerIsClose (AttackTriggerDistance) && characterState.AI_CONTROL.IsFacingPlayer ()) {
 				if (!characterState.AI_CONTROL.PlayerIsDead ()) {
-					return true;
+					if (characterState.AI_CONTROL.PlayerIsOnSameGround ()) {
+						return true;
+					}
 				}
 			}
 
