@@ -523,7 +523,7 @@ MonoBehaviour:
       Data: -0.25
     - Name: 
       Entry: 4
-      Data: -0.3
+      Data: -0.15
     - Name: 
       Entry: 4
       Data: -13
@@ -544,13 +544,13 @@ MonoBehaviour:
       Data: UnityEngine.Vector3, UnityEngine.CoreModule
     - Name: 
       Entry: 4
-      Data: 7.26
+      Data: 7
     - Name: 
       Entry: 4
-      Data: -0.7
+      Data: -1
     - Name: 
       Entry: 4
-      Data: -4.27
+      Data: -4
     - Name: 
       Entry: 8
       Data: 
@@ -699,7 +699,7 @@ MonoBehaviour:
   m_TrackedObjectOffset: {x: 0, y: 0, z: 0}
   m_LookaheadTime: 0.1
   m_LookaheadSmoothing: 3
-  m_HorizontalDamping: 1.25
+  m_HorizontalDamping: 0.1
   m_VerticalDamping: 0.5
   m_ScreenX: 0.5
   m_ScreenY: 0.5
