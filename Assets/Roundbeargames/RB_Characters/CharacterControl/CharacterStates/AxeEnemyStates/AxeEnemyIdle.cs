@@ -46,7 +46,11 @@ namespace roundbeargames
                     switch (AI_CONTROL.GetPathFindMethod())
                     {
                         case PathFindMethod.NONE:
-                            break;
+                            if (!AI_CONTROL.IsFacingPlayer())
+                            {
+                                characterStateController.ChangeState((int)AxeEnemyState.StandingTurnToRight90);
+                            }
+                            return;
                         case PathFindMethod.WALK:
                             characterStateController.ChangeState((int)AxeEnemyState.AxeWalkForward);
                             return;

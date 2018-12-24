@@ -26,28 +26,9 @@ namespace roundbeargames
             if (UpdateAnimation())
             {
                 //normal hit
-                attack.UpdateHit();
+                attack.UpdateHit(TouchDetectorType.ATTACK_AXE);
 
                 //Debug.Log(ANIMATION_DATA.PlayTime);
-
-                //too close still dies
-                if (ANIMATION_DATA.PlayTime > DeathByTooCloseTime)
-                {
-                    if (ANIMATION_DATA.PlayTime < attack.AttackEndTime)
-                    {
-                        if (CHARACTER_DATA.IsTouchingPlayer(TouchDetectorType.FRONT))
-                        {
-                            if (!AI_CONTROL.PlayerIsDead())
-                            {
-                                if (!CHARACTER_MANAGER.Player.characterStateController.NonKillable)
-                                {
-                                    CHARACTER_MANAGER.Player.characterStateController.ChangeState(999);
-                                }
-                            }
-                        }
-                    }
-
-                }
 
                 if (DurationTimePassed())
                 {
@@ -56,7 +37,5 @@ namespace roundbeargames
                 }
             }
         }
-
-        public float DeathByTooCloseTime;
     }
 }

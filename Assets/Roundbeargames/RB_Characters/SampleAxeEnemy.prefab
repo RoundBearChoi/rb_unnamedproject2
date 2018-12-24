@@ -429,23 +429,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1219158036589974
-GameObject:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4673687813324102}
-  - component: {fileID: 114301847633039544}
-  - component: {fileID: 65007972236320074}
-  m_Layer: 0
-  m_Name: PlayerFrontDetector - Default Layer
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &1222483029016324
 GameObject:
   m_ObjectHideFlags: 1
@@ -2613,7 +2596,6 @@ Transform:
   - {fileID: 4601170472705792}
   - {fileID: 4321631202815666}
   - {fileID: 4345287022865204}
-  - {fileID: 4673687813324102}
   m_Father: {fileID: 4277768819179454}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2666,7 +2648,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1159034064835406}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.07, y: 0.149, z: 0.955}
+  m_LocalPosition: {x: -0.013, y: 0.179, z: 0.884}
   m_LocalScale: {x: 0.38, y: 1, z: 1.28}
   m_Children: []
   m_Father: {fileID: 4955176370837656}
@@ -2798,7 +2780,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1751150661333436}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.64, y: 2.96, z: 0}
+  m_LocalPosition: {x: -10.25, y: 2.96, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4496745982195222}
@@ -3619,19 +3601,6 @@ Transform:
   m_Father: {fileID: 4938931200040134}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4673687813324102
-Transform:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1219158036589974}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4141998596530308}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4676869661216008
 Transform:
   m_ObjectHideFlags: 1
@@ -4213,18 +4182,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 88
   m_CollisionDetection: 0
---- !u!65 &65007972236320074
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1219158036589974}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2.32, y: 3.37, z: 1}
-  m_Center: {x: 1.62, y: -0.03, z: 0}
 --- !u!65 &65399105155850906
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -4235,7 +4192,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.5, y: 1, z: 1}
+  m_Size: {x: 1.14, y: 1, z: 1.09}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &65560970685699332
 BoxCollider:
@@ -4550,50 +4507,6 @@ MonoBehaviour:
   turnToPlayer: {fileID: 0}
   findPlayer: {fileID: 0}
   Duration: 0
---- !u!114 &114301847633039544
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1219158036589974}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 976a207f21ef55c49b81a7a42becbd88, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects: []
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes:
-    - Name: TouchablesDictionary
-      Entry: 7
-      Data: 0|System.Collections.Generic.Dictionary`2[[TouchableType, Assembly-CSharp],[System.Collections.Generic.List`1[[roundbeargames.Touchable,
-        Assembly-CSharp]], mscorlib]], mscorlib
-    - Name: comparer
-      Entry: 7
-      Data: 1|System.Collections.Generic.EqualityComparer`1+DefaultComparer[[TouchableType,
-        Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-  touchDetectorType: 0
-  IsTouching: 0
-  GeneralObjects: []
-  controlMechanism: {fileID: 0}
 --- !u!114 &114360984443453790
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4885,7 +4798,6 @@ MonoBehaviour:
   turnToPlayer: {fileID: 0}
   findPlayer: {fileID: 0}
   Duration: 1.5
-  DeathByTooCloseTime: 0.8
 --- !u!114 &114637017166860710
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5102,7 +5014,7 @@ MonoBehaviour:
   CrouchSpeed: 0
   AirMomentum: 0
   RunSpeed: 6
-  IsGrounded: 0
+  IsGrounded: 1
   GroundName: 
   LastWayPoint: {fileID: 0}
 --- !u!114 &114874091070424802

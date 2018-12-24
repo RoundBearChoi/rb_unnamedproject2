@@ -7,7 +7,7 @@ namespace roundbeargames
     public class ManualControl : ControlMechanism
     {
         InputDeviceManager inputDeviceManager;
-        VirtualInput virtualInput;
+        RB_VirtualInput virtualInput;
         //public Dictionary<string, int> CollidedObjects;
         public float FallMultiplier;
         public float LowJumpMultiplier;

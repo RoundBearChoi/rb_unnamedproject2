@@ -11,6 +11,7 @@ namespace roundbeargames
         public override void InitState()
         {
             ANIMATION_DATA.characterAnimator.runtimeAnimatorController = characterStateController.DeathAnimator;
+            CONTROL_MECHANISM.RIGIDBODY.useGravity = true;
 
             if (characterStateController.DeathCause.Contains("Jab"))
             {
