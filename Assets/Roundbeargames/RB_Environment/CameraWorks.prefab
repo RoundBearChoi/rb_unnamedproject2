@@ -57,7 +57,7 @@ GameObject:
   - component: {fileID: 114195025680393020}
   - component: {fileID: 114020147417900268}
   - component: {fileID: 114772412729452504}
-  - component: {fileID: 114483760959590118}
+  - component: {fileID: 114296156348153450}
   m_Layer: 0
   m_Name: GameCam
   m_TagString: Untagged
@@ -166,8 +166,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1422919047748578}
-  m_LocalRotation: {x: -0.0057648746, y: 0.027620062, z: 0.0001592899, w: 0.9996019}
-  m_LocalPosition: {x: -0.7177272, y: -0.14999986, z: -12.982578}
+  m_LocalRotation: {x: -0.0057651196, y: 0.027743852, z: 0.00018450349, w: 0.99959844}
+  m_LocalPosition: {x: -0.71772736, y: -0.14999992, z: -12.982579}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4143627828906712}
@@ -181,7 +181,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1943959237348622}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.91, y: 1.81, z: -7.32}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4608171454980472}
@@ -198,8 +198,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1805725620270060}
-  m_LocalRotation: {x: -0.0057648746, y: 0.027620062, z: 0.0001592899, w: 0.9996019}
-  m_LocalPosition: {x: -0.7177272, y: -0.14999986, z: -12.982578}
+  m_LocalRotation: {x: -0.0057651196, y: 0.027743852, z: 0.00018450349, w: 0.99959844}
+  m_LocalPosition: {x: -0.71772736, y: -0.14999992, z: -12.982579}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4596240073754876}
@@ -475,6 +475,122 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: Cinemachine.CinemachineBrain+VcamEvent, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &114296156348153450
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1422919047748578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fd934a47abafb44fa86075d7b4991fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: CamOffsets
+      Entry: 7
+      Data: 0|System.Collections.Generic.Dictionary`2[[roundbeargames.CameraOffsetType,
+        Assembly-CSharp],[UnityEngine.Vector3, UnityEngine.CoreModule]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 1|System.Collections.Generic.EqualityComparer`1+DefaultComparer[[roundbeargames.CameraOffsetType,
+        Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 3
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 7
+      Data: UnityEngine.Vector3, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: -0.25
+    - Name: 
+      Entry: 4
+      Data: -0.3
+    - Name: 
+      Entry: 4
+      Data: -13
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: UnityEngine.Vector3, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 7.26
+    - Name: 
+      Entry: 4
+      Data: -0.7
+    - Name: 
+      Entry: 4
+      Data: -4.27
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 3
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: UnityEngine.Vector3, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+  PostProc: {fileID: 0}
+  cinemachineVirtualCam: {fileID: 114361890918100490}
+  cinemachineTransposer: {fileID: 0}
+  postFX: {fileID: 114772412729452504}
 --- !u!114 &114361890918100490
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -511,18 +627,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114483760959590118
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1422919047748578}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58f6bb1053139314281fed13ab26e997, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PostProc: {fileID: 0}
 --- !u!114 &114552236089752154
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -561,7 +665,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_BindingMode: 1
   m_FollowOffset: {x: -0.25, y: -0.15, z: -13}
-  m_XDamping: 7
+  m_XDamping: 5
   m_YDamping: 3
   m_ZDamping: 3
   m_PitchDamping: 0
@@ -595,7 +699,7 @@ MonoBehaviour:
   m_TrackedObjectOffset: {x: 0, y: 0, z: 0}
   m_LookaheadTime: 0.1
   m_LookaheadSmoothing: 3
-  m_HorizontalDamping: 0.5
+  m_HorizontalDamping: 1.25
   m_VerticalDamping: 0.5
   m_ScreenX: 0.5
   m_ScreenY: 0.5

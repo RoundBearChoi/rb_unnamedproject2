@@ -30,6 +30,8 @@ namespace roundbeargames
             }
             else if (characterStateController.DeathCause.Contains("Axe"))
             {
+                CAMERA_MANAGER.gameCam.SetOffset(CameraOffsetType.ZOOM_ON_PLAYER_DEATH_RIGHT_SIDE);
+                Time.timeScale = 0.45f;
                 ANIMATION_DATA.characterAnimator.SetFloat(ParameterString, 2f);
             }
             else

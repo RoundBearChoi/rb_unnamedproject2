@@ -10,7 +10,7 @@ namespace roundbeargames
         {
             Application.targetFrameRate = 72;
             Application.runInBackground = true;
-            //Time.timeScale = 1f;
+            Time.timeScale = 1f;
         }
     }
 }
