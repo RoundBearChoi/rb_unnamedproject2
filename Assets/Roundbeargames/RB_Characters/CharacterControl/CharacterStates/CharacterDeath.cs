@@ -34,7 +34,6 @@ namespace roundbeargames
             }
             else
             {
-                //death by too close
                 ANIMATION_DATA.characterAnimator.SetFloat(ParameterString, 2f);
             }
         }
@@ -52,6 +51,20 @@ namespace roundbeargames
         public override void ClearState()
         {
 
+        }
+
+        public void Revive()
+        {
+            ANIMATION_DATA.characterAnimator.runtimeAnimatorController = characterStateController.OriginalAnimator;
+            CONTROL_MECHANISM.RIGIDBODY.useGravity = true;
+
+            if (CONTROL_MECHANISM.controlType == ControlType.ENEMY)
+            {
+                characterStateController.DeathCause = string.Empty;
+                characterStateController.DeathBringer = string.Empty;
+                characterStateController.characterData.hitRegister.RegisteredHits.Clear();
+                characterStateController.ChangeState((int)AxeEnemyState.AxeIdle);
+            }
         }
     }
 }

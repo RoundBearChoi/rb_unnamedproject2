@@ -4573,6 +4573,7 @@ MonoBehaviour:
   PrevState: {fileID: 114038878225016258}
   characterData: {fileID: 114478040808728464}
   controlMechanism: {fileID: 114196501381125698}
+  OriginalAnimator: {fileID: 9100000, guid: 9c9fd863bc208ee4cbab92f2962ff4f9, type: 2}
   DeathAnimator: {fileID: 9100000, guid: 015ba8f7c3ad4f24c868f33ce7e7843c, type: 2}
   DeathCause: 
   DeathBringer: 

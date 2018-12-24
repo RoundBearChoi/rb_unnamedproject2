@@ -11,6 +11,7 @@ public enum ManagerType
     CAMERA_MANAGER,
     VFX_MANAGER,
     UI_MANAGER,
+    SCENE_MANAGER,
 }
 
 namespace roundbeargames
@@ -44,6 +45,7 @@ namespace roundbeargames
         {
             GetManager(ManagerType.FRAME_MANAGER);
             GetManager(ManagerType.VFX_MANAGER);
+            GetManager(ManagerType.SCENE_MANAGER);
         }
 
         [SerializeField]

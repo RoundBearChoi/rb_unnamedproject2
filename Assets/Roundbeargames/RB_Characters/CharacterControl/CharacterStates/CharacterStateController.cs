@@ -13,6 +13,7 @@ namespace roundbeargames
         public CharacterState PrevState;
         public CharacterData characterData;
         public ControlMechanism controlMechanism;
+        public RuntimeAnimatorController OriginalAnimator;
         public RuntimeAnimatorController DeathAnimator;
         public string DeathCause;
         public string DeathBringer;

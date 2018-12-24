@@ -1365,8 +1365,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tweenTarget: {fileID: 1084728873060972}
-  hover: {r: 0.88235295, g: 0.78431374, b: 0.5882353, a: 1}
-  pressed: {r: 0.7176471, g: 0.6392157, b: 0.48235294, a: 1}
+  hover: {r: 0.7169812, g: 0.7169812, b: 0.7169812, a: 1}
+  pressed: {r: 0.20604457, g: 0.643289, b: 0.75735295, a: 1}
   disabledColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   duration: 0.2
   dragHighlight: 0
@@ -1377,7 +1377,11 @@ MonoBehaviour:
   pressedSprite2D: {fileID: 0}
   disabledSprite2D: {fileID: 0}
   pixelSnap: 0
-  onClick: []
+  onClick:
+  - mTarget: {fileID: 114484346958267622}
+    mMethodName: OnClickReviveEnemy
+    mParameters: []
+    oneShot: 0
 --- !u!114 &114045586044521980
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1419,7 +1423,7 @@ MonoBehaviour:
   submitKey1: 330
   cancelKey0: 27
   cancelKey1: 331
-  autoHideCursor: 1
+  autoHideCursor: 0
 --- !u!114 &114066513773787006
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1905,8 +1909,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tweenTarget: {fileID: 1815731224919628}
-  hover: {r: 0.88235295, g: 0.78431374, b: 0.5882353, a: 1}
-  pressed: {r: 0.7176471, g: 0.6392157, b: 0.48235294, a: 1}
+  hover: {r: 0.7169812, g: 0.7169812, b: 0.7169812, a: 1}
+  pressed: {r: 0.20604457, g: 0.643289, b: 0.75735295, a: 1}
   disabledColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   duration: 0.2
   dragHighlight: 0
@@ -1917,7 +1921,11 @@ MonoBehaviour:
   pressedSprite2D: {fileID: 0}
   disabledSprite2D: {fileID: 0}
   pixelSnap: 0
-  onClick: []
+  onClick:
+  - mTarget: {fileID: 114484346958267622}
+    mMethodName: OnClickRestartGame
+    mParameters: []
+    oneShot: 0
 --- !u!114 &114377905161565418
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2495,7 +2503,7 @@ MonoBehaviour:
     relative: 1
     absolute: 0
   updateAnchors: 1
-  mColor: {r: 1, g: 1, b: 1, a: 1}
+  mColor: {r: 0.8301887, g: 0.8301887, b: 0.8301887, a: 1}
   mPivot: 4
   mWidth: 138
   mHeight: 38
@@ -3126,7 +3134,7 @@ MonoBehaviour:
     relative: 1
     absolute: 0
   updateAnchors: 1
-  mColor: {r: 1, g: 1, b: 1, a: 1}
+  mColor: {r: 0.8301887, g: 0.8301887, b: 0.8301887, a: 1}
   mPivot: 4
   mWidth: 138
   mHeight: 38
