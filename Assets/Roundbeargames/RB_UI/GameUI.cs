@@ -7,6 +7,7 @@ namespace roundbeargames
     public class GameUI : MonoBehaviour
     {
         public KeyboardPress keyboardPress;
+        public UISprite PostProcChecker;
         private CharacterManager characterManager;
 
         void Start()
@@ -27,6 +28,18 @@ namespace roundbeargames
                 //Debug.Log("reviving enemy");
                 CharacterDeath deathState = characterManager.ListEnemies[0].characterStateController.CurrentState as CharacterDeath;
                 deathState.Revive();
+            }
+        }
+
+        public void OnClickTogglePostProcessing()
+        {
+            if (PostProcChecker.enabled)
+            {
+                PostProcChecker.enabled = false;
+            }
+            else
+            {
+                PostProcChecker.enabled = true;
             }
         }
     }
