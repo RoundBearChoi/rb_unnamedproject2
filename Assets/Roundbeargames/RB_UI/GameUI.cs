@@ -9,10 +9,12 @@ namespace roundbeargames
         public KeyboardPress keyboardPress;
         public UISprite PostProcChecker;
         private CharacterManager characterManager;
+        private CameraManager cameraManager;
 
         void Start()
         {
             characterManager = ManagerGroup.Instance.GetManager(ManagerType.CHARACTER_MANAGER) as CharacterManager;
+            cameraManager = ManagerGroup.Instance.GetManager(ManagerType.CAMERA_MANAGER) as CameraManager;
         }
 
         public void OnClickRestartGame()
@@ -40,6 +42,20 @@ namespace roundbeargames
             else
             {
                 PostProcChecker.enabled = true;
+            }
+
+            ProcPostProc();
+        }
+
+        public void ProcPostProc()
+        {
+            if (PostProcChecker.enabled)
+            {
+                cameraManager.gameCam.PostProc.enabled = true;
+            }
+            else
+            {
+                cameraManager.gameCam.PostProc.enabled = false;
             }
         }
     }

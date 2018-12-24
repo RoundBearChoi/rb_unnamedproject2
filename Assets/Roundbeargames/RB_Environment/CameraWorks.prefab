@@ -57,6 +57,7 @@ GameObject:
   - component: {fileID: 114195025680393020}
   - component: {fileID: 114020147417900268}
   - component: {fileID: 114772412729452504}
+  - component: {fileID: 114483760959590118}
   m_Layer: 0
   m_Name: GameCam
   m_TagString: Untagged
@@ -510,6 +511,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114483760959590118
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1422919047748578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58f6bb1053139314281fed13ab26e997, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PostProc: {fileID: 0}
 --- !u!114 &114552236089752154
 MonoBehaviour:
   m_ObjectHideFlags: 1
