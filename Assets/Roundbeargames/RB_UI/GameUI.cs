@@ -8,10 +8,19 @@ namespace roundbeargames {
         public UISprite PostProcChecker;
         private CharacterManager characterManager;
         private CameraManager cameraManager;
+        private SaveManager saveManager;
 
-        void Start () {
+        IEnumerator Start () {
             characterManager = ManagerGroup.Instance.GetManager (ManagerType.CHARACTER_MANAGER) as CharacterManager;
             cameraManager = ManagerGroup.Instance.GetManager (ManagerType.CAMERA_MANAGER) as CameraManager;
+            saveManager = ManagerGroup.Instance.GetManager (ManagerType.SAVE_MANAGER) as SaveManager;
+
+            yield return new WaitForEndOfFrame ();
+
+            saveManager.Load ();
+            cameraManager.gameCam.PostProc.enabled = saveManager.CurrentData.ShowPostProc;
+            PostProcChecker.enabled = saveManager.CurrentData.ShowPostProc;
+            ProcPostProc ();
         }
 
         public void OnClickRestartGame () {
@@ -30,10 +39,13 @@ namespace roundbeargames {
         public void OnClickTogglePostProcessing () {
             if (PostProcChecker.enabled) {
                 PostProcChecker.enabled = false;
+                saveManager.CurrentData.ShowPostProc = false;
             } else {
                 PostProcChecker.enabled = true;
+                saveManager.CurrentData.ShowPostProc = true;
             }
 
+            saveManager.Save ();
             ProcPostProc ();
         }
 
