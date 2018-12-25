@@ -51,10 +51,9 @@ namespace roundbeargames {
                     cinemachineTransposer.m_FollowOffset = targetOffset;
                     yield break;
                 }
-                cinemachineTransposer.m_FollowOffset = Vector3.Lerp (cinemachineTransposer.m_FollowOffset, targetOffset, Time.deltaTime * 55f);
+                cinemachineTransposer.m_FollowOffset = Vector3.Lerp (cinemachineTransposer.m_FollowOffset, targetOffset, Time.deltaTime * 2.25f);
                 yield return new WaitForEndOfFrame ();
             }
-
         }
     }
 }
