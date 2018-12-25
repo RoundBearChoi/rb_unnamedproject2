@@ -2,61 +2,51 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace roundbeargames
-{
-    public class GameUI : MonoBehaviour
-    {
+namespace roundbeargames {
+    public class GameUI : MonoBehaviour {
         public KeyboardPress keyboardPress;
         public UISprite PostProcChecker;
         private CharacterManager characterManager;
         private CameraManager cameraManager;
 
-        void Start()
-        {
-            characterManager = ManagerGroup.Instance.GetManager(ManagerType.CHARACTER_MANAGER) as CharacterManager;
-            cameraManager = ManagerGroup.Instance.GetManager(ManagerType.CAMERA_MANAGER) as CameraManager;
+        void Start () {
+            characterManager = ManagerGroup.Instance.GetManager (ManagerType.CHARACTER_MANAGER) as CharacterManager;
+            cameraManager = ManagerGroup.Instance.GetManager (ManagerType.CAMERA_MANAGER) as CameraManager;
         }
 
-        public void OnClickRestartGame()
-        {
+        public void OnClickRestartGame () {
             //Debug.Log("restarting game");
-            UnityEngine.SceneManagement.SceneManager.LoadScene("TestScene");
+            UnityEngine.SceneManagement.SceneManager.LoadScene ("TestScene");
         }
 
-        public void OnClickReviveEnemy()
-        {
-            if (characterManager.ListEnemies[0].characterStateController.CurrentState.GetType() == typeof(CharacterDeath))
-            {
+        public void OnClickReviveEnemy () {
+            if (characterManager.ListEnemies[0].characterStateController.CurrentState.GetType () == typeof (CharacterDeath)) {
                 //Debug.Log("reviving enemy");
                 CharacterDeath deathState = characterManager.ListEnemies[0].characterStateController.CurrentState as CharacterDeath;
-                deathState.Revive();
+                deathState.Revive ();
             }
         }
 
-        public void OnClickTogglePostProcessing()
-        {
-            if (PostProcChecker.enabled)
-            {
+        public void OnClickTogglePostProcessing () {
+            if (PostProcChecker.enabled) {
                 PostProcChecker.enabled = false;
-            }
-            else
-            {
+            } else {
                 PostProcChecker.enabled = true;
             }
 
-            ProcPostProc();
+            ProcPostProc ();
         }
 
-        public void ProcPostProc()
-        {
-            if (PostProcChecker.enabled)
-            {
+        public void ProcPostProc () {
+            if (PostProcChecker.enabled) {
                 cameraManager.gameCam.PostProc.enabled = true;
-            }
-            else
-            {
+            } else {
                 cameraManager.gameCam.PostProc.enabled = false;
             }
+        }
+
+        public void OnClickQuitGame () {
+            Application.Quit ();
         }
     }
 }
