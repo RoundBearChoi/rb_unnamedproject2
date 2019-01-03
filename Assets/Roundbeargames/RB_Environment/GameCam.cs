@@ -16,7 +16,7 @@ namespace roundbeargames {
         public Cinemachine.CinemachineTransposer cinemachineTransposer;
         public Dictionary<CameraOffsetType, Vector3> CamOffsets;
         private Coroutine OffsetChangeRoutine;
-        //public PlayerFollow playerFollow;
+        private Vector3 velocity;
         public CinemachinePostFX postFX;
 
         void Start () {
@@ -51,7 +51,8 @@ namespace roundbeargames {
                     cinemachineTransposer.m_FollowOffset = targetOffset;
                     yield break;
                 }
-                cinemachineTransposer.m_FollowOffset = Vector3.Lerp (cinemachineTransposer.m_FollowOffset, targetOffset, Time.deltaTime * 2.25f);
+                //cinemachineTransposer.m_FollowOffset = Vector3.Lerp (cinemachineTransposer.m_FollowOffset, targetOffset, Time.deltaTime * 2.25f);
+                cinemachineTransposer.m_FollowOffset = Vector3.SmoothDamp (cinemachineTransposer.m_FollowOffset, targetOffset, ref velocity, 0.25f);
                 yield return new WaitForEndOfFrame ();
             }
         }
