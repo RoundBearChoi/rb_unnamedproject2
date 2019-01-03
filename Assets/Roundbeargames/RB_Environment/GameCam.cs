@@ -17,6 +17,8 @@ namespace roundbeargames {
         public Dictionary<CameraOffsetType, Vector3> CamOffsets;
         private Coroutine OffsetChangeRoutine;
         private Vector3 velocity;
+        //private float CurrentLerpTime = 0f;
+        //private float LerpTime = 1f;
         public CinemachinePostFX postFX;
 
         void Start () {
@@ -45,14 +47,26 @@ namespace roundbeargames {
         }
 
         IEnumerator _ProcChangeOffset (Vector3 targetOffset) {
+            //CurrentLerpTime = 0f;
+
             while (true) {
                 if (Mathf.Abs (Vector3.Magnitude (cinemachineTransposer.m_FollowOffset - targetOffset)) < 0.01f) {
                     //Debug.Log("offset change complete");
                     cinemachineTransposer.m_FollowOffset = targetOffset;
                     yield break;
                 }
-                //cinemachineTransposer.m_FollowOffset = Vector3.Lerp (cinemachineTransposer.m_FollowOffset, targetOffset, Time.deltaTime * 2.25f);
-                cinemachineTransposer.m_FollowOffset = Vector3.SmoothDamp (cinemachineTransposer.m_FollowOffset, targetOffset, ref velocity, 0.25f);
+
+                /*
+                CurrentLerpTime += Time.deltaTime;
+                float t = CurrentLerpTime / LerpTime;
+                t = 1f - Mathf.Cos (t * Mathf.PI * 0.5f);
+                if (t >= 1f) {
+                    t = 1f;
+                }
+                cinemachineTransposer.m_FollowOffset = Vector3.Lerp (cinemachineTransposer.m_FollowOffset, targetOffset, t);
+                */
+
+                cinemachineTransposer.m_FollowOffset = Vector3.SmoothDamp (cinemachineTransposer.m_FollowOffset, targetOffset, ref velocity, 0.2f);
                 yield return new WaitForEndOfFrame ();
             }
         }
