@@ -22,7 +22,11 @@ namespace roundbeargames
         {
             if (UpdateAnimation())
             {
-
+                //Debug.Log(ANIMATION_DATA.PlayTime);
+                if (DurationTimePassed())
+                {
+                    characterStateController.ChangeState((int)PlayerState.HumanoidIdle);
+                }
             }
         }
 
