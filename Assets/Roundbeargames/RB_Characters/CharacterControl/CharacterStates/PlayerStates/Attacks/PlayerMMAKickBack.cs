@@ -26,6 +26,11 @@ namespace roundbeargames
                     characterStateController.ChangeState((int)PlayerState.HumanoidIdle);
                     return;
                 }
+
+                if (attack.UpdateHit(TouchDetectorType.ATTACK_RIGHT_FOOT, ref attack.Target))
+                {
+                    //Debug.Log("mma kick hit");
+                }
             }
         }
 
@@ -36,7 +41,7 @@ namespace roundbeargames
 
         public override void ClearState()
         {
-
+            attack.DeRegister(characterStateController.controlMechanism.gameObject.name, PlayerState.mmaKick_back.ToString());
         }
     }
 }

@@ -28,15 +28,16 @@ namespace roundbeargames
 
                 if (DurationTimePassed())
                 {
-                    attack.DeRegister(characterStateController.controlMechanism.gameObject.name, PlayerState.SurpriseUppercut.ToString());
 
                     if (attack.Target == null)
                     {
                         characterStateController.ChangeState((int)PlayerState.HumanoidIdle);
+                        return;
                     }
                     else
                     {
                         characterStateController.ChangeState((int)PlayerState.FightIdle);
+                        return;
                     }
 
                 }
@@ -52,7 +53,7 @@ namespace roundbeargames
 
         public override void ClearState()
         {
-
+            attack.DeRegister(characterStateController.controlMechanism.gameObject.name, PlayerState.SurpriseUppercut.ToString());
         }
     }
 }
