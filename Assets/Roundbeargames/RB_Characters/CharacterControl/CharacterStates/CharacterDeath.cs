@@ -20,7 +20,7 @@ namespace roundbeargames
             else if (characterStateController.DeathCause.Contains("Uppercut"))
             {
                 CONTROL_MECHANISM.ClearVelocity();
-                CONTROL_MECHANISM.RIGIDBODY.AddForce(Vector3.up * 250f);
+                CONTROL_MECHANISM.RIGIDBODY.AddForce(Vector3.up * 300f);
 
                 CAMERA_MANAGER.ShakeCamera(0.4f);
                 Transform rightHand = CHARACTER_MANAGER.Player.BodyPartDictionary[BodyPart.RIGHT_HAND];

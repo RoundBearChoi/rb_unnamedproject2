@@ -9,7 +9,6 @@ namespace roundbeargames
         public override void InitState()
         {
             ANIMATION_DATA.DesignatedAnimation = PlayerState.FightIdle.ToString();
-
             GetTargetHead();
         }
 
@@ -22,10 +21,17 @@ namespace roundbeargames
         {
             if (UpdateAnimation())
             {
+                if (ATTACK_DATA.AttackA)
+                {
+                    characterStateController.ChangeState((int)PlayerState.mmaKick_back);
+                    return;
+                }
+
                 //Debug.Log(ANIMATION_DATA.PlayTime);
                 if (DurationTimePassed())
                 {
                     characterStateController.ChangeState((int)PlayerState.HumanoidIdle);
+                    return;
                 }
             }
         }

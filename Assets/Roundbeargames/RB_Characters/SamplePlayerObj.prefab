@@ -1903,6 +1903,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1849070472644334
+GameObject:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4612852169217970}
+  - component: {fileID: 114872635897334760}
+  m_Layer: 9
+  m_Name: PlayerMMAKick_back
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1867855089343214
 GameObject:
   m_ObjectHideFlags: 1
@@ -2569,6 +2585,7 @@ Transform:
   - {fileID: 4877116490613542}
   - {fileID: 4868956070829936}
   - {fileID: 4066282016543340}
+  - {fileID: 4612852169217970}
   m_Father: {fileID: 4350749818408040}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3269,6 +3286,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4017931160595998}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4612852169217970
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1849070472644334}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4259665465109962}
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4616871818556130
 Transform:
@@ -4334,6 +4364,7 @@ MonoBehaviour:
     - {fileID: 114597320865608832}
     - {fileID: 114390775193823090}
     - {fileID: 114565099347531752}
+    - {fileID: 114872635897334760}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -4352,7 +4383,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 12
-      Data: 21
+      Data: 22
     - Name: 
       Entry: 7
       Data: 
@@ -4602,6 +4633,18 @@ MonoBehaviour:
     - Name: 
       Entry: 10
       Data: 20
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 3
+      Data: 20
+    - Name: 
+      Entry: 10
+      Data: 21
     - Name: 
       Entry: 8
       Data: 
@@ -5365,7 +5408,7 @@ MonoBehaviour:
   jump: {fileID: 0}
   turnToPlayer: {fileID: 0}
   findPlayer: {fileID: 0}
-  Duration: 0.7
+  Duration: 1.5
   Neck: {fileID: 4048297518508804}
   Head: {fileID: 4431581604902954}
   TargetControlMech: {fileID: 0}
@@ -5873,6 +5916,25 @@ MonoBehaviour:
   IsTouching: 0
   GeneralObjects: []
   controlMechanism: {fileID: 0}
+--- !u!114 &114872635897334760
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1849070472644334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 133b3e969c1a15b41b0cee96d2f1fbf9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterStateController: {fileID: 0}
+  move: {fileID: 0}
+  slowDown: {fileID: 0}
+  attack: {fileID: 0}
+  jump: {fileID: 0}
+  turnToPlayer: {fileID: 0}
+  findPlayer: {fileID: 0}
+  Duration: 1.35
 --- !u!114 &114894323334194986
 MonoBehaviour:
   m_ObjectHideFlags: 1
