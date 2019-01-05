@@ -29,10 +29,19 @@ namespace roundbeargames
                 if (DurationTimePassed())
                 {
                     attack.DeRegister(characterStateController.controlMechanism.gameObject.name, PlayerState.SurpriseUppercut.ToString());
-                    characterStateController.ChangeState((int)PlayerState.HumanoidIdle);
+
+                    if (attack.Target == null)
+                    {
+                        characterStateController.ChangeState((int)PlayerState.HumanoidIdle);
+                    }
+                    else
+                    {
+                        characterStateController.ChangeState((int)PlayerState.FightIdle);
+                    }
+
                 }
 
-                attack.UpdateHit(TouchDetectorType.ATTACK_AXE);
+                attack.UpdateHit(TouchDetectorType.ATTACK_RIGHT_FIST, ref attack.Target);
             }
         }
 

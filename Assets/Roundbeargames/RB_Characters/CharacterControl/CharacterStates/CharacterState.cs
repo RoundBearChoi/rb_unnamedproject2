@@ -23,6 +23,7 @@ public enum PlayerState
     JumpOver,
     CrouchedSneakingLeft,
     StandToRoll,
+    FightIdle,
 }
 
 public enum AxeEnemyState

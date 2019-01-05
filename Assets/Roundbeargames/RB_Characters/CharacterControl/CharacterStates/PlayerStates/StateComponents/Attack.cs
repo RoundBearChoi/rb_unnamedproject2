@@ -6,10 +6,11 @@ namespace roundbeargames
 {
     public class Attack : StateComponent
     {
+        public ControlMechanism Target;
         public float AttackStartTime;
         public float AttackEndTime;
         public bool ShakeCamera = false;
-        public void UpdateHit(TouchDetectorType touchDetectorType)
+        public void UpdateHit(TouchDetectorType touchDetectorType, ref ControlMechanism target)
         {
             if (IsWithinAttackTime())
             {
@@ -18,8 +19,11 @@ namespace roundbeargames
                 if (touchable != null)
                 {
                     touchable.controlMechanism.characterStateController.TakeHit(controlMechanism, characterData.characterAnimationData.DesignatedAnimation);
+                    target = touchable.controlMechanism;
+                    //return true;
                 }
             }
+            //return false;
         }
 
         Touchable GetFirstTouch(TouchDetector targetTouchDetector, TouchableType touchableType)

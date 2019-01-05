@@ -27,7 +27,7 @@ namespace roundbeargames
                     //return;
                 }
 
-                attack.UpdateHit(TouchDetectorType.ATTACK_AXE);
+                attack.UpdateHit(TouchDetectorType.ATTACK_RIGHT_FIST, ref attack.Target);
             }
         }
 

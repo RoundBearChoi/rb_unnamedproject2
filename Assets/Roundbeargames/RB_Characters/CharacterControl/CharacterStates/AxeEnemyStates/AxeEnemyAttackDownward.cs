@@ -26,7 +26,7 @@ namespace roundbeargames
             if (UpdateAnimation())
             {
                 //normal hit
-                attack.UpdateHit(TouchDetectorType.ATTACK_AXE);
+                attack.UpdateHit(TouchDetectorType.ATTACK_AXE, ref attack.Target);
 
                 //Debug.Log(ANIMATION_DATA.PlayTime);
 

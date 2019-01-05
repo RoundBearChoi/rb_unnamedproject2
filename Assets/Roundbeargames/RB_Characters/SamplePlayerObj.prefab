@@ -373,6 +373,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1177698300169068
+GameObject:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4066282016543340}
+  - component: {fileID: 114565099347531752}
+  m_Layer: 9
+  m_Name: PlayerFightIdle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1181612553362516
 GameObject:
   m_ObjectHideFlags: 1
@@ -2206,6 +2222,19 @@ Transform:
   m_Father: {fileID: 4963524435379384}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4066282016543340
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1177698300169068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4259665465109962}
+  m_RootOrder: 21
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4071036610590624
 Transform:
   m_ObjectHideFlags: 1
@@ -2539,6 +2568,7 @@ Transform:
   - {fileID: 4407574085090560}
   - {fileID: 4877116490613542}
   - {fileID: 4868956070829936}
+  - {fileID: 4066282016543340}
   m_Father: {fileID: 4350749818408040}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2697,7 +2727,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1382540918812880}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.84, y: 1.248, z: 0}
+  m_LocalPosition: {x: 3.81, y: 2.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4548758764177712}
@@ -4303,6 +4333,7 @@ MonoBehaviour:
     - {fileID: 114459944771191556}
     - {fileID: 114597320865608832}
     - {fileID: 114390775193823090}
+    - {fileID: 114565099347531752}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -4321,7 +4352,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 12
-      Data: 20
+      Data: 21
     - Name: 
       Entry: 7
       Data: 
@@ -4559,6 +4590,18 @@ MonoBehaviour:
     - Name: 
       Entry: 10
       Data: 19
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 3
+      Data: 19
+    - Name: 
+      Entry: 10
+      Data: 20
     - Name: 
       Entry: 8
       Data: 
@@ -5303,6 +5346,25 @@ MonoBehaviour:
   findPlayer: {fileID: 0}
   Duration: 0.42
   JumpForce: 400
+--- !u!114 &114565099347531752
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1177698300169068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d3ccf4a4b712d547a1f658dfe2461ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterStateController: {fileID: 0}
+  move: {fileID: 0}
+  slowDown: {fileID: 0}
+  attack: {fileID: 0}
+  jump: {fileID: 0}
+  turnToPlayer: {fileID: 0}
+  findPlayer: {fileID: 0}
+  Duration: 0
 --- !u!114 &114577880823642808
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5382,7 +5444,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  touchDetectorType: 3
+  touchDetectorType: 6
   IsTouching: 0
   GeneralObjects: []
   controlMechanism: {fileID: 0}
@@ -5554,6 +5616,7 @@ MonoBehaviour:
   characterData: {fileID: 0}
   movementData: {fileID: 0}
   vfxManager: {fileID: 0}
+  Target: {fileID: 0}
   AttackStartTime: 0.1
   AttackEndTime: 0.5
   ShakeCamera: 0
@@ -5746,6 +5809,7 @@ MonoBehaviour:
   characterData: {fileID: 0}
   movementData: {fileID: 0}
   vfxManager: {fileID: 0}
+  Target: {fileID: 0}
   AttackStartTime: 0.05
   AttackEndTime: 0.2
   ShakeCamera: 0

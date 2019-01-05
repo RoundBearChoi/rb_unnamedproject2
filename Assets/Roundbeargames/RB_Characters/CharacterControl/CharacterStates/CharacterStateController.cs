@@ -56,6 +56,12 @@ namespace roundbeargames
 
             CurrentState.ANIMATION_DATA.PlayTime = 0f;
             CurrentState.ANIMATION_DATA.StartAnimation(stateIndex);
+
+            if (CurrentState.attack != null)
+            {
+                CurrentState.attack.Target = null;
+            }
+
             CurrentState.InitState();
         }
 
