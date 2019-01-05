@@ -29,7 +29,8 @@ namespace roundbeargames
 
                 if (attack.UpdateHit(TouchDetectorType.ATTACK_RIGHT_FOOT, ref attack.Target))
                 {
-                    //Debug.Log("mma kick hit");
+                    CharacterDeath targetDeathState = attack.Target.characterStateController.CurrentState as CharacterDeath;
+                    targetDeathState.ProcSpinKickReaction();
                 }
             }
         }

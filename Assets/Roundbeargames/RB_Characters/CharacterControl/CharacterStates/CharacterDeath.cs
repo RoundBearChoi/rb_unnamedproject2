@@ -7,11 +7,13 @@ namespace roundbeargames
     public class CharacterDeath : CharacterState
     {
         string ParameterString = "DeathAnimationIndex";
+        bool SpinKickReactionTriggered;
 
         public override void InitState()
         {
             ANIMATION_DATA.characterAnimator.runtimeAnimatorController = characterStateController.DeathAnimator;
             CONTROL_MECHANISM.RIGIDBODY.useGravity = true;
+            SpinKickReactionTriggered = false;
 
             if (characterStateController.DeathCause.Contains("Jab"))
             {
@@ -22,12 +24,8 @@ namespace roundbeargames
                 CONTROL_MECHANISM.ClearVelocity();
                 CONTROL_MECHANISM.RIGIDBODY.AddForce(Vector3.up * 300f);
 
+                ShowHitEffect(BodyPart.RIGHT_HAND);
                 CAMERA_MANAGER.ShakeCamera(0.4f);
-                Transform rightHand = CHARACTER_MANAGER.Player.BodyPartDictionary[BodyPart.RIGHT_HAND];
-                VFX_MANAGER.ShowSimpleEffect(SimpleEffectType.SPARK, rightHand.position);
-                VFX_MANAGER.ShowSimpleEffect(SimpleEffectType.FLARE, rightHand.position);
-                VFX_MANAGER.ShowSimpleEffect(SimpleEffectType.BLOOD, rightHand.position);
-                VFX_MANAGER.ShowSimpleEffect(SimpleEffectType.DISTORTION, rightHand.position);
 
                 ANIMATION_DATA.characterAnimator.SetFloat(ParameterString, 1f);
             }
@@ -75,6 +73,31 @@ namespace roundbeargames
                 characterStateController.characterData.hitRegister.RegisteredHits.Clear();
                 characterStateController.ChangeState((int)AxeEnemyState.AxeIdle);
             }
+        }
+
+        public void ProcSpinKickReaction()
+        {
+            if (!SpinKickReactionTriggered)
+            {
+                //Debug.Log("spinkick reaction triggered");
+                ShowHitEffect(BodyPart.RIGHT_FOOT);
+                CAMERA_MANAGER.ShakeCamera(0.4f);
+
+                SpinKickReactionTriggered = true;
+                ANIMATION_DATA.characterAnimator.applyRootMotion = true;
+                ANIMATION_DATA.characterAnimator.runtimeAnimatorController = null;
+                ANIMATION_DATA.characterAnimator.runtimeAnimatorController = characterStateController.DeathAnimator;
+                ANIMATION_DATA.characterAnimator.SetFloat(ParameterString, 3f);
+            }
+        }
+
+        void ShowHitEffect(BodyPart bodypart)
+        {
+            Transform part = CHARACTER_MANAGER.Player.BodyPartDictionary[bodypart];
+            VFX_MANAGER.ShowSimpleEffect(SimpleEffectType.SPARK, part.position);
+            VFX_MANAGER.ShowSimpleEffect(SimpleEffectType.FLARE, part.position);
+            VFX_MANAGER.ShowSimpleEffect(SimpleEffectType.BLOOD, part.position);
+            VFX_MANAGER.ShowSimpleEffect(SimpleEffectType.DISTORTION, part.position);
         }
     }
 }
