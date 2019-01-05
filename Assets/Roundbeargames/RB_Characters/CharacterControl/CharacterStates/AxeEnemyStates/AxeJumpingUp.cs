@@ -44,6 +44,16 @@ namespace roundbeargames
             }
         }
 
+        public override void RunLateUpdate()
+        {
+
+        }
+
+        public override void ClearState()
+        {
+
+        }
+
         bool IsPastWayPoint()
         {
             if (CONTROL_MECHANISM.IsFacingForward())
@@ -61,11 +71,6 @@ namespace roundbeargames
                 }
             }
             return false;
-        }
-
-        public override void ClearState()
-        {
-
         }
     }
 }

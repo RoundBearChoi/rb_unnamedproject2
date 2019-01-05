@@ -85,6 +85,11 @@ namespace roundbeargames
             }
         }
 
+        public override void RunLateUpdate()
+        {
+
+        }
+
         public override void ClearState()
         {
             MOVEMENT_DATA.AirMomentum = 0f;

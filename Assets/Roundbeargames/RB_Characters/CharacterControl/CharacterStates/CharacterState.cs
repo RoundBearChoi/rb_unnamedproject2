@@ -44,6 +44,7 @@ namespace roundbeargames
         public CharacterStateController characterStateController;
         public abstract void RunFrameUpdate();
         public abstract void RunFixedUpdate();
+        public abstract void RunLateUpdate();
         public abstract void ClearState();
         public abstract void InitState();
 

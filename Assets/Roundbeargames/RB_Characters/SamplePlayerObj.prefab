@@ -5243,6 +5243,7 @@ MonoBehaviour:
   characterAttackData: {fileID: 0}
   controlMechanism: {fileID: 0}
   hitRegister: {fileID: 0}
+  Touchables: []
 --- !u!114 &114491819143984580
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5365,6 +5366,10 @@ MonoBehaviour:
   turnToPlayer: {fileID: 0}
   findPlayer: {fileID: 0}
   Duration: 0
+  Neck: {fileID: 4048297518508804}
+  Head: {fileID: 4431581604902954}
+  TargetControlMech: {fileID: 0}
+  TargetHead: {fileID: 0}
 --- !u!114 &114577880823642808
 MonoBehaviour:
   m_ObjectHideFlags: 1

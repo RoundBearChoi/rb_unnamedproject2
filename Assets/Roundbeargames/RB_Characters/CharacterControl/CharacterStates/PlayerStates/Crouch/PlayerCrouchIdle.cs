@@ -32,6 +32,11 @@ namespace roundbeargames
             }
         }
 
+        public override void RunLateUpdate()
+        {
+
+        }
+
         public override void ClearState()
         {
 

@@ -47,6 +47,11 @@ namespace roundbeargames
             CurrentState.RunFrameUpdate();
         }
 
+        void LateUpdate()
+        {
+            CurrentState.RunLateUpdate();
+        }
+
         public void ChangeState(int stateIndex)
         {
             CurrentState.ClearState();

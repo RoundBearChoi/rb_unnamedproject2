@@ -17,11 +17,6 @@ namespace roundbeargames
 
         }
 
-        public override void ClearState()
-        {
-
-        }
-
         public override void RunFrameUpdate()
         {
             if (UpdateAnimation())
@@ -63,6 +58,16 @@ namespace roundbeargames
                     }
                 }
             }
+        }
+
+        public override void RunLateUpdate()
+        {
+
+        }
+
+        public override void ClearState()
+        {
+
         }
 
         bool ChasePlayer()

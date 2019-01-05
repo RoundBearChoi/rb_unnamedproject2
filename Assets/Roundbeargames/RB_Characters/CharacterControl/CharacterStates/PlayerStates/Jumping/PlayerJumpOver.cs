@@ -118,6 +118,11 @@ namespace roundbeargames
             }
         }
 
+        public override void RunLateUpdate()
+        {
+
+        }
+
         public override void ClearState()
         {
             CONTROL_MECHANISM.RIGIDBODY.useGravity = true;

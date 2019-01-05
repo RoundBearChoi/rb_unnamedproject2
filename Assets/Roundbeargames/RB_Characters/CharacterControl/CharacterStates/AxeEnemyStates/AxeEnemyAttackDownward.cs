@@ -16,11 +16,6 @@ namespace roundbeargames
 
         }
 
-        public override void ClearState()
-        {
-
-        }
-
         public override void RunFrameUpdate()
         {
             if (UpdateAnimation())
@@ -36,6 +31,16 @@ namespace roundbeargames
                     attack.DeRegister(characterStateController.controlMechanism.gameObject.name, AxeEnemyState.AxeAttackDownward.ToString());
                 }
             }
+        }
+
+        public override void RunLateUpdate()
+        {
+
+        }
+
+        public override void ClearState()
+        {
+
         }
     }
 }
