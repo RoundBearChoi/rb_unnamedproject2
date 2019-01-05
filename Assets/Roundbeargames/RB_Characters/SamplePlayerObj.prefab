@@ -5542,7 +5542,7 @@ MonoBehaviour:
   jump: {fileID: 0}
   turnToPlayer: {fileID: 0}
   findPlayer: {fileID: 0}
-  Duration: 1.5
+  Duration: 1.15
   Neck: {fileID: 4048297518508804}
   Head: {fileID: 4431581604902954}
   TargetControlMech: {fileID: 0}
@@ -6068,7 +6068,7 @@ MonoBehaviour:
   jump: {fileID: 0}
   turnToPlayer: {fileID: 0}
   findPlayer: {fileID: 0}
-  Duration: 1.35
+  Duration: 1.05
 --- !u!114 &114894323334194986
 MonoBehaviour:
   m_ObjectHideFlags: 1
