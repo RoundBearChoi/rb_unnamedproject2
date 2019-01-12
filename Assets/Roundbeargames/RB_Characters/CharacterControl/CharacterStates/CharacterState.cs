@@ -38,6 +38,11 @@ public enum AxeEnemyState
     AxeFallingIdle,
 }
 
+public enum DummyEnemyState
+{
+    HumanoidIdle,
+}
+
 namespace roundbeargames
 {
     public abstract class CharacterState : MonoBehaviour
