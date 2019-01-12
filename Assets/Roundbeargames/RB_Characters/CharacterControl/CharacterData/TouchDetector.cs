@@ -13,6 +13,7 @@ public enum TouchDetectorType
     WAY_POINT_DETECTOR,
     ATTACK_RIGHT_FIST,
     ATTACK_RIGHT_FOOT,
+    CHARACTER_DETECTOR_BODY,
 }
 
 namespace roundbeargames

@@ -4327,6 +4327,7 @@ MonoBehaviour:
   jump: {fileID: 0}
   turnToPlayer: {fileID: 0}
   findPlayer: {fileID: 0}
+  collateral: {fileID: 0}
   Duration: 0.6
 --- !u!114 &114064817527406612
 MonoBehaviour:
@@ -4346,6 +4347,7 @@ MonoBehaviour:
   jump: {fileID: 0}
   turnToPlayer: {fileID: 0}
   findPlayer: {fileID: 0}
+  collateral: {fileID: 0}
   Duration: 0
 --- !u!114 &114066811523182172
 MonoBehaviour:
@@ -4365,6 +4367,7 @@ MonoBehaviour:
   jump: {fileID: 0}
   turnToPlayer: {fileID: 0}
   findPlayer: {fileID: 0}
+  collateral: {fileID: 0}
   Duration: 0
 --- !u!114 &114071836006146930
 MonoBehaviour:
@@ -4962,6 +4965,7 @@ MonoBehaviour:
   jump: {fileID: 0}
   turnToPlayer: {fileID: 0}
   findPlayer: {fileID: 0}
+  collateral: {fileID: 0}
   Duration: 0
 --- !u!114 &114235310220388744
 MonoBehaviour:
@@ -5044,6 +5048,7 @@ MonoBehaviour:
   jump: {fileID: 114382969190022726}
   turnToPlayer: {fileID: 0}
   findPlayer: {fileID: 0}
+  collateral: {fileID: 0}
   Duration: 0
 --- !u!114 &114247948049153014
 MonoBehaviour:
@@ -5063,6 +5068,7 @@ MonoBehaviour:
   jump: {fileID: 0}
   turnToPlayer: {fileID: 0}
   findPlayer: {fileID: 0}
+  collateral: {fileID: 0}
   Duration: 0.97
 --- !u!114 &114251191125258908
 MonoBehaviour:
@@ -5146,6 +5152,7 @@ MonoBehaviour:
   jump: {fileID: 114084697179015538}
   turnToPlayer: {fileID: 0}
   findPlayer: {fileID: 0}
+  collateral: {fileID: 0}
   Duration: 0.8
   JumpForce: 350
 --- !u!114 &114367710872931572
@@ -5255,6 +5262,7 @@ MonoBehaviour:
   jump: {fileID: 0}
   turnToPlayer: {fileID: 0}
   findPlayer: {fileID: 0}
+  collateral: {fileID: 0}
   Duration: 0.95
   FallCheck: 0.65
 --- !u!114 &114402861509797356
@@ -5275,6 +5283,7 @@ MonoBehaviour:
   jump: {fileID: 0}
   turnToPlayer: {fileID: 0}
   findPlayer: {fileID: 0}
+  collateral: {fileID: 0}
   Duration: 0
 --- !u!114 &114428078079017918
 MonoBehaviour:
@@ -5294,6 +5303,7 @@ MonoBehaviour:
   jump: {fileID: 0}
   turnToPlayer: {fileID: 0}
   findPlayer: {fileID: 0}
+  collateral: {fileID: 0}
   Duration: 0
   ClimbDistance: {x: 0.78, y: 2.25, z: 0}
 --- !u!114 &114442324638881190
@@ -5346,6 +5356,7 @@ MonoBehaviour:
   jump: {fileID: 0}
   turnToPlayer: {fileID: 0}
   findPlayer: {fileID: 0}
+  collateral: {fileID: 0}
   Duration: 1.6
   DiveCheckTime: 0.5
   DiveTime: 0.65
@@ -5522,6 +5533,7 @@ MonoBehaviour:
   jump: {fileID: 114674723888085112}
   turnToPlayer: {fileID: 0}
   findPlayer: {fileID: 0}
+  collateral: {fileID: 0}
   Duration: 0.42
   JumpForce: 400
 --- !u!114 &114565099347531752
@@ -5542,6 +5554,7 @@ MonoBehaviour:
   jump: {fileID: 0}
   turnToPlayer: {fileID: 0}
   findPlayer: {fileID: 0}
+  collateral: {fileID: 0}
   Duration: 1.15
   Neck: {fileID: 4048297518508804}
   Head: {fileID: 4431581604902954}
@@ -5648,6 +5661,7 @@ MonoBehaviour:
   jump: {fileID: 0}
   turnToPlayer: {fileID: 0}
   findPlayer: {fileID: 0}
+  collateral: {fileID: 0}
   Duration: 0
 --- !u!114 &114600684623409792
 MonoBehaviour:
@@ -5711,6 +5725,7 @@ MonoBehaviour:
   jump: {fileID: 0}
   turnToPlayer: {fileID: 0}
   findPlayer: {fileID: 0}
+  collateral: {fileID: 0}
   Duration: 0.5
 --- !u!114 &114638562406486062
 MonoBehaviour:
@@ -5858,6 +5873,7 @@ MonoBehaviour:
   jump: {fileID: 0}
   turnToPlayer: {fileID: 0}
   findPlayer: {fileID: 0}
+  collateral: {fileID: 0}
   Duration: 0.6
 --- !u!114 &114759115735969122
 MonoBehaviour:
@@ -5877,6 +5893,7 @@ MonoBehaviour:
   jump: {fileID: 0}
   turnToPlayer: {fileID: 0}
   findPlayer: {fileID: 0}
+  collateral: {fileID: 0}
   Duration: 0
   RunStopBuffer: 0.05
 --- !u!114 &114804831633307940
@@ -5897,6 +5914,7 @@ MonoBehaviour:
   jump: {fileID: 0}
   turnToPlayer: {fileID: 0}
   findPlayer: {fileID: 0}
+  collateral: {fileID: 0}
   Duration: 0.85
 --- !u!114 &114808794602646412
 MonoBehaviour:
@@ -5929,6 +5947,7 @@ MonoBehaviour:
   jump: {fileID: 0}
   turnToPlayer: {fileID: 0}
   findPlayer: {fileID: 0}
+  collateral: {fileID: 0}
   Duration: 0
 --- !u!114 &114820827697914358
 MonoBehaviour:
@@ -6068,6 +6087,7 @@ MonoBehaviour:
   jump: {fileID: 0}
   turnToPlayer: {fileID: 0}
   findPlayer: {fileID: 0}
+  collateral: {fileID: 0}
   Duration: 1.05
 --- !u!114 &114894323334194986
 MonoBehaviour:
@@ -6087,6 +6107,7 @@ MonoBehaviour:
   jump: {fileID: 0}
   turnToPlayer: {fileID: 0}
   findPlayer: {fileID: 0}
+  collateral: {fileID: 0}
   Duration: 0.55
 --- !u!114 &114897820714980530
 MonoBehaviour:
@@ -6106,6 +6127,7 @@ MonoBehaviour:
   jump: {fileID: 0}
   turnToPlayer: {fileID: 0}
   findPlayer: {fileID: 0}
+  collateral: {fileID: 0}
   Duration: 0.5
 --- !u!114 &114949103814494608
 MonoBehaviour:

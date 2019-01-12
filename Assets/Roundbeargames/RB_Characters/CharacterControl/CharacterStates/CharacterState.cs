@@ -61,6 +61,7 @@ namespace roundbeargames
         public Jump jump;
         public TurnToPlayer turnToPlayer;
         public FindPlayer findPlayer;
+        public Collateral collateral;
 
         //Common Variables
         private ControlMechanism controlMechanism;
