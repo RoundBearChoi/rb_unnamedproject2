@@ -33,6 +33,10 @@ namespace roundbeargames
                 Time.timeScale = 0.35f;
                 ANIMATION_DATA.characterAnimator.SetFloat(ParameterString, 2f);
             }
+            else if (characterStateController.DeathCause.Contains("Collateral"))
+            {
+                ANIMATION_DATA.characterAnimator.SetFloat(ParameterString, 0f);
+            }
             else
             {
                 ANIMATION_DATA.characterAnimator.SetFloat(ParameterString, 2f);
@@ -55,9 +59,9 @@ namespace roundbeargames
             {
                 if (collateral.DetectionRoutine != null)
                 {
-                    if (collateral.IsTouchingAnotherAI())
+                    if (collateral.TriggerCollateralDamage())
                     {
-                        Debug.Log("is touching another enemy");
+                        //Debug.Log("has triggered collateral death");
                     }
                 }
             }

@@ -17,9 +17,12 @@ namespace roundbeargames
         public RuntimeAnimatorController DeathAnimator;
         public string DeathCause;
         public string DeathBringer;
+        public bool ForceDeath;
 
         void Start()
         {
+            ForceDeath = false;
+
             foreach (KeyValuePair<int, CharacterState> d in StatesDictionary)
             {
                 d.Value.characterStateController = this;
@@ -42,6 +45,11 @@ namespace roundbeargames
             if (CurrentState.GetType() != typeof(CharacterDeath))
             {
                 CurrentState.UpdateDeath();
+            }
+
+            if (CurrentState.characterStateController.ForceDeath && CurrentState.GetType() != typeof(CharacterDeath))
+            {
+                CurrentState.characterStateController.ChangeState(999);
             }
 
             CurrentState.RunFrameUpdate();

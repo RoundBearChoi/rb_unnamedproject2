@@ -9,7 +9,7 @@ namespace roundbeargames
         public Coroutine DetectionRoutine;
         bool StopDetecting = false;
         public List<AIControl> CollateralAIs;
-        public bool IsTouchingAnotherAI()
+        public bool TriggerCollateralDamage()
         {
             if (StopDetecting)
             {
@@ -38,6 +38,8 @@ namespace roundbeargames
                                 if (!CollateralAIs.Contains(aiControl))
                                 {
                                     CollateralAIs.Add(aiControl);
+                                    aiControl.characterStateController.ForceDeath = true;
+                                    aiControl.characterStateController.DeathCause = "Collateral";
                                     return true;
                                 }
                                 else
@@ -63,10 +65,10 @@ namespace roundbeargames
 
         IEnumerator _StartDetectingTimer(float timer)
         {
-            Debug.Log("detection started");
+            //Debug.Log("detection started");
             yield return new WaitForSeconds(timer);
             StopDetecting = true;
-            Debug.Log("detection ended");
+            //Debug.Log("detection ended");
         }
     }
 }
