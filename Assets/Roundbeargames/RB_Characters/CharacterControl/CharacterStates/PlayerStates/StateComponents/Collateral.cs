@@ -40,6 +40,16 @@ namespace roundbeargames
                                     CollateralAIs.Add(aiControl);
                                     aiControl.characterStateController.ForceDeath = true;
                                     aiControl.characterStateController.DeathCause = "Collateral";
+
+                                    if (controlMechanism.IsFacingForward())
+                                    {
+                                        aiControl.transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, 0f));
+                                    }
+                                    else
+                                    {
+                                        aiControl.transform.rotation = Quaternion.Euler(new Vector3(0f, 180f, 0f));
+                                    }
+
                                     return true;
                                 }
                                 else
