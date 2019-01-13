@@ -2450,6 +2450,7 @@ MonoBehaviour:
   DeathAnimator: {fileID: 9100000, guid: 015ba8f7c3ad4f24c868f33ce7e7843c, type: 2}
   DeathCause: 
   DeathBringer: 
+  ForceDeath: 0
 --- !u!114 &114978166807709462
 MonoBehaviour:
   m_ObjectHideFlags: 1

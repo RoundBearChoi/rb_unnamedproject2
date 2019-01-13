@@ -37,12 +37,22 @@ namespace roundbeargames
 
         public void OnClickReviveEnemy()
         {
-            if (characterManager.ListEnemies[0].characterStateController.CurrentState.GetType() == typeof(CharacterDeath))
+            foreach (ControlMechanism c in characterManager.ListEnemies)
+            {
+                if (c.characterStateController.CurrentState.GetType() == typeof(CharacterDeath))
+                {
+                    //Debug.Log("reviving enemy");
+                    CharacterDeath deathState = c.characterStateController.CurrentState as CharacterDeath;
+                    deathState.Revive();
+                }
+            }
+
+            /*if (characterManager.ListEnemies[0].characterStateController.CurrentState.GetType() == typeof(CharacterDeath))
             {
                 //Debug.Log("reviving enemy");
                 CharacterDeath deathState = characterManager.ListEnemies[0].characterStateController.CurrentState as CharacterDeath;
                 deathState.Revive();
-            }
+            }*/
         }
 
         public void OnClickTogglePostProcessing()

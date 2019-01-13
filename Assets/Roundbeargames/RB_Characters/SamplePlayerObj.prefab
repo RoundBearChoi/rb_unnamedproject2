@@ -2792,7 +2792,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1382540918812880}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.84, y: 1.248, z: 0}
+  m_LocalPosition: {x: 1.369, y: 1.248, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4548758764177712}
@@ -3500,7 +3500,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1891272533201896}
   m_LocalRotation: {x: 0.40410972, y: -0.5396358, z: -0.51177585, w: 0.5325167}
-  m_LocalPosition: {x: 0.0337985, y: 0.07281153, z: -0.027825806}
+  m_LocalPosition: {x: 0.009, y: 0.079, z: -0.003}
   m_LocalScale: {x: 0.30434826, y: 0.3043485, z: 0.30434912}
   m_Children: []
   m_Father: {fileID: 4411683597815084}
@@ -4735,6 +4735,7 @@ MonoBehaviour:
   DeathAnimator: {fileID: 9100000, guid: 015ba8f7c3ad4f24c868f33ce7e7843c, type: 2}
   DeathCause: 
   DeathBringer: 
+  ForceDeath: 0
 --- !u!114 &114159936083691288
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6202,7 +6203,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.26
+  m_Radius: 0.3
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!135 &135812185648675294
 SphereCollider:

@@ -40,17 +40,29 @@ namespace roundbeargames
         {
             if (TargetHead != null)
             {
-                NeutralHeadPos = TargetHead.position - (Vector3.up * 0.25f);
-                NeutralHeadPos.z = 0f;
+                NeutralTargetPos = TargetHead.position - (Vector3.up * 0.25f);
+                NeutralTargetPos.z = 0f;
 
                 NeutralNeckPos = Neck.transform.position;
                 NeutralNeckPos.z = 0f;
 
-                NeckDir = NeutralNeckPos - NeutralHeadPos;
-                NeckDir.Normalize();
-                Neck.forward = NeckDir;
+                NeckDir = NeutralNeckPos - NeutralTargetPos;
 
-                Head.forward = NeckDir;
+                //Debug.Log(NeckDir);
+
+                if (CONTROL_MECHANISM.IsFacingForward())
+                {
+                    NeckDir += new Vector3(-3f, 0f, 0f);
+                }
+                else
+                {
+                    NeckDir += new Vector3(3f, 0f, 0f);
+                }
+
+                Neck.transform.LookAt(Neck.transform.position + NeckDir, Vector3.up);
+                Head.transform.LookAt(Neck.transform.position + NeckDir, Vector3.up);
+                //Neck.forward = NeckDir;
+                //Head.forward = NeckDir;
             }
         }
 
@@ -90,7 +102,7 @@ namespace roundbeargames
         public ControlMechanism TargetControlMech;
         public Transform TargetHead;
         private Vector3 NeutralNeckPos;
-        private Vector3 NeutralHeadPos;
+        private Vector3 NeutralTargetPos;
         private Vector3 NeckDir;
     }
 }
