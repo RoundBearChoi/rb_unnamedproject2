@@ -599,6 +599,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1306706431154084
+GameObject:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4325589974668744}
+  - component: {fileID: 114774463979758084}
+  m_Layer: 9
+  m_Name: Collateral
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1307045549506244
 GameObject:
   m_ObjectHideFlags: 1
@@ -2849,6 +2865,19 @@ Transform:
   m_Father: {fileID: 4241741866010196}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4325589974668744
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1306706431154084}
+  m_LocalRotation: {x: -0, y: -0.00000008742278, z: -0, w: -1}
+  m_LocalPosition: {x: 0, y: 0, z: -0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4464772415155848}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4338662336423010
 Transform:
   m_ObjectHideFlags: 1
@@ -3100,7 +3129,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 4325589974668744}
   m_Father: {fileID: 4277768819179454}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4444,6 +4474,7 @@ MonoBehaviour:
   jump: {fileID: 114874091070424802}
   turnToPlayer: {fileID: 0}
   findPlayer: {fileID: 0}
+  collateral: {fileID: 0}
   Duration: 0
 --- !u!114 &114273537764782036
 MonoBehaviour:
@@ -4507,6 +4538,7 @@ MonoBehaviour:
   jump: {fileID: 0}
   turnToPlayer: {fileID: 0}
   findPlayer: {fileID: 0}
+  collateral: {fileID: 0}
   Duration: 0
 --- !u!114 &114360984443453790
 MonoBehaviour:
@@ -4712,6 +4744,7 @@ MonoBehaviour:
   DeathAnimator: {fileID: 9100000, guid: 015ba8f7c3ad4f24c868f33ce7e7843c, type: 2}
   DeathCause: 
   DeathBringer: 
+  ForceDeath: 0
 --- !u!114 &114411368105336930
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4743,6 +4776,7 @@ MonoBehaviour:
   jump: {fileID: 0}
   turnToPlayer: {fileID: 114379686138648668}
   findPlayer: {fileID: 0}
+  collateral: {fileID: 0}
   Duration: 0
 --- !u!114 &114537811033712220
 MonoBehaviour:
@@ -4762,6 +4796,7 @@ MonoBehaviour:
   jump: {fileID: 0}
   turnToPlayer: {fileID: 114391792567256102}
   findPlayer: {fileID: 114550402402487998}
+  collateral: {fileID: 0}
   Duration: 0
 --- !u!114 &114550402402487998
 MonoBehaviour:
@@ -4799,6 +4834,7 @@ MonoBehaviour:
   jump: {fileID: 0}
   turnToPlayer: {fileID: 0}
   findPlayer: {fileID: 0}
+  collateral: {fileID: 0}
   Duration: 1.5
 --- !u!114 &114637017166860710
 MonoBehaviour:
@@ -4818,6 +4854,7 @@ MonoBehaviour:
   jump: {fileID: 0}
   turnToPlayer: {fileID: 0}
   findPlayer: {fileID: 114055148560382414}
+  collateral: {fileID: 0}
   Duration: 0
 --- !u!114 &114648355866686842
 MonoBehaviour:
@@ -4911,7 +4948,26 @@ MonoBehaviour:
   jump: {fileID: 0}
   turnToPlayer: {fileID: 0}
   findPlayer: {fileID: 0}
+  collateral: {fileID: 114774463979758084}
   Duration: 0
+--- !u!114 &114774463979758084
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1306706431154084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63f54bc09ad579847accc8b75c9745ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controlMechanism: {fileID: 0}
+  characterStateController: {fileID: 0}
+  characterState: {fileID: 0}
+  characterData: {fileID: 0}
+  movementData: {fileID: 0}
+  vfxManager: {fileID: 0}
+  CollateralAIs: []
 --- !u!114 &114780128308226070
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4930,6 +4986,7 @@ MonoBehaviour:
   jump: {fileID: 0}
   turnToPlayer: {fileID: 0}
   findPlayer: {fileID: 0}
+  collateral: {fileID: 0}
   Duration: 0.5
 --- !u!114 &114807190823774702
 MonoBehaviour:
