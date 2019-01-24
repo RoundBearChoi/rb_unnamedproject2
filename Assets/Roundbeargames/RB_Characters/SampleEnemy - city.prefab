@@ -95,9 +95,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4519350881802578}
   - component: {fileID: 136491857637392482}
-  - component: {fileID: 114707027468189224}
-  m_Layer: 9
-  m_Name: DummyEnemyTouchable_LeftLeg
+  - component: {fileID: 114856137401385714}
+  m_Layer: 0
+  m_Name: DummyEnemyTouchDetector_LeftLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -131,6 +131,23 @@ GameObject:
   m_Name: IndexFinger_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1150067886645566
+GameObject:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4432261498018342}
+  - component: {fileID: 136758523613856126}
+  - component: {fileID: 114707027468189224}
+  m_Layer: 9
+  m_Name: DummyEnemyTouchable_LeftLeg
+  m_TagString: Untagged
+  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -273,6 +290,23 @@ GameObject:
   m_Name: Neck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1298951922566152
+GameObject:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4060614444549498}
+  - component: {fileID: 136766037818514854}
+  - component: {fileID: 114761244436599342}
+  m_Layer: 9
+  m_Name: DummyEnemyTouchable_RightLeg
+  m_TagString: Untagged
+  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -621,9 +655,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4661435027363470}
   - component: {fileID: 136480462932745464}
-  - component: {fileID: 114761244436599342}
-  m_Layer: 9
-  m_Name: DummyEnemyTouchable_RightLeg
+  - component: {fileID: 114198969414202098}
+  m_Layer: 0
+  m_Name: DummyEnemyTouchDetector_RightLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -715,6 +749,23 @@ GameObject:
   - component: {fileID: 4261363991143326}
   m_Layer: 9
   m_Name: Eyebrows
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1660346317796370
+GameObject:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4805012593239182}
+  - component: {fileID: 114773657323074382}
+  - component: {fileID: 65707836091307492}
+  m_Layer: 0
+  m_Name: SlidingPlayerDetector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -822,6 +873,22 @@ GameObject:
   - component: {fileID: 95091914436205058}
   m_Layer: 9
   m_Name: Characters
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1805673321693620
+GameObject:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4755659814935436}
+  - component: {fileID: 114285599187624760}
+  m_Layer: 9
+  m_Name: StompingQuick
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1098,9 +1165,23 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4518069475270406}
+  - {fileID: 4432261498018342}
   - {fileID: 4519350881802578}
   m_Father: {fileID: 4205503105897004}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4060614444549498
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1298951922566152}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4086551426924088}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4086551426924088
 Transform:
@@ -1113,6 +1194,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4920750023483728}
+  - {fileID: 4060614444549498}
   - {fileID: 4661435027363470}
   m_Father: {fileID: 4364020971555058}
   m_RootOrder: 0
@@ -1437,6 +1519,7 @@ Transform:
   - {fileID: 4178704089928148}
   - {fileID: 4001975909885358}
   - {fileID: 4910402233032924}
+  - {fileID: 4755659814935436}
   m_Father: {fileID: 4825976272768432}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1483,6 +1566,19 @@ Transform:
   - {fileID: 4815750319639242}
   m_Father: {fileID: 4302498235284280}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4432261498018342
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1150067886645566}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4048864470897584}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4446810946123988
 Transform:
@@ -1539,6 +1635,7 @@ Transform:
   - {fileID: 4391820478869192}
   - {fileID: 4205503105897004}
   - {fileID: 4364020971555058}
+  - {fileID: 4805012593239182}
   m_Father: {fileID: 4446810946123988}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1575,12 +1672,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1099220768776026}
-  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0.000000029802315, y: 0.00000002793967, z: 0.70710665, w: 0.7071069}
+  m_LocalPosition: {x: 0.00000008811765, y: 0.000000014440149, z: 0.000000026812394}
+  m_LocalScale: {x: 1.000002, y: 0.9999998, z: 1.0000023}
   m_Children: []
   m_Father: {fileID: 4048864470897584}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4529016733383966
 Transform:
@@ -1685,12 +1782,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1548021545505058}
-  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0.000000029802315, y: 0.00000002793967, z: 0.7071068, w: 0.70710677}
+  m_LocalPosition: {x: -0.00000017671493, y: -0.000000022628857, z: -0.000000046060478}
+  m_LocalScale: {x: 0.9999998, y: 1.0000025, z: 1.0000021}
   m_Children: []
   m_Father: {fileID: 4086551426924088}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4675684320683194
 Transform:
@@ -1775,6 +1872,19 @@ Transform:
   m_Father: {fileID: 4488382725646402}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4755659814935436
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1805673321693620}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4385122112680206}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4795374347418460
 Transform:
   m_ObjectHideFlags: 1
@@ -1801,6 +1911,19 @@ Transform:
   m_Father: {fileID: 4178704089928148}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4805012593239182
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1660346317796370}
+  m_LocalRotation: {x: -0, y: -0, z: -0.076778114, w: 0.99704826}
+  m_LocalPosition: {x: 0.833, y: -0.136, z: -0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4494233266590922}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -8.807}
 --- !u!4 &4815750319639242
 Transform:
   m_ObjectHideFlags: 1
@@ -2022,6 +2145,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.4, y: 2, z: 1}
   m_Center: {x: -0.008, y: -0.225, z: 0}
+--- !u!65 &65707836091307492
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1660346317796370}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.27, y: 0.79, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!95 &95091914436205058
 Animator:
   serializedVersion: 3
@@ -2115,6 +2250,70 @@ MonoBehaviour:
   findPlayer: {fileID: 0}
   collateral: {fileID: 114303341400983850}
   Duration: 0
+--- !u!114 &114198969414202098
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1548021545505058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 976a207f21ef55c49b81a7a42becbd88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: TouchablesDictionary
+      Entry: 7
+      Data: 0|System.Collections.Generic.Dictionary`2[[TouchableType, Assembly-CSharp],[System.Collections.Generic.List`1[[roundbeargames.Touchable,
+        Assembly-CSharp]], mscorlib]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 1|System.Collections.Generic.EqualityComparer`1+DefaultComparer[[TouchableType,
+        Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+  touchDetectorType: 10
+  IsTouching: 0
+  GeneralObjects: []
+  controlMechanism: {fileID: 0}
+--- !u!114 &114285599187624760
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1805673321693620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cebfad8ceab28d44834dbfa34d6326d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterStateController: {fileID: 0}
+  move: {fileID: 0}
+  slowDown: {fileID: 0}
+  attack: {fileID: 0}
+  jump: {fileID: 0}
+  turnToPlayer: {fileID: 0}
+  findPlayer: {fileID: 0}
+  collateral: {fileID: 0}
+  Duration: 0.5
 --- !u!114 &114303341400983850
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2280,6 +2479,7 @@ MonoBehaviour:
   findPlayer: {fileID: 0}
   collateral: {fileID: 0}
   Duration: 0
+  Stomp: 1
 --- !u!114 &114683773530757832
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2297,7 +2497,7 @@ MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1099220768776026}
+  m_GameObject: {fileID: 1150067886645566}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fcb183ae0c465974884b550169dd4526, type: 3}
@@ -2310,13 +2510,57 @@ MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1548021545505058}
+  m_GameObject: {fileID: 1298951922566152}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fcb183ae0c465974884b550169dd4526, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   touchableType: 1
+  controlMechanism: {fileID: 0}
+--- !u!114 &114773657323074382
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1660346317796370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 976a207f21ef55c49b81a7a42becbd88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: TouchablesDictionary
+      Entry: 7
+      Data: 0|System.Collections.Generic.Dictionary`2[[TouchableType, Assembly-CSharp],[System.Collections.Generic.List`1[[roundbeargames.Touchable,
+        Assembly-CSharp]], mscorlib]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 1|System.Collections.Generic.EqualityComparer`1+DefaultComparer[[TouchableType,
+        Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+  touchDetectorType: 11
+  IsTouching: 0
+  GeneralObjects: []
   controlMechanism: {fileID: 0}
 --- !u!114 &114855051876426870
 MonoBehaviour:
@@ -2330,6 +2574,50 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   touchableType: 1
+  controlMechanism: {fileID: 0}
+--- !u!114 &114856137401385714
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1099220768776026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 976a207f21ef55c49b81a7a42becbd88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: TouchablesDictionary
+      Entry: 7
+      Data: 0|System.Collections.Generic.Dictionary`2[[TouchableType, Assembly-CSharp],[System.Collections.Generic.List`1[[roundbeargames.Touchable,
+        Assembly-CSharp]], mscorlib]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 1|System.Collections.Generic.EqualityComparer`1+DefaultComparer[[TouchableType,
+        Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+  touchDetectorType: 9
+  IsTouching: 0
+  GeneralObjects: []
   controlMechanism: {fileID: 0}
 --- !u!114 &114912632535104386
 MonoBehaviour:
@@ -2392,6 +2680,7 @@ MonoBehaviour:
     ReferencedUnityObjects:
     - {fileID: 114635882472314058}
     - {fileID: 114106880057952752}
+    - {fileID: 114285599187624760}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -2410,7 +2699,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 12
-      Data: 2
+      Data: 3
     - Name: 
       Entry: 7
       Data: 
@@ -2432,6 +2721,18 @@ MonoBehaviour:
     - Name: 
       Entry: 10
       Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 10
+      Data: 2
     - Name: 
       Entry: 8
       Data: 
@@ -2604,6 +2905,32 @@ CapsuleCollider:
   m_Height: 0.91
   m_Direction: 1
   m_Center: {x: 0, y: 0.15, z: 0}
+--- !u!136 &136758523613856126
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1150067886645566}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.125
+  m_Height: 0.78
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!136 &136766037818514854
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1298951922566152}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.125
+  m_Height: 0.78
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!136 &136922946764944980
 CapsuleCollider:
   m_ObjectHideFlags: 1

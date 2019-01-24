@@ -42,6 +42,7 @@ public enum AxeEnemyState
 public enum DummyEnemyState
 {
     HumanoidIdle,
+    StompingQuick,
 }
 
 namespace roundbeargames

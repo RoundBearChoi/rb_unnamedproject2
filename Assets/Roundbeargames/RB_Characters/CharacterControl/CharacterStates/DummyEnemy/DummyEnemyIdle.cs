@@ -9,6 +9,7 @@ namespace roundbeargames
         public override void InitState()
         {
             ANIMATION_DATA.DesignatedAnimation = DummyEnemyState.HumanoidIdle.ToString();
+            SlidingPlayerDetector = CHARACTER_DATA.GetTouchDetector(TouchDetectorType.CHARACTER_DETECTOR_SLIDER_FORESIGHT);
         }
 
         public override void RunFixedUpdate()
@@ -20,7 +21,14 @@ namespace roundbeargames
         {
             if (UpdateAnimation())
             {
-
+                if (Stomp)
+                {
+                    if (StompPlayer())
+                    {
+                        characterStateController.ChangeState((int)DummyEnemyState.StompingQuick);
+                        return;
+                    }
+                }
             }
         }
 
@@ -32,6 +40,30 @@ namespace roundbeargames
         public override void ClearState()
         {
 
+        }
+
+        TouchDetector SlidingPlayerDetector;
+        public bool Stomp;
+
+        private bool StompPlayer()
+        {
+            if (SlidingPlayerDetector.TouchablesDictionary.ContainsKey(TouchableType.CHARACTER))
+            {
+                List<Touchable> touchables = SlidingPlayerDetector.TouchablesDictionary[TouchableType.CHARACTER];
+
+                foreach (Touchable t in touchables)
+                {
+                    if (t.controlMechanism.controlType == ControlType.PLAYER)
+                    {
+                        if (t.controlMechanism.characterStateController.CurrentState.GetType() == typeof(PlayerRunningSlide))
+                        {
+                            return true;
+                        }
+                    }
+                }
+            }
+
+            return false;
         }
     }
 }
