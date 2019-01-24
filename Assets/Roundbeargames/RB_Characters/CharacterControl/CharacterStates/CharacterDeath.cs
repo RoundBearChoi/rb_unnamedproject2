@@ -37,6 +37,10 @@ namespace roundbeargames
             {
                 ANIMATION_DATA.characterAnimator.SetFloat(ParameterString, 0f);
             }
+            else if (characterStateController.DeathCause.Contains("RunningKick"))
+            {
+                ANIMATION_DATA.characterAnimator.SetFloat(ParameterString, 0f);
+            }
             else
             {
                 ANIMATION_DATA.characterAnimator.SetFloat(ParameterString, 2f);

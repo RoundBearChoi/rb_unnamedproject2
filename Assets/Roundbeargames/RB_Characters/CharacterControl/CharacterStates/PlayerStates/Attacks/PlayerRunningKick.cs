@@ -37,6 +37,8 @@ namespace roundbeargames
                     return;
                 }
             }
+
+            attack.UpdateHit(TouchDetectorType.ATTACK_RIGHT_FOOT, ref attack.Target);
         }
 
         public override void RunLateUpdate()
@@ -46,7 +48,7 @@ namespace roundbeargames
 
         public override void ClearState()
         {
-
+            attack.DeRegister(characterStateController.controlMechanism.gameObject.name, PlayerState.RunningKick.ToString());
         }
     }
 }
