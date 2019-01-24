@@ -6009,6 +6009,8 @@ MonoBehaviour:
   collateral: {fileID: 0}
   Duration: 0
   RunStopBuffer: 0.05
+  StartRunningKickBuffer: 0
+  RunningKickBuffer: 0
 --- !u!114 &114804831633307940
 MonoBehaviour:
   m_ObjectHideFlags: 1
