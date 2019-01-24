@@ -27,6 +27,15 @@ namespace roundbeargames
                     }
                 }
             }
+
+            if (characterStateController.PrevState.GetType() == typeof(PlayerRunningKick))
+            {
+                StartRunningKickBuffer = true;
+            }
+            else
+            {
+                StartRunningKickBuffer = false;
+            }
         }
 
         public override void RunFixedUpdate()
@@ -41,11 +50,27 @@ namespace roundbeargames
                     return;
                 }
 
+                if (ATTACK_DATA.AttackA)
+                {
+                    if (!StartRunningKickBuffer)
+                    {
+                        characterStateController.ChangeState((int)PlayerState.RunningKick);
+                        return;
+                    }
+                }
+
                 UpdateRun();
             }
             else
             {
-                move.MoveForward(MOVEMENT_DATA.RunSpeed * 0.9f, CHARACTER_TRANSFORM.rotation.eulerAngles.y);
+                if (characterStateController.PrevState.GetType() == typeof(PlayerRunningKick))
+                {
+                    move.MoveForward(MOVEMENT_DATA.RunSpeed * 1.125f, CHARACTER_TRANSFORM.rotation.eulerAngles.y);
+                }
+                else
+                {
+                    move.MoveForward(MOVEMENT_DATA.RunSpeed * 0.9f, CHARACTER_TRANSFORM.rotation.eulerAngles.y);
+                }
             }
         }
 
@@ -53,7 +78,16 @@ namespace roundbeargames
         {
             if (UpdateAnimation())
             {
+                if (StartRunningKickBuffer)
+                {
+                    RunningKickBuffer += Time.deltaTime;
 
+                    if (RunningKickBuffer >= 0.05f)
+                    {
+                        StartRunningKickBuffer = false;
+                        RunningKickBuffer = 0f;
+                    }
+                }
             }
         }
 
@@ -64,7 +98,7 @@ namespace roundbeargames
 
         public override void ClearState()
         {
-
+            RunningKickBuffer = 0f;
         }
 
         void UpdateRun()
@@ -116,6 +150,8 @@ namespace roundbeargames
         }
 
         public float RunStopBuffer;
+        public bool StartRunningKickBuffer;
+        public float RunningKickBuffer;
         private Coroutine RunStop;
 
         IEnumerator _StopRunning()

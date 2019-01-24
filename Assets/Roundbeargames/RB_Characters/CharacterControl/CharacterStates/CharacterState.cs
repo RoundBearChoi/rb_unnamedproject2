@@ -25,6 +25,7 @@ public enum PlayerState
     StandToRoll,
     FightIdle,
     mmaKick_back,
+    RunningKick,
 }
 
 public enum AxeEnemyState

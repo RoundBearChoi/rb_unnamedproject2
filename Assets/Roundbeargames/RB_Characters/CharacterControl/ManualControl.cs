@@ -38,7 +38,8 @@ namespace roundbeargames
 
         void FixedUpdate()
         {
-            if (characterStateController.CurrentState.GetType() != typeof(PlayerJumpOver))
+            if (characterStateController.CurrentState.GetType() != typeof(PlayerJumpOver) &&
+            characterStateController.CurrentState.GetType() != typeof(PlayerRunningKick))
             {
                 if (RIGIDBODY.velocity.y < 0f)
                 {

@@ -23,6 +23,17 @@ namespace roundbeargames
                 }
 
                 slowDown.SlowDownToStop();
+            }
+            else
+            {
+                move.MoveForward(MOVEMENT_DATA.RunSpeed * 1.125f, CHARACTER_TRANSFORM.rotation.eulerAngles.y);
+            }
+        }
+        public override void RunFrameUpdate()
+        {
+            if (UpdateAnimation())
+            {
+                //Debug.Log (ANIMATION_DATA.PlayTime);
 
                 if (DurationTimePassed())
                 {
@@ -69,17 +80,6 @@ namespace roundbeargames
                             return;
                     }
                 }
-            }
-            else
-            {
-                move.MoveForward(MOVEMENT_DATA.RunSpeed * 1.125f, CHARACTER_TRANSFORM.rotation.eulerAngles.y);
-            }
-        }
-        public override void RunFrameUpdate()
-        {
-            if (UpdateAnimation())
-            {
-                //Debug.Log (ANIMATION_DATA.PlayTime);
             }
         }
 
