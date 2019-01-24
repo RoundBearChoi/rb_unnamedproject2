@@ -27,6 +27,8 @@ namespace roundbeargames
                     characterStateController.ChangeState((int)DummyEnemyState.HumanoidIdle);
                     return;
                 }
+
+                attack.UpdateHit(TouchDetectorType.ATTACK_RIGHT_FOOT, ref attack.Target);
             }
         }
 
@@ -37,7 +39,7 @@ namespace roundbeargames
 
         public override void ClearState()
         {
-
+            attack.DeRegister(characterStateController.controlMechanism.gameObject.name, DummyEnemyState.StompingQuick.ToString());
         }
     }
 }

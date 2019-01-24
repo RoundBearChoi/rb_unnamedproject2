@@ -43,6 +43,10 @@ namespace roundbeargames
                 CAMERA_MANAGER.ShakeCamera(0.4f);
                 ANIMATION_DATA.characterAnimator.SetFloat(ParameterString, 4f);
             }
+            else if (characterStateController.DeathCause.Contains("Stomp"))
+            {
+                ANIMATION_DATA.characterAnimator.SetFloat(ParameterString, 5f);
+            }
             else
             {
                 ANIMATION_DATA.characterAnimator.SetFloat(ParameterString, 2f);
