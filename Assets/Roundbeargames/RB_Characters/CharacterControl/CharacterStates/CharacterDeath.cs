@@ -39,6 +39,8 @@ namespace roundbeargames
             }
             else if (characterStateController.DeathCause.Contains("RunningKick"))
             {
+                ShowHitEffect(BodyPart.RIGHT_FOOT);
+                CAMERA_MANAGER.ShakeCamera(0.4f);
                 ANIMATION_DATA.characterAnimator.SetFloat(ParameterString, 4f);
             }
             else
@@ -69,12 +71,6 @@ namespace roundbeargames
                     }
                 }
             }
-
-            /*if (Calculating)
-            {
-                CollateralTime += Time.deltaTime;
-                Debug.Log(CollateralTime);
-            }*/
         }
 
         public override void RunLateUpdate()

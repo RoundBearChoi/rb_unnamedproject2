@@ -9,7 +9,6 @@ namespace roundbeargames
         public ControlMechanism Target;
         public float AttackStartTime;
         public float AttackEndTime;
-        public bool ShakeCamera = false;
         public bool UpdateHit(TouchDetectorType touchDetectorType, ref ControlMechanism target)
         {
             if (IsWithinAttackTime())

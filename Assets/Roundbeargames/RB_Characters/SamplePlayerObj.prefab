@@ -5657,7 +5657,6 @@ MonoBehaviour:
   Target: {fileID: 0}
   AttackStartTime: 0.15
   AttackEndTime: 0.4
-  ShakeCamera: 0
 --- !u!114 &114560393735295654
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5959,7 +5958,6 @@ MonoBehaviour:
   Target: {fileID: 0}
   AttackStartTime: 0.01
   AttackEndTime: 2
-  ShakeCamera: 0
 --- !u!114 &114711660740885990
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6061,7 +6059,6 @@ MonoBehaviour:
   Target: {fileID: 0}
   AttackStartTime: 0.1
   AttackEndTime: 0.5
-  ShakeCamera: 0
 --- !u!114 &114804831633307940
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6179,7 +6176,6 @@ MonoBehaviour:
   Target: {fileID: 0}
   AttackStartTime: 0.05
   AttackEndTime: 0.2
-  ShakeCamera: 0
 --- !u!114 &114842661731023610
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6380,7 +6376,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.26
+  m_Radius: 0.3
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!136 &136005304920020622
 CapsuleCollider:
