@@ -126,8 +126,9 @@ namespace roundbeargames
                 ShowHitEffect(BodyPart.RIGHT_FOOT);
                 CAMERA_MANAGER.ShakeCamera(0.4f);
 
+                CONTROL_MECHANISM.RIGIDBODY.AddForce(-CONTROL_MECHANISM.transform.right * 730f);
                 SpinKickReactionTriggered = true;
-                ANIMATION_DATA.characterAnimator.applyRootMotion = true;
+                //ANIMATION_DATA.characterAnimator.applyRootMotion = true;
                 ANIMATION_DATA.characterAnimator.runtimeAnimatorController = null;
                 ANIMATION_DATA.characterAnimator.runtimeAnimatorController = characterStateController.DeathAnimator;
                 ANIMATION_DATA.characterAnimator.SetFloat(ParameterString, 3f);
