@@ -8,11 +8,15 @@ namespace roundbeargames {
 			ANIMATION_DATA.DesignatedAnimation = PlayerState.PlayerCombo1_2.ToString ();
 
 			float turn = move.GetTurn ();
-			move.InstMoveForward (0.08f, turn);
+			move.InstMoveForward (0.125f, turn);
 		}
 
 		public override void RunFixedUpdate () {
+			if (ANIMATION_DATA.AnimationNameMatches) {
 
+			} else {
+				//move.MoveForward (MOVEMENT_DATA.RunSpeed * 0.1f, CHARACTER_TRANSFORM.rotation.eulerAngles.y);
+			}
 		}
 
 		public override void RunFrameUpdate () {

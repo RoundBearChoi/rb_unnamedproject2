@@ -21,7 +21,11 @@ namespace roundbeargames {
                 if (MOVEMENT_DATA.Turn != CHARACTER_TRANSFORM.rotation.eulerAngles.y) {
                     CHARACTER_TRANSFORM.rotation = Quaternion.Euler (0, MOVEMENT_DATA.Turn, 0);
                 }
-            }
+            } //else {
+            //if (characterStateController.PrevState.GetType () == typeof (PlayerCombo1_3)) {
+            //    move.MoveForward (MOVEMENT_DATA.RunSpeed * 0.225f, CHARACTER_TRANSFORM.rotation.eulerAngles.y);
+            //}
+            //}
         }
 
         public override void RunFrameUpdate () {

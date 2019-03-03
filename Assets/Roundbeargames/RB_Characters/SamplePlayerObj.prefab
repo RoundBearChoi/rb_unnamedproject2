@@ -5796,7 +5796,7 @@ MonoBehaviour:
   turnToPlayer: {fileID: 0}
   findPlayer: {fileID: 0}
   collateral: {fileID: 0}
-  Duration: 1
+  Duration: 0.75
 --- !u!114 &114428078079017918
 MonoBehaviour:
   m_ObjectHideFlags: 1

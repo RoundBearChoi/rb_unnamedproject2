@@ -8,16 +8,27 @@ namespace roundbeargames {
 			ANIMATION_DATA.DesignatedAnimation = PlayerState.PlayerCombo1_3.ToString ();
 
 			//float turn = move.GetTurn ();
-			//move.InstMoveForward (0.225f, turn);
+			//move.InstMoveForward (0.25f, turn);
 		}
 
 		public override void RunFixedUpdate () {
+			if (ANIMATION_DATA.AnimationNameMatches) {
 
+			} else {
+				if (characterStateController.PrevState.GetType () == typeof (PlayerCombo1_2)) {
+					move.MoveForward (MOVEMENT_DATA.RunSpeed * 0.9f, CHARACTER_TRANSFORM.rotation.eulerAngles.y);
+				}
+			}
 		}
 
 		public override void RunFrameUpdate () {
 			if (UpdateAnimation ()) {
 				//Debug.Log (ANIMATION_DATA.PlayTime);
+				if (ANIMATION_DATA.PlayTime < 0.25f) {
+					move.MoveForward (MOVEMENT_DATA.RunSpeed * 0.6f, CHARACTER_TRANSFORM.rotation.eulerAngles.y);
+
+				}
+
 				if (DurationTimePassed ()) {
 					characterStateController.ChangeState ((int) PlayerState.HumanoidIdle);
 					return;
