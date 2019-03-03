@@ -26,6 +26,8 @@ public enum PlayerState {
     mmaKick_back,
     RunningKick,
     PlayerCombo1_1,
+    PlayerCombo1_2,
+    PlayerCombo1_3,
 }
 
 public enum AxeEnemyState {

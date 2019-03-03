@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace roundbeargames {
-	public class PlayerCombo1_1 : CharacterState {
+	public class PlayerCombo1_3 : CharacterState {
 		public override void InitState () {
-			ANIMATION_DATA.DesignatedAnimation = PlayerState.PlayerCombo1_1.ToString ();
+			ANIMATION_DATA.DesignatedAnimation = PlayerState.PlayerCombo1_3.ToString ();
 
-			float turn = move.GetTurn ();
-			move.InstMoveForward (0.3f, turn);
+			//float turn = move.GetTurn ();
+			//move.InstMoveForward (0.225f, turn);
 		}
 
 		public override void RunFixedUpdate () {
@@ -23,13 +23,6 @@ namespace roundbeargames {
 					return;
 				}
 
-				if (ANIMATION_DATA.PlayTime > 0.558f) {
-					if (ATTACK_DATA.AttackA) {
-						characterStateController.ChangeState ((int) PlayerState.PlayerCombo1_2);
-						return;
-					}
-				}
-
 				attack.UpdateHit (TouchDetectorType.ATTACK_RIGHT_FIST, ref attack.Target);
 			}
 		}
@@ -39,7 +32,7 @@ namespace roundbeargames {
 		}
 
 		public override void ClearState () {
-			attack.DeRegister (characterStateController.controlMechanism.gameObject.name, PlayerState.PlayerCombo1_1.ToString ());
+			attack.DeRegister (characterStateController.controlMechanism.gameObject.name, PlayerState.PlayerCombo1_3.ToString ());
 		}
 	}
 }
