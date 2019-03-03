@@ -1040,6 +1040,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1495281585467056
+GameObject:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4486069699082626}
+  - component: {fileID: 114731619079278736}
+  m_Layer: 9
+  m_Name: Attack
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1501451029672570
 GameObject:
   m_ObjectHideFlags: 1
@@ -1473,7 +1489,7 @@ GameObject:
   - component: {fileID: 4553918325374884}
   - component: {fileID: 114821764612935706}
   m_Layer: 9
-  m_Name: JabAttack
+  m_Name: Attack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1614,6 +1630,22 @@ GameObject:
   - component: {fileID: 114638562406486062}
   m_Layer: 9
   m_Name: AttackData
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1702619772622144
+GameObject:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4880395062659884}
+  - component: {fileID: 114888262394282850}
+  m_Layer: 9
+  m_Name: PlayerCombo1_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2710,6 +2742,7 @@ Transform:
   - {fileID: 4066282016543340}
   - {fileID: 4612852169217970}
   - {fileID: 4120620402528614}
+  - {fileID: 4880395062659884}
   m_Father: {fileID: 4350749818408040}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3121,6 +3154,19 @@ Transform:
   m_Father: {fileID: 4144473466850466}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4486069699082626
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1495281585467056}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4849208335512242}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4503355025045462
 Transform:
   m_ObjectHideFlags: 1
@@ -3283,11 +3329,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1662803145448776}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 4849208335512242}
+  m_Father: {fileID: 4880395062659884}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4557647740732732
@@ -3884,7 +3930,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 4553918325374884}
+  - {fileID: 4486069699082626}
   m_Father: {fileID: 4259665465109962}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3969,6 +4015,20 @@ Transform:
   - {fileID: 4909573128366854}
   m_Father: {fileID: 4259665465109962}
   m_RootOrder: 19
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4880395062659884
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1702619772622144}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4553918325374884}
+  m_Father: {fileID: 4259665465109962}
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4902954095774140
 Transform:
@@ -4528,6 +4588,7 @@ MonoBehaviour:
     - {fileID: 114565099347531752}
     - {fileID: 114872635897334760}
     - {fileID: 114251235724409222}
+    - {fileID: 114888262394282850}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -4546,7 +4607,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 12
-      Data: 23
+      Data: 24
     - Name: 
       Entry: 7
       Data: 
@@ -4820,6 +4881,18 @@ MonoBehaviour:
     - Name: 
       Entry: 10
       Data: 22
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 3
+      Data: 22
+    - Name: 
+      Entry: 10
+      Data: 23
     - Name: 
       Entry: 8
       Data: 
@@ -5863,7 +5936,7 @@ MonoBehaviour:
   characterStateController: {fileID: 114104038244042082}
   move: {fileID: 0}
   slowDown: {fileID: 0}
-  attack: {fileID: 114821764612935706}
+  attack: {fileID: 114731619079278736}
   jump: {fileID: 0}
   turnToPlayer: {fileID: 0}
   findPlayer: {fileID: 0}
@@ -5977,6 +6050,26 @@ MonoBehaviour:
   vfxManager: {fileID: 0}
   AirMaxSpeed: 0
   AirSpeedGain: 0
+--- !u!114 &114731619079278736
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1495281585467056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a272af72d04b0984fa73265135659ebc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controlMechanism: {fileID: 0}
+  characterStateController: {fileID: 0}
+  characterState: {fileID: 0}
+  characterData: {fileID: 0}
+  movementData: {fileID: 0}
+  vfxManager: {fileID: 0}
+  Target: {fileID: 0}
+  AttackStartTime: 0.05
+  AttackEndTime: 0.2
 --- !u!114 &114741439636791136
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6175,7 +6268,7 @@ MonoBehaviour:
   vfxManager: {fileID: 0}
   Target: {fileID: 0}
   AttackStartTime: 0.05
-  AttackEndTime: 0.2
+  AttackEndTime: 0.35
 --- !u!114 &114842661731023610
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6251,6 +6344,26 @@ MonoBehaviour:
   findPlayer: {fileID: 0}
   collateral: {fileID: 0}
   Duration: 1.05
+--- !u!114 &114888262394282850
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1702619772622144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 431efedcaee25954593708130cfbb572, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterStateController: {fileID: 0}
+  move: {fileID: 0}
+  slowDown: {fileID: 0}
+  attack: {fileID: 114821764612935706}
+  jump: {fileID: 0}
+  turnToPlayer: {fileID: 0}
+  findPlayer: {fileID: 0}
+  collateral: {fileID: 0}
+  Duration: 0.55
 --- !u!114 &114894323334194986
 MonoBehaviour:
   m_ObjectHideFlags: 1
