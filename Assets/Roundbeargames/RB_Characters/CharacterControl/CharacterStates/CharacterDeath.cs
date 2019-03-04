@@ -57,7 +57,7 @@ namespace roundbeargames
             {
                 ShowHitEffect(BodyPart.RIGHT_HAND);
                 CAMERA_MANAGER.ShakeCamera(0.4f);
-                ANIMATION_DATA.characterAnimator.SetFloat(ParameterString, 2f);
+                ANIMATION_DATA.characterAnimator.SetFloat(ParameterString, 6f);
             }
             else
             {

@@ -13,8 +13,8 @@ namespace roundbeargames
             float turn = move.GetTurn();
             move.InstMoveForward(0.135f, turn);
 
-            CONTROL_MECHANISM.BodyTrailDictionary[BodyTrail.BODY].gameObject.SetActive(false);
-            CONTROL_MECHANISM.BodyTrailDictionary[BodyTrail.BODY].gameObject.SetActive(true);
+            CONTROL_MECHANISM.BodyTrailDictionary[BodyTrail.BACK].gameObject.SetActive(false);
+            CONTROL_MECHANISM.BodyTrailDictionary[BodyTrail.BACK].gameObject.SetActive(true);
         }
 
         public override void RunFixedUpdate()
