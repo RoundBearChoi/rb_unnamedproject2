@@ -120,6 +120,24 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1048611167201246
+GameObject:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4428923562720542}
+  - component: {fileID: 33385378758852662}
+  - component: {fileID: 135214039824161394}
+  - component: {fileID: 114522040700088350}
+  m_Layer: 0
+  m_Name: PlayerRightHandAttack
+  m_TagString: Untagged
+  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1048786843087498
 GameObject:
   m_ObjectHideFlags: 1
@@ -2120,7 +2138,7 @@ GameObject:
   - component: {fileID: 4136314766906062}
   - component: {fileID: 114419934956644448}
   m_Layer: 9
-  m_Name: PlayerCombo1_3
+  m_Name: PlayerCombo1_3_Uppercut
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2138,7 +2156,7 @@ GameObject:
   - component: {fileID: 135749608025770702}
   - component: {fileID: 114337197041040276}
   m_Layer: 0
-  m_Name: PlayerRightHandAttack
+  m_Name: PlayerLeftHandAttack
   m_TagString: Untagged
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -2915,7 +2933,7 @@ Transform:
   m_Children:
   - {fileID: 4131429131687658}
   m_Father: {fileID: 4445595856261762}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4279946283572224
 Transform:
@@ -3147,7 +3165,7 @@ Transform:
   m_LocalPosition: {x: -0.000000010011721, y: 0.23279431, z: -0.000000018539149}
   m_LocalScale: {x: 1, y: 0.99999994, z: 1.0000001}
   m_Children:
-  - {fileID: 4724243533038294}
+  - {fileID: 4428923562720542}
   - {fileID: 4726599828333746}
   - {fileID: 4279946283572224}
   - {fileID: 4504036395941208}
@@ -3183,6 +3201,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4136314766906062}
   m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4428923562720542
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1048611167201246}
+  m_LocalRotation: {x: 0.40410972, y: -0.5396358, z: -0.51177585, w: 0.5325167}
+  m_LocalPosition: {x: 0.009, y: 0.079, z: -0.003}
+  m_LocalScale: {x: 0.30434826, y: 0.3043485, z: 0.30434912}
+  m_Children: []
+  m_Father: {fileID: 4411683597815084}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4431581604902954
 Transform:
@@ -3264,6 +3295,7 @@ Transform:
   m_LocalPosition: {x: -0.00000010943047, y: 0.23279437, z: -0.000000016185373}
   m_LocalScale: {x: 1, y: 0.99999994, z: 1}
   m_Children:
+  - {fileID: 4724243533038294}
   - {fileID: 4839435294803578}
   - {fileID: 4913313189825518}
   - {fileID: 4718666335781274}
@@ -3784,7 +3816,7 @@ Transform:
   m_Children:
   - {fileID: 4223635545736536}
   m_Father: {fileID: 4445595856261762}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4724243533038294
 Transform:
@@ -3796,7 +3828,7 @@ Transform:
   m_LocalPosition: {x: 0.009, y: 0.079, z: -0.003}
   m_LocalScale: {x: 0.30434826, y: 0.3043485, z: 0.30434912}
   m_Children: []
-  m_Father: {fileID: 4411683597815084}
+  m_Father: {fileID: 4445595856261762}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4726599828333746
@@ -4061,7 +4093,7 @@ Transform:
   m_Children:
   - {fileID: 4144473466850466}
   m_Father: {fileID: 4445595856261762}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4843636862913114
 Transform:
@@ -4269,7 +4301,7 @@ Transform:
   m_Children:
   - {fileID: 4017931160595998}
   m_Father: {fileID: 4445595856261762}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4920499853137428
 Transform:
@@ -4338,7 +4370,7 @@ Transform:
   m_Children:
   - {fileID: 4434676729249502}
   m_Father: {fileID: 4445595856261762}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4961577254323962
 Transform:
@@ -4478,6 +4510,13 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1339759710688602}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!33 &33385378758852662
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1048611167201246}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &33455665920192324
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -5622,7 +5661,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  touchDetectorType: 6
+  touchDetectorType: 12
   IsTouching: 0
   GeneralObjects: []
   controlMechanism: {fileID: 0}
@@ -6006,6 +6045,50 @@ MonoBehaviour:
   vfxManager: {fileID: 0}
   AirMaxSpeed: 0
   AirSpeedGain: 0
+--- !u!114 &114522040700088350
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1048611167201246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 976a207f21ef55c49b81a7a42becbd88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: TouchablesDictionary
+      Entry: 7
+      Data: 0|System.Collections.Generic.Dictionary`2[[TouchableType, Assembly-CSharp],[System.Collections.Generic.List`1[[roundbeargames.Touchable,
+        Assembly-CSharp]], mscorlib]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 1|System.Collections.Generic.EqualityComparer`1+DefaultComparer[[TouchableType,
+        Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+  touchDetectorType: 6
+  IsTouching: 0
+  GeneralObjects: []
+  controlMechanism: {fileID: 0}
 --- !u!114 &114527118640104320
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6816,6 +6899,18 @@ MonoBehaviour:
   vfxManager: {fileID: 0}
   AirMaxSpeed: 0
   AirSpeedGain: 0
+--- !u!135 &135214039824161394
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1048611167201246}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.325
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!135 &135552997963014974
 SphereCollider:
   m_ObjectHideFlags: 1

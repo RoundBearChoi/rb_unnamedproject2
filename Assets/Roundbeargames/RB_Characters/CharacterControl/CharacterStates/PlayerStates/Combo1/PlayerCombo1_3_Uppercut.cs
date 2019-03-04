@@ -4,16 +4,29 @@ using UnityEngine;
 
 namespace roundbeargames
 {
-    public class PlayerSurpriseUppercut : CharacterState
+    public class PlayerCombo1_3_Uppercut : CharacterState
     {
         public override void InitState()
         {
-            ANIMATION_DATA.DesignatedAnimation = PlayerState.SurpriseUppercut.ToString();
+            ANIMATION_DATA.DesignatedAnimation = PlayerState.PlayerCombo1_3_Uppercut.ToString();
+
+            //float turn = move.GetTurn ();
+            //move.InstMoveForward (0.25f, turn);
         }
 
         public override void RunFixedUpdate()
         {
+            if (ANIMATION_DATA.AnimationNameMatches)
+            {
 
+            }
+            else
+            {
+                if (characterStateController.PrevState.GetType() == typeof(PlayerCombo1_2))
+                {
+                    move.MoveForward(MOVEMENT_DATA.RunSpeed * 0.9f, CHARACTER_TRANSFORM.rotation.eulerAngles.y);
+                }
+            }
         }
 
         public override void RunFrameUpdate()
@@ -21,8 +34,9 @@ namespace roundbeargames
             if (UpdateAnimation())
             {
                 //Debug.Log (ANIMATION_DATA.PlayTime);
-                if (ANIMATION_DATA.PlayTime >= 0.34f)
+                if (ANIMATION_DATA.PlayTime < 0.25f)
                 {
+                    move.MoveForward(MOVEMENT_DATA.RunSpeed * 0.6f, CHARACTER_TRANSFORM.rotation.eulerAngles.y);
 
                 }
 
@@ -51,7 +65,7 @@ namespace roundbeargames
 
         public override void ClearState()
         {
-            attack.DeRegister(characterStateController.controlMechanism.gameObject.name, PlayerState.SurpriseUppercut.ToString());
+            attack.DeRegister(characterStateController.controlMechanism.gameObject.name, PlayerState.PlayerCombo1_3_Uppercut.ToString());
         }
     }
 }
