@@ -61,6 +61,7 @@ namespace roundbeargames
         public override void ClearState()
         {
             attack.DeRegister(characterStateController.controlMechanism.gameObject.name, PlayerState.PlayerCombo1_2.ToString());
+            CONTROL_MECHANISM.BodyTrailDictionary[BodyTrail.BACK].gameObject.SetActive(false);
         }
     }
 }
