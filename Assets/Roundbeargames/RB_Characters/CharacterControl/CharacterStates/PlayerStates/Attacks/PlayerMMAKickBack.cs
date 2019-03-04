@@ -20,7 +20,7 @@ namespace roundbeargames
         {
             if (UpdateAnimation())
             {
-                //Debug.Log(ANIMATION_DATA.PlayTime);
+                Debug.Log(ANIMATION_DATA.PlayTime);
                 if (DurationTimePassed())
                 {
                     characterStateController.ChangeState((int)PlayerState.HumanoidIdle);
@@ -29,18 +29,24 @@ namespace roundbeargames
 
                 if (attack.UpdateHit(TouchDetectorType.ATTACK_RIGHT_FOOT, ref attack.Target))
                 {
-                    CharacterDeath targetDeathState = attack.Target.characterStateController.CurrentState as CharacterDeath;
-
-                    if (CONTROL_MECHANISM.IsFacingForward())
+                    if (attack.Target.characterStateController.CurrentState.ANIMATION_DATA.characterAnimator.GetFloat("DeathAnimationIndex") == 1f)
                     {
-                        targetDeathState.CONTROL_MECHANISM.transform.rotation = Quaternion.Euler(new Vector3(0f, 180f, 0f));
-                    }
-                    else
-                    {
-                        targetDeathState.CONTROL_MECHANISM.transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, 0f));
-                    }
+                        if (!attack.Target.moveData.IsGrounded)
+                        {
+                            CharacterDeath targetDeathState = attack.Target.characterStateController.CurrentState as CharacterDeath;
 
-                    targetDeathState.ProcSpinKickReaction();
+                            if (CONTROL_MECHANISM.IsFacingForward())
+                            {
+                                targetDeathState.CONTROL_MECHANISM.transform.rotation = Quaternion.Euler(new Vector3(0f, 180f, 0f));
+                            }
+                            else
+                            {
+                                targetDeathState.CONTROL_MECHANISM.transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, 0f));
+                            }
+
+                            targetDeathState.ProcSpinKickReaction();
+                        }
+                    }
                 }
             }
         }

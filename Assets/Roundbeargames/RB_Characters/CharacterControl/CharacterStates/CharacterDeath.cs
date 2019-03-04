@@ -47,6 +47,18 @@ namespace roundbeargames
             {
                 ANIMATION_DATA.characterAnimator.SetFloat(ParameterString, 5f);
             }
+            else if (characterStateController.DeathCause.Contains("Combo1_1"))
+            {
+                ShowHitEffect(BodyPart.RIGHT_HAND);
+                CAMERA_MANAGER.ShakeCamera(0.4f);
+                ANIMATION_DATA.characterAnimator.SetFloat(ParameterString, 2f);
+            }
+            else if (characterStateController.DeathCause.Contains("Combo1_2"))
+            {
+                ShowHitEffect(BodyPart.RIGHT_HAND);
+                CAMERA_MANAGER.ShakeCamera(0.4f);
+                ANIMATION_DATA.characterAnimator.SetFloat(ParameterString, 2f);
+            }
             else
             {
                 ANIMATION_DATA.characterAnimator.SetFloat(ParameterString, 2f);

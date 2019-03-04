@@ -6446,7 +6446,7 @@ MonoBehaviour:
   movementData: {fileID: 0}
   vfxManager: {fileID: 0}
   Target: {fileID: 0}
-  AttackStartTime: 0.01
+  AttackStartTime: 0.28
   AttackEndTime: 2
 --- !u!114 &114711660740885990
 MonoBehaviour:

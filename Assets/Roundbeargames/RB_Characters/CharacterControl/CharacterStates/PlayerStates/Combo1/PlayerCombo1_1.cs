@@ -10,6 +10,8 @@ namespace roundbeargames
         {
             ANIMATION_DATA.DesignatedAnimation = PlayerState.PlayerCombo1_1.ToString();
 
+            CONTROL_MECHANISM.BodyTrailDictionary[BodyTrail.BODY].gameObject.SetActive(false);
+            CONTROL_MECHANISM.BodyTrailDictionary[BodyTrail.BODY].gameObject.SetActive(true);
             //float turn = move.GetTurn ();
             //move.InstMoveForward (0.3f, turn);
         }
@@ -49,7 +51,7 @@ namespace roundbeargames
                     }
                 }
 
-                //attack.UpdateHit (TouchDetectorType.ATTACK_RIGHT_FIST, ref attack.Target);
+                attack.UpdateHit(TouchDetectorType.ATTACK_RIGHT_FIST, ref attack.Target);
             }
         }
 

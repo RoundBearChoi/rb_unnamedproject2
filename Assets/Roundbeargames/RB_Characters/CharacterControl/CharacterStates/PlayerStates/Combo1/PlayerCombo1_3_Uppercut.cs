@@ -12,6 +12,9 @@ namespace roundbeargames
 
             //float turn = move.GetTurn ();
             //move.InstMoveForward (0.25f, turn);
+
+            CONTROL_MECHANISM.BodyTrailDictionary[BodyTrail.BODY].gameObject.SetActive(false);
+            CONTROL_MECHANISM.BodyTrailDictionary[BodyTrail.BODY].gameObject.SetActive(true);
         }
 
         public override void RunFixedUpdate()
@@ -24,7 +27,7 @@ namespace roundbeargames
             {
                 if (characterStateController.PrevState.GetType() == typeof(PlayerCombo1_2))
                 {
-                    move.MoveForward(MOVEMENT_DATA.RunSpeed * 0.9f, CHARACTER_TRANSFORM.rotation.eulerAngles.y);
+                    move.MoveForward(MOVEMENT_DATA.RunSpeed * 0.95f, CHARACTER_TRANSFORM.rotation.eulerAngles.y);
                 }
             }
         }
