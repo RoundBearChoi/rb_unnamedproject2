@@ -2257,6 +2257,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1923607860832770
+GameObject:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4078357033261288}
+  - component: {fileID: 114321192906592952}
+  m_Layer: 9
+  m_Name: ComboTransition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1933795002018816
 GameObject:
   m_ObjectHideFlags: 1
@@ -2553,6 +2569,19 @@ Transform:
   - {fileID: 4143149163946094}
   m_Father: {fileID: 4259665465109962}
   m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4078357033261288
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1923607860832770}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4880395062659884}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4078917151614500
 Transform:
@@ -3094,7 +3123,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1382540918812880}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.81, y: 2.25, z: 0}
+  m_LocalPosition: {x: -5.8, y: 1.248, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4548758764177712}
@@ -4261,6 +4290,7 @@ Transform:
   m_Children:
   - {fileID: 4961577254323962}
   - {fileID: 4790840190560242}
+  - {fileID: 4078357033261288}
   m_Father: {fileID: 4259665465109962}
   m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4793,6 +4823,7 @@ MonoBehaviour:
   move: {fileID: 114367710872931572}
   slowDown: {fileID: 114587184454007026}
   attack: {fileID: 0}
+  comboTransition: {fileID: 0}
   jump: {fileID: 0}
   turnToPlayer: {fileID: 0}
   findPlayer: {fileID: 0}
@@ -4813,6 +4844,7 @@ MonoBehaviour:
   move: {fileID: 114711660740885990}
   slowDown: {fileID: 0}
   attack: {fileID: 0}
+  comboTransition: {fileID: 0}
   jump: {fileID: 0}
   turnToPlayer: {fileID: 0}
   findPlayer: {fileID: 0}
@@ -4833,6 +4865,7 @@ MonoBehaviour:
   move: {fileID: 114387466380687818}
   slowDown: {fileID: 0}
   attack: {fileID: 0}
+  comboTransition: {fileID: 0}
   jump: {fileID: 0}
   turnToPlayer: {fileID: 0}
   findPlayer: {fileID: 0}
@@ -5517,6 +5550,7 @@ MonoBehaviour:
   move: {fileID: 0}
   slowDown: {fileID: 0}
   attack: {fileID: 0}
+  comboTransition: {fileID: 0}
   jump: {fileID: 0}
   turnToPlayer: {fileID: 0}
   findPlayer: {fileID: 0}
@@ -5600,6 +5634,7 @@ MonoBehaviour:
   move: {fileID: 114741439636791136}
   slowDown: {fileID: 0}
   attack: {fileID: 0}
+  comboTransition: {fileID: 0}
   jump: {fileID: 114382969190022726}
   turnToPlayer: {fileID: 0}
   findPlayer: {fileID: 0}
@@ -5620,6 +5655,7 @@ MonoBehaviour:
   move: {fileID: 0}
   slowDown: {fileID: 0}
   attack: {fileID: 0}
+  comboTransition: {fileID: 0}
   jump: {fileID: 0}
   turnToPlayer: {fileID: 0}
   findPlayer: {fileID: 0}
@@ -5660,11 +5696,33 @@ MonoBehaviour:
   move: {fileID: 114527603721642698}
   slowDown: {fileID: 0}
   attack: {fileID: 114558677218971652}
+  comboTransition: {fileID: 0}
   jump: {fileID: 0}
   turnToPlayer: {fileID: 0}
   findPlayer: {fileID: 0}
   collateral: {fileID: 0}
   Duration: 0.475
+--- !u!114 &114321192906592952
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1923607860832770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b979ea9ccdc03946b2027583a08bc3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controlMechanism: {fileID: 0}
+  characterStateController: {fileID: 0}
+  characterState: {fileID: 0}
+  characterData: {fileID: 0}
+  movementData: {fileID: 0}
+  vfxManager: {fileID: 0}
+  PressTime: 0.1
+  TransitionTime: 0.4
+  AttackUnpressed: 0
+  AttackPressed: 0
 --- !u!114 &114337197041040276
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5724,6 +5782,7 @@ MonoBehaviour:
   move: {fileID: 114502459585722768}
   slowDown: {fileID: 0}
   attack: {fileID: 0}
+  comboTransition: {fileID: 0}
   jump: {fileID: 114084697179015538}
   turnToPlayer: {fileID: 0}
   findPlayer: {fileID: 0}
@@ -5834,6 +5893,7 @@ MonoBehaviour:
   move: {fileID: 114375471206073340}
   slowDown: {fileID: 0}
   attack: {fileID: 0}
+  comboTransition: {fileID: 0}
   jump: {fileID: 0}
   turnToPlayer: {fileID: 0}
   findPlayer: {fileID: 0}
@@ -5855,6 +5915,7 @@ MonoBehaviour:
   move: {fileID: 114032303733505746}
   slowDown: {fileID: 0}
   attack: {fileID: 0}
+  comboTransition: {fileID: 0}
   jump: {fileID: 0}
   turnToPlayer: {fileID: 0}
   findPlayer: {fileID: 0}
@@ -5875,6 +5936,7 @@ MonoBehaviour:
   move: {fileID: 114949103814494608}
   slowDown: {fileID: 0}
   attack: {fileID: 114821764612935706}
+  comboTransition: {fileID: 0}
   jump: {fileID: 0}
   turnToPlayer: {fileID: 0}
   findPlayer: {fileID: 0}
@@ -5895,6 +5957,7 @@ MonoBehaviour:
   move: {fileID: 0}
   slowDown: {fileID: 0}
   attack: {fileID: 0}
+  comboTransition: {fileID: 0}
   jump: {fileID: 0}
   turnToPlayer: {fileID: 0}
   findPlayer: {fileID: 0}
@@ -5948,6 +6011,7 @@ MonoBehaviour:
   move: {fileID: 114679735577926942}
   slowDown: {fileID: 0}
   attack: {fileID: 0}
+  comboTransition: {fileID: 0}
   jump: {fileID: 0}
   turnToPlayer: {fileID: 0}
   findPlayer: {fileID: 0}
@@ -6206,6 +6270,7 @@ MonoBehaviour:
   move: {fileID: 114577880823642808}
   slowDown: {fileID: 0}
   attack: {fileID: 0}
+  comboTransition: {fileID: 0}
   jump: {fileID: 114674723888085112}
   turnToPlayer: {fileID: 0}
   findPlayer: {fileID: 0}
@@ -6227,6 +6292,7 @@ MonoBehaviour:
   move: {fileID: 0}
   slowDown: {fileID: 0}
   attack: {fileID: 0}
+  comboTransition: {fileID: 0}
   jump: {fileID: 0}
   turnToPlayer: {fileID: 0}
   findPlayer: {fileID: 0}
@@ -6334,6 +6400,7 @@ MonoBehaviour:
   move: {fileID: 114514667092004682}
   slowDown: {fileID: 0}
   attack: {fileID: 0}
+  comboTransition: {fileID: 0}
   jump: {fileID: 0}
   turnToPlayer: {fileID: 0}
   findPlayer: {fileID: 0}
@@ -6398,6 +6465,7 @@ MonoBehaviour:
   move: {fileID: 0}
   slowDown: {fileID: 0}
   attack: {fileID: 114731619079278736}
+  comboTransition: {fileID: 0}
   jump: {fileID: 0}
   turnToPlayer: {fileID: 0}
   findPlayer: {fileID: 0}
@@ -6565,6 +6633,7 @@ MonoBehaviour:
   move: {fileID: 0}
   slowDown: {fileID: 0}
   attack: {fileID: 114803402401926928}
+  comboTransition: {fileID: 0}
   jump: {fileID: 0}
   turnToPlayer: {fileID: 0}
   findPlayer: {fileID: 0}
@@ -6585,6 +6654,7 @@ MonoBehaviour:
   move: {fileID: 114518048926998478}
   slowDown: {fileID: 0}
   attack: {fileID: 0}
+  comboTransition: {fileID: 0}
   jump: {fileID: 0}
   turnToPlayer: {fileID: 0}
   findPlayer: {fileID: 0}
@@ -6628,6 +6698,7 @@ MonoBehaviour:
   move: {fileID: 114235310220388744}
   slowDown: {fileID: 114251191125258908}
   attack: {fileID: 0}
+  comboTransition: {fileID: 0}
   jump: {fileID: 0}
   turnToPlayer: {fileID: 0}
   findPlayer: {fileID: 0}
@@ -6661,6 +6732,7 @@ MonoBehaviour:
   move: {fileID: 0}
   slowDown: {fileID: 0}
   attack: {fileID: 0}
+  comboTransition: {fileID: 0}
   jump: {fileID: 0}
   turnToPlayer: {fileID: 0}
   findPlayer: {fileID: 0}
@@ -6745,6 +6817,7 @@ MonoBehaviour:
   move: {fileID: 114958266265371472}
   slowDown: {fileID: 0}
   attack: {fileID: 114009488323926384}
+  comboTransition: {fileID: 0}
   jump: {fileID: 0}
   turnToPlayer: {fileID: 0}
   findPlayer: {fileID: 0}
@@ -6820,6 +6893,7 @@ MonoBehaviour:
   move: {fileID: 0}
   slowDown: {fileID: 0}
   attack: {fileID: 114710908551247428}
+  comboTransition: {fileID: 0}
   jump: {fileID: 0}
   turnToPlayer: {fileID: 0}
   findPlayer: {fileID: 0}
@@ -6840,6 +6914,7 @@ MonoBehaviour:
   move: {fileID: 114527118640104320}
   slowDown: {fileID: 0}
   attack: {fileID: 114183849936684084}
+  comboTransition: {fileID: 114321192906592952}
   jump: {fileID: 0}
   turnToPlayer: {fileID: 0}
   findPlayer: {fileID: 0}
@@ -6860,6 +6935,7 @@ MonoBehaviour:
   move: {fileID: 114668108750659064}
   slowDown: {fileID: 114954587168113878}
   attack: {fileID: 0}
+  comboTransition: {fileID: 0}
   jump: {fileID: 0}
   turnToPlayer: {fileID: 0}
   findPlayer: {fileID: 0}
@@ -6880,6 +6956,7 @@ MonoBehaviour:
   move: {fileID: 114451335880279448}
   slowDown: {fileID: 0}
   attack: {fileID: 0}
+  comboTransition: {fileID: 0}
   jump: {fileID: 0}
   turnToPlayer: {fileID: 0}
   findPlayer: {fileID: 0}
