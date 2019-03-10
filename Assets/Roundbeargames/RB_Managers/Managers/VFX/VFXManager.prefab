@@ -107,6 +107,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1687877279490206
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4358140377756698}
+  - component: {fileID: 114514923155097118}
+  m_Layer: 0
+  m_Name: MotionSpeedWhite
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1882056999986054
 GameObject:
   m_ObjectHideFlags: 0
@@ -152,6 +168,7 @@ Transform:
   - {fileID: 4102772468244746}
   - {fileID: 4559296905043904}
   - {fileID: 4303479502859536}
+  - {fileID: 4358140377756698}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -180,6 +197,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4198178046156908}
   m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4358140377756698
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1687877279490206}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4198178046156908}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4533849731586796
 Transform:
@@ -288,6 +318,23 @@ MonoBehaviour:
   Showing: []
   Pool: []
   Duration: 2
+--- !u!114 &114514923155097118
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1687877279490206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d664c18f3e227314fb28e76eaad353f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  simpleEffectType: 6
+  EffectPrefab: {fileID: 1122948124144956, guid: 95eb70fcd6813f9428bd4334764b9626,
+    type: 2}
+  Showing: []
+  Pool: []
+  Duration: 2
 --- !u!114 &114597625865755126
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -343,6 +390,7 @@ MonoBehaviour:
     - {fileID: 114617349858378700}
     - {fileID: 114171289189428812}
     - {fileID: 114340203790689640}
+    - {fileID: 114514923155097118}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -441,8 +489,8 @@ MonoBehaviour:
       Entry: 3
       Data: 6
     - Name: 
-      Entry: 6
-      Data: 
+      Entry: 10
+      Data: 6
     - Name: 
       Entry: 8
       Data: 

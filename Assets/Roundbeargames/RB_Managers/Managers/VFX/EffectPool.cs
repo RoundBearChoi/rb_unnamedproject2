@@ -9,6 +9,7 @@ public enum SimpleEffectType {
     GROUND_SHOCK,
     DISTORTION,
     GROUND_SMOKE,
+    MOTION_SPEED_WHITE,
 }
 
 namespace roundbeargames {
