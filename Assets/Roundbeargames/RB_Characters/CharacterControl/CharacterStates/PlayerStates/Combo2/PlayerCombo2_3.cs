@@ -10,8 +10,17 @@ namespace roundbeargames {
 			CONTROL_MECHANISM.BodyTrailDictionary[BodyTrail.BACK].gameObject.SetActive (false);
 			CONTROL_MECHANISM.BodyTrailDictionary[BodyTrail.BACK].gameObject.SetActive (true);
 
-			CONTROL_MECHANISM.RIGIDBODY.AddForce (Vector3.up * 200f);
+			Vector3 footPos = new Vector3 (CONTROL_MECHANISM.BodyPartDictionary[BodyPart.RIGHT_FOOT].position.x, CONTROL_MECHANISM.BodyPartDictionary[BodyPart.RIGHT_FOOT].position.y + 0.1f, 0f);
+			VFX_MANAGER.ShowSimpleEffect (SimpleEffectType.GROUND_SHOCK, footPos);
+			VFX_MANAGER.ShowSimpleEffect (SimpleEffectType.GROUND_SMOKE, footPos);
+
+			//CONTROL_MECHANISM.BodyTrailDictionary[BodyTrail.BODY].gameObject.SetActive (false);
+			//CONTROL_MECHANISM.BodyTrailDictionary[BodyTrail.BODY].gameObject.SetActive (true);
+
 			//comboTransition.Reset ();
+
+			attack.AttackAnimationMotionTriggered = false;
+			CONTROL_MECHANISM.RIGIDBODY.AddForce (Vector3.up * 200f);
 		}
 
 		public override void RunFixedUpdate () {
@@ -31,6 +40,21 @@ namespace roundbeargames {
 				if (ANIMATION_DATA.PlayTime < 0.6f) {
 					if (!MOVEMENT_DATA.IsGrounded) {
 						move.MoveForward (MOVEMENT_DATA.RunSpeed * 0.65f, CHARACTER_TRANSFORM.rotation.eulerAngles.y);
+					}
+				}
+
+				if (ANIMATION_DATA.PlayTime > 0.4f) {
+					if (MOVEMENT_DATA.IsGrounded) {
+						if (!attack.AttackAnimationMotionTriggered) {
+							attack.AttackAnimationMotionTriggered = true;
+							Vector3 defaultPos = CONTROL_MECHANISM.transform.position;
+							GameObject sm = VFX_MANAGER.ShowSimpleEffect (SimpleEffectType.MOTION_STRAIGHT_ATTACK, defaultPos);
+							if (!CONTROL_MECHANISM.IsFacingForward ()) {
+								sm.transform.rotation = Quaternion.Euler (0, 180, 0);
+							} else {
+								sm.transform.rotation = Quaternion.Euler (0, 0, 0);
+							}
+						}
 					}
 				}
 			} else {

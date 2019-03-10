@@ -680,6 +680,11 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1267233197}
   m_Script: {fileID: 11500000, guid: 51561a14bee0dce47bee2da4d2151678, type: 3}
+--- !u!1 &894041516 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1692860288433010, guid: eca59c81064c47a4c9d4805342b4830c,
+    type: 2}
+  m_PrefabInternal: {fileID: 1267233197}
 --- !u!114 &909157382 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114243893432733594, guid: eca59c81064c47a4c9d4805342b4830c,
@@ -768,25 +773,25 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114196501381125698, guid: eca59c81064c47a4c9d4805342b4830c,
+        type: 2}
+      propertyPath: serializationData.PrefabModifications.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 114196501381125698, guid: eca59c81064c47a4c9d4805342b4830c,
+        type: 2}
+      propertyPath: serializationData.PrefabModificationsReferencedUnityObjects.Array.size
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 114104038244042082, guid: eca59c81064c47a4c9d4805342b4830c,
         type: 2}
       propertyPath: serializationData.PrefabModifications.Array.size
       value: 22
       objectReference: {fileID: 0}
-    - target: {fileID: 114196501381125698, guid: eca59c81064c47a4c9d4805342b4830c,
-        type: 2}
-      propertyPath: serializationData.PrefabModifications.Array.size
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 114104038244042082, guid: eca59c81064c47a4c9d4805342b4830c,
         type: 2}
       propertyPath: serializationData.PrefabModificationsReferencedUnityObjects.Array.size
       value: 22
-      objectReference: {fileID: 0}
-    - target: {fileID: 114196501381125698, guid: eca59c81064c47a4c9d4805342b4830c,
-        type: 2}
-      propertyPath: serializationData.PrefabModificationsReferencedUnityObjects.Array.size
-      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4350749818408040, guid: eca59c81064c47a4c9d4805342b4830c, type: 2}
       propertyPath: m_LocalPosition.x
@@ -1134,6 +1139,16 @@ Prefab:
       objectReference: {fileID: 1218847413}
     - target: {fileID: 114196501381125698, guid: eca59c81064c47a4c9d4805342b4830c,
         type: 2}
+      propertyPath: serializationData.PrefabModificationsReferencedUnityObjects.Array.data[4]
+      value: 
+      objectReference: {fileID: 894041516}
+    - target: {fileID: 114196501381125698, guid: eca59c81064c47a4c9d4805342b4830c,
+        type: 2}
+      propertyPath: serializationData.PrefabModificationsReferencedUnityObjects.Array.data[5]
+      value: 
+      objectReference: {fileID: 1381080822}
+    - target: {fileID: 114196501381125698, guid: eca59c81064c47a4c9d4805342b4830c,
+        type: 2}
       propertyPath: serializationData.PrefabModifications.Array.data[0]
       value: '"path":"BodyPartDictionary.{0es}","value":$eref:0'
       objectReference: {fileID: 0}
@@ -1152,6 +1167,16 @@ Prefab:
       propertyPath: serializationData.PrefabModifications.Array.data[3]
       value: '"path":"BodyTrailDictionary.{2es}","value":$eref:3'
       objectReference: {fileID: 0}
+    - target: {fileID: 114196501381125698, guid: eca59c81064c47a4c9d4805342b4830c,
+        type: 2}
+      propertyPath: serializationData.PrefabModifications.Array.data[4]
+      value: '"path":"BodyTrailDictionary.{3es}","value":$eref:4'
+      objectReference: {fileID: 0}
+    - target: {fileID: 114196501381125698, guid: eca59c81064c47a4c9d4805342b4830c,
+        type: 2}
+      propertyPath: serializationData.PrefabModifications.Array.data[5]
+      value: '"path":"BodyTrailDictionary.{4es}","value":$eref:5'
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eca59c81064c47a4c9d4805342b4830c, type: 2}
   m_IsPrefabAsset: 0
@@ -1167,6 +1192,11 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1267233197}
   m_Script: {fileID: 11500000, guid: 97ba6cde65e751747a6a5bc335f9dd8a, type: 3}
+--- !u!1 &1381080822 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1063138331339786, guid: eca59c81064c47a4c9d4805342b4830c,
+    type: 2}
+  m_PrefabInternal: {fileID: 1267233197}
 --- !u!114 &1468853949 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114459944771191556, guid: eca59c81064c47a4c9d4805342b4830c,

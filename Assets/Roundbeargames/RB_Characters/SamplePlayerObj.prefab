@@ -5510,6 +5510,7 @@ MonoBehaviour:
   Target: {fileID: 0}
   AttackStartTime: 0.05
   AttackEndTime: 0.3
+  AttackAnimationMotionTriggered: 0
 --- !u!114 &114013203238515036
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6139,6 +6140,7 @@ MonoBehaviour:
   Target: {fileID: 0}
   AttackStartTime: 0.05
   AttackEndTime: 0.3
+  AttackAnimationMotionTriggered: 0
 --- !u!114 &114196501381125698
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6537,6 +6539,7 @@ MonoBehaviour:
   Target: {fileID: 0}
   AttackStartTime: 0.05
   AttackEndTime: 0.3
+  AttackAnimationMotionTriggered: 0
 --- !u!114 &114321192906592952
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7111,6 +7114,7 @@ MonoBehaviour:
   Target: {fileID: 0}
   AttackStartTime: 0.15
   AttackEndTime: 0.4
+  AttackAnimationMotionTriggered: 0
 --- !u!114 &114560393735295654
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7416,6 +7420,7 @@ MonoBehaviour:
   Target: {fileID: 0}
   AttackStartTime: 0.28
   AttackEndTime: 2
+  AttackAnimationMotionTriggered: 0
 --- !u!114 &114711660740885990
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7455,6 +7460,7 @@ MonoBehaviour:
   Target: {fileID: 0}
   AttackStartTime: 0.05
   AttackEndTime: 0.2
+  AttackAnimationMotionTriggered: 0
 --- !u!114 &114741439636791136
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7539,6 +7545,7 @@ MonoBehaviour:
   Target: {fileID: 0}
   AttackStartTime: 0.1
   AttackEndTime: 0.5
+  AttackAnimationMotionTriggered: 0
 --- !u!114 &114804831633307940
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7658,6 +7665,7 @@ MonoBehaviour:
   Target: {fileID: 0}
   AttackStartTime: 0.15
   AttackEndTime: 0.6
+  AttackAnimationMotionTriggered: 0
 --- !u!114 &114821807403274318
 MonoBehaviour:
   m_ObjectHideFlags: 1

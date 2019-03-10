@@ -10,6 +10,7 @@ public enum SimpleEffectType {
     DISTORTION,
     GROUND_SMOKE,
     MOTION_SPEED_WHITE,
+    MOTION_STRAIGHT_ATTACK,
 }
 
 namespace roundbeargames {
@@ -30,10 +31,11 @@ namespace roundbeargames {
             }
             //effect.transform.localPosition = Vector3.zero;
             effect.transform.position = new Vector3 (pos.x, pos.y, pos.z);
+
             effect.SetActive (true);
             Showing.Add (effect);
 
-            if (Duration > 0.0001f) {
+            if (Duration != 0f) {
                 StartCoroutine (_TurnOff (Duration, effect));
             }
 
@@ -44,6 +46,17 @@ namespace roundbeargames {
             yield return new WaitForSeconds (seconds);
             Showing.Remove (obj);
             Pool.Add (obj);
+
+            ParticleSystem ps = obj.GetComponent<ParticleSystem> ();
+            if (ps != null) {
+                ps.Stop ();
+            }
+
+            ParticleSystem[] arr = obj.GetComponentsInChildren<ParticleSystem> ();
+            foreach (ParticleSystem p in arr) {
+                p.Stop ();
+            }
+
             obj.SetActive (false);
         }
 
