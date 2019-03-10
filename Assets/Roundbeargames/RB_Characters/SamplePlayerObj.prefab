@@ -1152,6 +1152,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1509801460608636
+GameObject:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4249399597471258}
+  - component: {fileID: 114154184514826620}
+  m_Layer: 9
+  m_Name: Move
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1517478946838332
 GameObject:
   m_ObjectHideFlags: 1
@@ -1610,6 +1626,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1670833304223480
+GameObject:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4664097266140894}
+  - component: {fileID: 114529105911287564}
+  m_Layer: 9
+  m_Name: PlayerCombo2_3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1677146090084188
 GameObject:
   m_ObjectHideFlags: 1
@@ -1823,6 +1855,22 @@ GameObject:
   - component: {fileID: 114491819143984580}
   m_Layer: 9
   m_Name: MoveData
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1731135650587584
+GameObject:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4365399570763268}
+  - component: {fileID: 114297689689706192}
+  m_Layer: 9
+  m_Name: Attack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2724,8 +2772,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 4553918325374884}
-  - {fileID: 4420024005704782}
+  - {fileID: 4365399570763268}
+  - {fileID: 4249399597471258}
   m_Father: {fileID: 4259665465109962}
   m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2944,6 +2992,19 @@ Transform:
   m_Father: {fileID: 4333011208191526}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4249399597471258
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1509801460608636}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4136314766906062}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4259665465109962
 Transform:
   m_ObjectHideFlags: 1
@@ -2981,6 +3042,7 @@ Transform:
   - {fileID: 4880395062659884}
   - {fileID: 4009065469111050}
   - {fileID: 4136314766906062}
+  - {fileID: 4664097266140894}
   m_Father: {fileID: 4350749818408040}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3148,6 +3210,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4365399570763268
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1731135650587584}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4136314766906062}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4366745194595742
 Transform:
   m_ObjectHideFlags: 1
@@ -3275,7 +3350,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 4136314766906062}
+  m_Father: {fileID: 4664097266140894}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4428923562720542
@@ -3612,7 +3687,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 4136314766906062}
+  m_Father: {fileID: 4664097266140894}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4557647740732732
@@ -3806,6 +3881,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4417578656836610}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4664097266140894
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1670833304223480}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4553918325374884}
+  - {fileID: 4420024005704782}
+  m_Father: {fileID: 4259665465109962}
+  m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4664180122064234
 Transform:
@@ -4994,6 +5084,7 @@ MonoBehaviour:
     - {fileID: 114888262394282850}
     - {fileID: 114821807403274318}
     - {fileID: 114419934956644448}
+    - {fileID: 114529105911287564}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -5012,7 +5103,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 12
-      Data: 26
+      Data: 27
     - Name: 
       Entry: 7
       Data: 
@@ -5326,6 +5417,18 @@ MonoBehaviour:
       Entry: 8
       Data: 
     - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 3
+      Data: 25
+    - Name: 
+      Entry: 10
+      Data: 26
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
       Entry: 13
       Data: 
     - Name: 
@@ -5341,6 +5444,25 @@ MonoBehaviour:
   DeathCause: 
   DeathBringer: 
   ForceDeath: 0
+--- !u!114 &114154184514826620
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1509801460608636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2e30b4bea7119448a1a1f8233099276, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controlMechanism: {fileID: 0}
+  characterStateController: {fileID: 0}
+  characterState: {fileID: 0}
+  characterData: {fileID: 0}
+  movementData: {fileID: 0}
+  vfxManager: {fileID: 0}
+  AirMaxSpeed: 0
+  AirSpeedGain: 0
 --- !u!114 &114159936083691288
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5753,6 +5875,26 @@ MonoBehaviour:
   findPlayer: {fileID: 0}
   collateral: {fileID: 0}
   Duration: 0.475
+--- !u!114 &114297689689706192
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1731135650587584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a272af72d04b0984fa73265135659ebc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controlMechanism: {fileID: 0}
+  characterStateController: {fileID: 0}
+  characterState: {fileID: 0}
+  characterData: {fileID: 0}
+  movementData: {fileID: 0}
+  vfxManager: {fileID: 0}
+  Target: {fileID: 0}
+  AttackStartTime: 0.05
+  AttackEndTime: 0.3
 --- !u!114 &114321192906592952
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5984,9 +6126,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterStateController: {fileID: 0}
-  move: {fileID: 114949103814494608}
+  move: {fileID: 114154184514826620}
   slowDown: {fileID: 0}
-  attack: {fileID: 114821764612935706}
+  attack: {fileID: 114297689689706192}
   comboTransition: {fileID: 0}
   jump: {fileID: 0}
   turnToPlayer: {fileID: 0}
@@ -6286,6 +6428,27 @@ MonoBehaviour:
   vfxManager: {fileID: 0}
   AirMaxSpeed: 0
   AirSpeedGain: 0
+--- !u!114 &114529105911287564
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1670833304223480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c7417e2866a50f469496f1ac652885b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterStateController: {fileID: 0}
+  move: {fileID: 114949103814494608}
+  slowDown: {fileID: 0}
+  attack: {fileID: 114821764612935706}
+  comboTransition: {fileID: 0}
+  jump: {fileID: 0}
+  turnToPlayer: {fileID: 0}
+  findPlayer: {fileID: 0}
+  collateral: {fileID: 0}
+  Duration: 1
 --- !u!114 &114558677218971652
 MonoBehaviour:
   m_ObjectHideFlags: 1

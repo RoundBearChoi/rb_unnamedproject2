@@ -29,21 +29,19 @@ namespace roundbeargames {
                 //Debug.Log (ANIMATION_DATA.PlayTime);
 
                 if (comboTransition.GoNext (ANIMATION_DATA.PlayTime, ATTACK_DATA.AttackA)) {
-                    characterStateController.ChangeState ((int) PlayerState.PlayerCombo1_3_Uppercut);
-                    return;
+                    if (MOVEMENT_DATA.MoveUp) {
+                        characterStateController.ChangeState ((int) PlayerState.PlayerCombo2_3);
+                        return;
+                    } else {
+                        characterStateController.ChangeState ((int) PlayerState.PlayerCombo1_3_Uppercut);
+                        return;
+                    }
                 }
 
                 if (DurationTimePassed ()) {
                     characterStateController.ChangeState ((int) PlayerState.HumanoidIdle);
                     return;
                 }
-
-                /*if (ANIMATION_DATA.PlayTime > 0.45f) {
-                    if (ATTACK_DATA.AttackA) {
-                        characterStateController.ChangeState ((int) PlayerState.PlayerCombo1_3_Uppercut);
-                        return;
-                    }
-                }*/
 
                 attack.UpdateHit (TouchDetectorType.ATTACK_LEFT_FIST, ref attack.Target);
             }
