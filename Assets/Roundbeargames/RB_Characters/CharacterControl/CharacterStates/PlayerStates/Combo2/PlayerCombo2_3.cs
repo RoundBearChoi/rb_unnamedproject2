@@ -16,7 +16,7 @@ namespace roundbeargames {
 
 		public override void RunFixedUpdate () {
 			if (ANIMATION_DATA.AnimationNameMatches) {
-				if (ANIMATION_DATA.PlayTime > 0.15f) {
+				/*if (ANIMATION_DATA.PlayTime > 0.15f) {
 					if (!CONTROL_MECHANISM.BodyTrailDictionary[BodyTrail.RIGHT_HAND_FIRE].gameObject.activeInHierarchy) {
 						CONTROL_MECHANISM.BodyTrailDictionary[BodyTrail.RIGHT_HAND_FIRE].gameObject.SetActive (true);
 					}
@@ -26,7 +26,7 @@ namespace roundbeargames {
 					if (CONTROL_MECHANISM.BodyTrailDictionary[BodyTrail.RIGHT_HAND_FIRE].gameObject.activeInHierarchy) {
 						CONTROL_MECHANISM.BodyTrailDictionary[BodyTrail.RIGHT_HAND_FIRE].gameObject.SetActive (false);
 					}
-				}
+				}*/
 
 				if (ANIMATION_DATA.PlayTime < 0.6f) {
 					if (!MOVEMENT_DATA.IsGrounded) {
