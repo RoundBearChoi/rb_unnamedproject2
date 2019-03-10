@@ -8,10 +8,13 @@ namespace roundbeargames {
             ANIMATION_DATA.DesignatedAnimation = PlayerState.PlayerCombo1_2.ToString ();
 
             float turn = move.GetTurn ();
-            move.InstMoveForward (0.135f, turn);
+
+            //CONTROL_MECHANISM.BodyTrailDictionary[BodyTrail.RIGHT_FOOT_FIRE].gameObject.SetActive (true);
 
             CONTROL_MECHANISM.BodyTrailDictionary[BodyTrail.BACK].gameObject.SetActive (false);
             CONTROL_MECHANISM.BodyTrailDictionary[BodyTrail.BACK].gameObject.SetActive (true);
+
+            move.InstMoveForward (0.135f, turn);
 
             comboTransition.Reset ();
         }
@@ -54,6 +57,7 @@ namespace roundbeargames {
         public override void ClearState () {
             attack.DeRegister (characterStateController.controlMechanism.gameObject.name, PlayerState.PlayerCombo1_2.ToString ());
             CONTROL_MECHANISM.BodyTrailDictionary[BodyTrail.BACK].gameObject.SetActive (false);
+            //CONTROL_MECHANISM.BodyTrailDictionary[BodyTrail.RIGHT_FOOT_FIRE].gameObject.SetActive (false);
         }
     }
 }

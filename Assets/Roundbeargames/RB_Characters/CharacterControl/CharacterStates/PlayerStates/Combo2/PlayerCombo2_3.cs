@@ -7,9 +7,6 @@ namespace roundbeargames {
 		public override void InitState () {
 			ANIMATION_DATA.DesignatedAnimation = PlayerState.PlayerCombo2_3.ToString ();
 
-			//float turn = move.GetTurn ();
-			//move.InstMoveForward (0.135f, turn);
-
 			CONTROL_MECHANISM.BodyTrailDictionary[BodyTrail.BACK].gameObject.SetActive (false);
 			CONTROL_MECHANISM.BodyTrailDictionary[BodyTrail.BACK].gameObject.SetActive (true);
 
@@ -19,6 +16,18 @@ namespace roundbeargames {
 
 		public override void RunFixedUpdate () {
 			if (ANIMATION_DATA.AnimationNameMatches) {
+				if (ANIMATION_DATA.PlayTime > 0.15f) {
+					if (!CONTROL_MECHANISM.BodyTrailDictionary[BodyTrail.RIGHT_HAND_FIRE].gameObject.activeInHierarchy) {
+						CONTROL_MECHANISM.BodyTrailDictionary[BodyTrail.RIGHT_HAND_FIRE].gameObject.SetActive (true);
+					}
+				}
+
+				if (ANIMATION_DATA.PlayTime > 0.85f) {
+					if (CONTROL_MECHANISM.BodyTrailDictionary[BodyTrail.RIGHT_HAND_FIRE].gameObject.activeInHierarchy) {
+						CONTROL_MECHANISM.BodyTrailDictionary[BodyTrail.RIGHT_HAND_FIRE].gameObject.SetActive (false);
+					}
+				}
+
 				if (ANIMATION_DATA.PlayTime < 0.6f) {
 					if (!MOVEMENT_DATA.IsGrounded) {
 						move.MoveForward (MOVEMENT_DATA.RunSpeed * 0.65f, CHARACTER_TRANSFORM.rotation.eulerAngles.y);
@@ -38,7 +47,7 @@ namespace roundbeargames {
 					return;
 				}
 
-				attack.UpdateHit (TouchDetectorType.ATTACK_RIGHT_FIST, ref attack.Target);
+				//attack.UpdateHit (TouchDetectorType.ATTACK_RIGHT_FIST, ref attack.Target);
 			}
 		}
 
@@ -49,6 +58,7 @@ namespace roundbeargames {
 		public override void ClearState () {
 			attack.DeRegister (characterStateController.controlMechanism.gameObject.name, PlayerState.PlayerCombo2_3.ToString ());
 			CONTROL_MECHANISM.BodyTrailDictionary[BodyTrail.BACK].gameObject.SetActive (false);
+			CONTROL_MECHANISM.BodyTrailDictionary[BodyTrail.RIGHT_HAND_FIRE].gameObject.SetActive (false);
 		}
 	}
 }

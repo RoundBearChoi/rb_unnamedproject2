@@ -2,124 +2,87 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace roundbeargames
-{
-    public class ManualControl : ControlMechanism
-    {
+namespace roundbeargames {
+    public class ManualControl : ControlMechanism {
         InputDeviceManager inputDeviceManager;
         RB_VirtualInput virtualInput;
         //public Dictionary<string, int> CollidedObjects;
         public float FallMultiplier;
         public float LowJumpMultiplier;
 
-        void Awake()
-        {
-            FindCharacterStateController();
+        void Awake () {
+            FindCharacterStateController ();
         }
 
-        void Update()
-        {
-            if (moveData == null)
-            {
+        void Update () {
+            if (moveData == null) {
                 moveData = characterStateController.characterData.characterMovementData;
-            }
-            else
-            {
-                UpdateControl();
+            } else {
+                UpdateControl ();
             }
 
-            if (attackData == null)
-            {
+            if (attackData == null) {
                 attackData = characterStateController.characterData.characterAttackData;
             }
 
-            CenterPosition();
+            CenterPosition ();
         }
 
-        void FixedUpdate()
-        {
-            if (characterStateController.CurrentState.GetType() != typeof(PlayerJumpOver) &&
-            characterStateController.CurrentState.GetType() != typeof(PlayerRunningKick))
-            {
-                if (RIGIDBODY.velocity.y < 0f)
-                {
+        void FixedUpdate () {
+            if (characterStateController.CurrentState.GetType () != typeof (PlayerJumpOver) &&
+                characterStateController.CurrentState.GetType () != typeof (PlayerRunningKick)) {
+                if (RIGIDBODY.velocity.y < 0f) {
                     RIGIDBODY.velocity += Vector3.up * Physics.gravity.y * (FallMultiplier - 1) * Time.deltaTime;
-                }
-                else if (RIGIDBODY.velocity.y > 0f && moveData.Jump == false)
-                {
+                } else if (RIGIDBODY.velocity.y > 0f && moveData.Jump == false) {
                     RIGIDBODY.velocity += Vector3.up * Physics.gravity.y * (LowJumpMultiplier - 1) * Time.deltaTime;
                     //Debug.Log ("short jump");
                 }
             }
         }
 
-        void FindInputDevice()
-        {
-            inputDeviceManager = ManagerGroup.Instance.GetManager(ManagerType.INPUT_DEVICE_MANAGER) as InputDeviceManager;
+        void FindInputDevice () {
+            inputDeviceManager = ManagerGroup.Instance.GetManager (ManagerType.INPUT_DEVICE_MANAGER) as InputDeviceManager;
             virtualInput = inputDeviceManager.VIRTUAL_INPUT;
         }
 
-        void UpdateControl()
-        {
-            if (virtualInput == null)
-            {
-                FindInputDevice();
+        void UpdateControl () {
+            if (virtualInput == null) {
+                FindInputDevice ();
             }
 
-            if (virtualInput.ToggleMoveForward)
-            {
+            if (virtualInput.ToggleMoveForward) {
                 moveData.MoveForward = true;
-            }
-            else
-            {
+            } else {
                 moveData.MoveForward = false;
             }
-            if (virtualInput.ToggleMoveBack)
-            {
+            if (virtualInput.ToggleMoveBack) {
                 moveData.MoveBack = true;
-            }
-            else
-            {
+            } else {
                 moveData.MoveBack = false;
             }
-            if (virtualInput.ToggleMoveUp)
-            {
+            if (virtualInput.ToggleMoveUp) {
                 moveData.MoveUp = true;
-            }
-            else
-            {
+            } else {
                 moveData.MoveUp = false;
             }
-            if (virtualInput.ToggleMoveDown)
-            {
+            if (virtualInput.ToggleMoveDown) {
                 moveData.MoveDown = true;
-            }
-            else
-            {
+            } else {
                 moveData.MoveDown = false;
             }
-            if (virtualInput.ToggleRun)
-            {
+            if (virtualInput.ToggleRun) {
                 moveData.Run = true;
-            }
-            else
-            {
+            } else {
                 moveData.Run = false;
             }
-            if (virtualInput.Jump)
-            {
+            if (virtualInput.Jump) {
                 moveData.Jump = true;
-            }
-            else
-            {
+            } else {
                 moveData.Jump = false;
             }
-            if (virtualInput.AttackA)
-            {
+            if (virtualInput.AttackA) {
                 attackData.AttackA = true;
-            }
-            else
-            {
+            } else {
                 attackData.AttackA = false;
             }
         }
