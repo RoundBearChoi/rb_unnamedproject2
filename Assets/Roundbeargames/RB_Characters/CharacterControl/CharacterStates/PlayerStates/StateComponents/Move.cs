@@ -211,5 +211,19 @@ namespace roundbeargames {
             }
             return true;
         }
+
+        public void ShowQuickMoveEffect () {
+            StartCoroutine (_ShowMoveEffect ());
+        }
+
+        IEnumerator _ShowMoveEffect () {
+            yield return new WaitForEndOfFrame ();
+            GameObject sw = vfxManager.ShowSimpleEffect (SimpleEffectType.MOTION_SPEED_WHITE, controlMechanism.transform.position);
+            if (!controlMechanism.IsFacingForward ()) {
+                sw.transform.rotation = Quaternion.Euler (0, 180, 0);
+            } else {
+                sw.transform.rotation = Quaternion.Euler (0, 0, 0);
+            }
+        }
     }
 }

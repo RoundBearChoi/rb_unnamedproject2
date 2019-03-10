@@ -2350,6 +2350,7 @@ MonoBehaviour:
   move: {fileID: 0}
   slowDown: {fileID: 0}
   attack: {fileID: 0}
+  comboTransition: {fileID: 0}
   jump: {fileID: 0}
   turnToPlayer: {fileID: 0}
   findPlayer: {fileID: 0}
@@ -2414,6 +2415,7 @@ MonoBehaviour:
   move: {fileID: 0}
   slowDown: {fileID: 0}
   attack: {fileID: 114810913331609108}
+  comboTransition: {fileID: 0}
   jump: {fileID: 0}
   turnToPlayer: {fileID: 0}
   findPlayer: {fileID: 0}
@@ -2579,6 +2581,7 @@ MonoBehaviour:
   move: {fileID: 0}
   slowDown: {fileID: 0}
   attack: {fileID: 0}
+  comboTransition: {fileID: 0}
   jump: {fileID: 0}
   turnToPlayer: {fileID: 0}
   findPlayer: {fileID: 0}

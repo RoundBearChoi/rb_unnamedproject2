@@ -12,17 +12,7 @@ namespace roundbeargames {
 
             comboTransition.Reset ();
 
-            StartCoroutine (_ShowMoveEffect ());
-        }
-
-        IEnumerator _ShowMoveEffect () {
-            yield return new WaitForEndOfFrame ();
-            GameObject sw = VFX_MANAGER.ShowSimpleEffect (SimpleEffectType.MOTION_SPEED_WHITE, CONTROL_MECHANISM.transform.position);
-            if (!CONTROL_MECHANISM.IsFacingForward ()) {
-                sw.transform.rotation = Quaternion.Euler (0, 180, 0);
-            } else {
-                sw.transform.rotation = Quaternion.Euler (0, 0, 0);
-            }
+            move.ShowQuickMoveEffect ();
         }
 
         public override void RunFixedUpdate () {

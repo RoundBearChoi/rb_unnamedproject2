@@ -17,6 +17,8 @@ namespace roundbeargames {
             move.InstMoveForward (0.135f, turn);
 
             comboTransition.Reset ();
+
+            move.ShowQuickMoveEffect ();
         }
 
         public override void RunFixedUpdate () {
