@@ -25,25 +25,29 @@ namespace roundbeargames {
 
 		public override void RunFixedUpdate () {
 			if (ANIMATION_DATA.AnimationNameMatches) {
-				/*if (ANIMATION_DATA.PlayTime > 0.15f) {
-					if (!CONTROL_MECHANISM.BodyTrailDictionary[BodyTrail.RIGHT_HAND_FIRE].gameObject.activeInHierarchy) {
-						CONTROL_MECHANISM.BodyTrailDictionary[BodyTrail.RIGHT_HAND_FIRE].gameObject.SetActive (true);
-					}
-				}
-
-				if (ANIMATION_DATA.PlayTime > 0.85f) {
-					if (CONTROL_MECHANISM.BodyTrailDictionary[BodyTrail.RIGHT_HAND_FIRE].gameObject.activeInHierarchy) {
-						CONTROL_MECHANISM.BodyTrailDictionary[BodyTrail.RIGHT_HAND_FIRE].gameObject.SetActive (false);
-					}
-				}*/
-
 				if (ANIMATION_DATA.PlayTime < 0.6f) {
 					if (!MOVEMENT_DATA.IsGrounded) {
 						move.MoveForward (MOVEMENT_DATA.RunSpeed * 0.65f, CHARACTER_TRANSFORM.rotation.eulerAngles.y);
 					}
 				}
 
-				if (ANIMATION_DATA.PlayTime > 0.4f) {
+				//hangtime
+				if (ANIMATION_DATA.PlayTime > 0.48f) {
+					if (!MOVEMENT_DATA.IsGrounded) {
+						if (ANIMATION_DATA.AnimationIsPlaying ()) {
+							ANIMATION_DATA.StopAnimation ();
+						}
+					}
+
+					if (!ANIMATION_DATA.AnimationIsPlaying ()) {
+						if (MOVEMENT_DATA.IsGrounded) {
+							ANIMATION_DATA.PlayAnimation ();
+						}
+					}
+				}
+
+				//show effect
+				if (ANIMATION_DATA.PlayTime > 0.515f) {
 					if (MOVEMENT_DATA.IsGrounded) {
 						if (!attack.AttackAnimationMotionTriggered) {
 							attack.AttackAnimationMotionTriggered = true;

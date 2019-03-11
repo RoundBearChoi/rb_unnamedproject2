@@ -3600,7 +3600,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1382540918812880}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.8, y: 1.248, z: 0}
+  m_LocalPosition: {x: 4.709, y: 10.939, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4548758764177712}
@@ -7663,7 +7663,7 @@ MonoBehaviour:
   movementData: {fileID: 0}
   vfxManager: {fileID: 0}
   Target: {fileID: 0}
-  AttackStartTime: 0.15
+  AttackStartTime: 0.485
   AttackEndTime: 0.6
   AttackAnimationMotionTriggered: 0
 --- !u!114 &114821807403274318
