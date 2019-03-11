@@ -67,8 +67,10 @@ namespace roundbeargames {
 				Debug.Log (ANIMATION_DATA.PlayTime);
 
 				if (DurationTimePassed ()) {
-					characterStateController.ChangeState ((int) PlayerState.HumanoidIdle);
-					return;
+					if (MOVEMENT_DATA.IsGrounded) {
+						characterStateController.ChangeState ((int) PlayerState.HumanoidIdle);
+						return;
+					}
 				}
 
 				attack.UpdateHit (TouchDetectorType.ATTACK_RIGHT_FIST, ref attack.Target);
