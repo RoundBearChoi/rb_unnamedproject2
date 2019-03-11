@@ -46,19 +46,31 @@ namespace roundbeargames {
 					}
 				}
 
-				//show effect
+				//show effect - motion, cam shake
 				if (ANIMATION_DATA.PlayTime > 0.515f) {
 					if (MOVEMENT_DATA.IsGrounded) {
 						if (!attack.AttackAnimationMotionTriggered) {
 							attack.AttackAnimationMotionTriggered = true;
-							Vector3 defaultPos = CONTROL_MECHANISM.transform.position;
-							GameObject sm = VFX_MANAGER.ShowSimpleEffect (SimpleEffectType.MOTION_STRAIGHT_ATTACK, defaultPos);
+							GameObject sm = VFX_MANAGER.ShowSimpleEffect (SimpleEffectType.MOTION_STRAIGHT_ATTACK, CONTROL_MECHANISM.transform.position);
 							if (!CONTROL_MECHANISM.IsFacingForward ()) {
 								sm.transform.rotation = Quaternion.Euler (0, 180, 0);
 							} else {
 								sm.transform.rotation = Quaternion.Euler (0, 0, 0);
 							}
-							CAMERA_MANAGER.ShakeCamera (0.2f);
+							CAMERA_MANAGER.ShakeCamera (0.3f);
+						}
+					}
+				}
+
+				//show effect - ground effect
+				if (ANIMATION_DATA.PlayTime > 0.55f) {
+					if (attack.AttackAnimationMotionTriggered && !GroundEffectShown) {
+						GroundEffectShown = true;
+						GameObject nt = VFX_MANAGER.ShowSimpleEffect (SimpleEffectType.NITRONIC, CONTROL_MECHANISM.transform.position);
+						if (!CONTROL_MECHANISM.IsFacingForward ()) {
+							nt.transform.rotation = Quaternion.Euler (0, 180, 0);
+						} else {
+							nt.transform.rotation = Quaternion.Euler (0, 0, 0);
 						}
 					}
 				}
@@ -69,7 +81,7 @@ namespace roundbeargames {
 
 		public override void RunFrameUpdate () {
 			if (UpdateAnimation ()) {
-				Debug.Log (ANIMATION_DATA.PlayTime);
+				//Debug.Log (ANIMATION_DATA.PlayTime);
 
 				if (DurationTimePassed ()) {
 					if (MOVEMENT_DATA.IsGrounded) {
@@ -89,7 +101,9 @@ namespace roundbeargames {
 		public override void ClearState () {
 			attack.DeRegister (characterStateController.controlMechanism.gameObject.name, PlayerState.PlayerCombo2_3.ToString ());
 			CONTROL_MECHANISM.BodyTrailDictionary[BodyTrail.BACK].gameObject.SetActive (false);
-			CONTROL_MECHANISM.BodyTrailDictionary[BodyTrail.RIGHT_HAND_FIRE].gameObject.SetActive (false);
+			GroundEffectShown = false;
 		}
+
+		bool GroundEffectShown;
 	}
 }
