@@ -58,6 +58,7 @@ namespace roundbeargames {
 							} else {
 								sm.transform.rotation = Quaternion.Euler (0, 0, 0);
 							}
+							CAMERA_MANAGER.ShakeCamera (0.2f);
 						}
 					}
 				}
