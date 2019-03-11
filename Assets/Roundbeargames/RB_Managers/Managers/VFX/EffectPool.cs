@@ -12,6 +12,7 @@ public enum SimpleEffectType {
     MOTION_SPEED_WHITE,
     MOTION_STRAIGHT_ATTACK,
     NITRONIC,
+    GROUND_IMPACT_DUST,
 }
 
 namespace roundbeargames {

@@ -72,6 +72,7 @@ namespace roundbeargames {
 						} else {
 							nt.transform.rotation = Quaternion.Euler (0, 0, 0);
 						}
+						VFX_MANAGER.ShowSimpleEffect (SimpleEffectType.GROUND_IMPACT_DUST, CONTROL_MECHANISM.transform.position);
 					}
 				}
 			} else {
