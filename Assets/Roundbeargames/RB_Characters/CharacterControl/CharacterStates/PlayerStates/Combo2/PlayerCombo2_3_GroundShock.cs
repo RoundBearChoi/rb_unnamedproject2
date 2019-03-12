@@ -73,6 +73,18 @@ namespace roundbeargames {
 							nt.transform.rotation = Quaternion.Euler (0, 0, 0);
 						}
 						VFX_MANAGER.ShowSimpleEffect (SimpleEffectType.GROUND_IMPACT_DUST, CONTROL_MECHANISM.transform.position);
+
+						//need to be more specific later
+						foreach (ControlMechanism e in CHARACTER_MANAGER.ListEnemies) {
+							if (e.characterStateController.CurrentState.GetType () != typeof (CharacterDeath)) {
+								float dist = Vector3.Distance (e.transform.position, CONTROL_MECHANISM.transform.position);
+								Debug.Log (e.gameObject.name + " distance to player: " + dist);
+								if (dist < 10f) {
+									e.characterStateController.DeathCause = "GroundShock";
+									e.characterStateController.ChangeState (999);
+								}
+							}
+						}
 					}
 				}
 			} else {
@@ -91,7 +103,7 @@ namespace roundbeargames {
 					}
 				}
 
-				attack.UpdateHit (TouchDetectorType.ATTACK_RIGHT_FIST, ref attack.Target);
+				//attack.UpdateHit (TouchDetectorType.ATTACK_RIGHT_FIST, ref attack.Target);
 			}
 		}
 

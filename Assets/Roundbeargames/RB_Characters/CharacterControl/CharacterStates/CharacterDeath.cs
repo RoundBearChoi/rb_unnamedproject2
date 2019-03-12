@@ -44,7 +44,7 @@ namespace roundbeargames {
                 CONTROL_MECHANISM.RIGIDBODY.AddForce (Vector3.up * 100f);
                 //need to make animations consistent later
                 ANIMATION_DATA.characterAnimator.applyRootMotion = true;
-                int[] gsDeaths = { 7, 8, 9 };
+                int[] gsDeaths = { /*7,*/ 8, /*9*/ };
                 int index = Random.Range ((int) 0, (int) gsDeaths.Length - 1);
                 float d = (float) gsDeaths[index];
                 ANIMATION_DATA.characterAnimator.SetFloat (ParameterString, d);
