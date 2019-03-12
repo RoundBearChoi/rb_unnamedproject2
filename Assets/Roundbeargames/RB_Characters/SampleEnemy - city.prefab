@@ -2690,6 +2690,7 @@ MonoBehaviour:
   Target: {fileID: 0}
   AttackStartTime: 0.1
   AttackEndTime: 0.4
+  AttackAnimationMotionTriggered: 0
 --- !u!114 &114855051876426870
 MonoBehaviour:
   m_ObjectHideFlags: 1

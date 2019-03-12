@@ -28,7 +28,7 @@ public enum PlayerState {
     PlayerCombo1_1,
     PlayerCombo1_2,
     PlayerCombo1_3_Uppercut,
-    PlayerCombo2_3,
+    PlayerCombo2_3_GroundShock,
 }
 
 public enum AxeEnemyState {

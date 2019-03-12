@@ -35,7 +35,7 @@ namespace roundbeargames {
 
                 if (comboTransition.GoNext (ANIMATION_DATA.PlayTime, ATTACK_DATA.AttackA)) {
                     if (MOVEMENT_DATA.MoveUp) {
-                        characterStateController.ChangeState ((int) PlayerState.PlayerCombo2_3);
+                        characterStateController.ChangeState ((int) PlayerState.PlayerCombo2_3_GroundShock);
                         return;
                     } else {
                         characterStateController.ChangeState ((int) PlayerState.PlayerCombo1_3_Uppercut);

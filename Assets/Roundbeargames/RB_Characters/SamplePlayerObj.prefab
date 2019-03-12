@@ -1855,7 +1855,7 @@ GameObject:
   - component: {fileID: 4664097266140894}
   - component: {fileID: 114529105911287564}
   m_Layer: 9
-  m_Name: PlayerCombo2_3
+  m_Name: PlayerCombo2_3_GroundShock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
