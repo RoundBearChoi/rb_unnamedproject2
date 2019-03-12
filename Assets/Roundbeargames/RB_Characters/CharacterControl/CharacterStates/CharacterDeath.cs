@@ -41,7 +41,7 @@ namespace roundbeargames {
                 CAMERA_MANAGER.ShakeCamera (0.4f);
                 ANIMATION_DATA.characterAnimator.SetFloat (ParameterString, 6f);
             } else if (characterStateController.DeathCause.Contains ("GroundShock")) {
-                CONTROL_MECHANISM.RIGIDBODY.AddForce (Vector3.up * 100f);
+                CONTROL_MECHANISM.RIGIDBODY.AddForce (Vector3.up * 160f);
                 //need to make animations consistent later
                 ANIMATION_DATA.characterAnimator.applyRootMotion = true;
                 int[] gsDeaths = { /*7,*/ 8, /*9*/ };
