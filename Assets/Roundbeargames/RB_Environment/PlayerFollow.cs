@@ -11,6 +11,7 @@ namespace roundbeargames {
     public class PlayerFollow : SerializedMonoBehaviour {
         CharacterManager characterManager;
         public Vector3 FollowOffset;
+        public PlayerFollowType CurrentFollowType;
         public float Speed;
         public Dictionary<PlayerFollowType, Vector3> FollowDictionary;
 
@@ -24,6 +25,7 @@ namespace roundbeargames {
 
         public void SetFollow (PlayerFollowType offsetType) {
             FollowOffset = FollowDictionary[offsetType];
+            CurrentFollowType = offsetType;
         }
     }
 }

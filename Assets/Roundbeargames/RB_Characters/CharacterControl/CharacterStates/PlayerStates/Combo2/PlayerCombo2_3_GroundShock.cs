@@ -21,7 +21,7 @@ namespace roundbeargames {
 
 			attack.AttackAnimationMotionTriggered = false;
 			CONTROL_MECHANISM.RIGIDBODY.AddForce (Vector3.up * 200f);
-			CAMERA_MANAGER.gameCam.SetOffset (CameraOffsetType.ZOOM_ON_GROUND_SHOCK_LEFT, 0.5f);
+			CAMERA_MANAGER.gameCam.SetOffset (CameraOffsetType.ZOOM_ON_GROUND_SHOCK_LEFT, 0.65f);
 			CAMERA_MANAGER.gameCam.playerFollow.SetFollow (PlayerFollowType.FOCUS_ON_HEAD);
 			Time.timeScale = 0.6f;
 		}
@@ -36,9 +36,11 @@ namespace roundbeargames {
 
 				//hangtime
 				if (ANIMATION_DATA.PlayTime > 0.48f) {
+					ResetCameraToNormal ();
 					if (!MOVEMENT_DATA.IsGrounded) {
 						if (ANIMATION_DATA.AnimationIsPlaying ()) {
 							ANIMATION_DATA.StopAnimation ();
+
 						}
 					}
 
@@ -48,6 +50,10 @@ namespace roundbeargames {
 						}
 					}
 				}
+
+				//if (ANIMATION_DATA.PlayTime > 0.5f) {
+				//	ResetCameraToNormal ();
+				//}
 
 				//show effect - motion, cam shake
 				if (ANIMATION_DATA.PlayTime > 0.515f) {
@@ -88,11 +94,6 @@ namespace roundbeargames {
 								}
 							}
 						}
-
-						CAMERA_MANAGER.gameCam.SetOffset (CameraOffsetType.DEFAULT, 0.2f);
-						CAMERA_MANAGER.gameCam.playerFollow.SetFollow (PlayerFollowType.DEFAULT);
-						Time.timeScale = 1f;
-						//Debug.Log ("resetting cam");
 					}
 				}
 			} else {
@@ -123,6 +124,15 @@ namespace roundbeargames {
 			attack.DeRegister (characterStateController.controlMechanism.gameObject.name, PlayerState.PlayerCombo2_3_GroundShock.ToString ());
 			CONTROL_MECHANISM.BodyTrailDictionary[BodyTrail.BACK].gameObject.SetActive (false);
 			GroundEffectShown = false;
+		}
+
+		private void ResetCameraToNormal () {
+			if (CAMERA_MANAGER.gameCam.playerFollow.CurrentFollowType != PlayerFollowType.DEFAULT) {
+				CAMERA_MANAGER.gameCam.SetOffset (CameraOffsetType.DEFAULT, 0.2f);
+				CAMERA_MANAGER.gameCam.playerFollow.SetFollow (PlayerFollowType.DEFAULT);
+				Time.timeScale = 1f;
+				//Debug.Log ("resetting cam");
+			}
 		}
 
 		bool GroundEffectShown;

@@ -753,6 +753,7 @@ MonoBehaviour:
       Entry: 8
       Data: 
   FollowOffset: {x: 0, y: 0, z: 0}
+  CurrentFollowType: 0
   Speed: 4
 --- !u!114 &114636490199641814
 MonoBehaviour:
