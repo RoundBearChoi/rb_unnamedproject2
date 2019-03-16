@@ -166,8 +166,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1422919047748578}
-  m_LocalRotation: {x: -0.0057701636, y: 0.027609983, z: 0.00018386984, w: 0.99960214}
-  m_LocalPosition: {x: -0.71772736, y: -0.14999992, z: -12.982579}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4143627828906712}
@@ -508,7 +508,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 12
-      Data: 3
+      Data: 4
     - Name: 
       Entry: 7
       Data: 
@@ -582,6 +582,30 @@ MonoBehaviour:
       Entry: 8
       Data: 
     - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 3
+      Data: 3
+    - Name: 
+      Entry: 7
+      Data: UnityEngine.Vector3, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: -5.66
+    - Name: 
+      Entry: 4
+      Data: 0.42
+    - Name: 
+      Entry: 4
+      Data: -2.67
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
       Entry: 13
       Data: 
     - Name: 
@@ -591,6 +615,7 @@ MonoBehaviour:
   cinemachineVirtualCam: {fileID: 114361890918100490}
   cinemachineTransposer: {fileID: 0}
   postFX: {fileID: 114772412729452504}
+  playerFollow: {fileID: 0}
 --- !u!114 &114361890918100490
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -650,7 +675,84 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 593d786bb1a83c74096d8a08707608a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Offset: {x: 0.25, y: 2.2, z: 0}
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: FollowDictionary
+      Entry: 7
+      Data: 0|System.Collections.Generic.Dictionary`2[[roundbeargames.PlayerFollowType,
+        Assembly-CSharp],[UnityEngine.Vector3, UnityEngine.CoreModule]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 1|System.Collections.Generic.EqualityComparer`1+DefaultComparer[[roundbeargames.PlayerFollowType,
+        Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 7
+      Data: UnityEngine.Vector3, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0.3
+    - Name: 
+      Entry: 4
+      Data: 1.6
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: UnityEngine.Vector3, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0.35
+    - Name: 
+      Entry: 4
+      Data: 1.6
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+  FollowOffset: {x: 0, y: 0, z: 0}
   Speed: 4
 --- !u!114 &114636490199641814
 MonoBehaviour:

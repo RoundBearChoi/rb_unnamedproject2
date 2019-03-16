@@ -9,6 +9,8 @@ namespace roundbeargames {
         DEFAULT,
         ZOOM_ON_PLAYER_DEATH_RIGHT_SIDE,
         ZOOM_ON_PLAYER_DEATH_LEFT_SIDE,
+        ZOOM_ON_GROUND_SHOCK_LEFT,
+        ZOOM_ON_GROUND_SHOCK_RIGHT,
     }
     public class GameCam : SerializedMonoBehaviour {
         public UnityEngine.PostProcessing.PostProcessingBehaviour PostProc;
@@ -20,6 +22,7 @@ namespace roundbeargames {
         //private float CurrentLerpTime = 0f;
         //private float LerpTime = 1f;
         public CinemachinePostFX postFX;
+        public PlayerFollow playerFollow;
 
         void Start () {
             PostProc = this.gameObject.GetComponent<UnityEngine.PostProcessing.PostProcessingBehaviour> ();
@@ -31,12 +34,19 @@ namespace roundbeargames {
                 }
             }
 
-            SetOffset (CameraOffsetType.DEFAULT);
+            SetOffset (CameraOffsetType.DEFAULT, 0.2f);
+
+            playerFollow = GameObject.FindObjectOfType<PlayerFollow> ();
+            playerFollow.SetFollow (PlayerFollowType.DEFAULT);
         }
 
-        public void SetOffset (CameraOffsetType offsetType) {
+        public void SetOffset (CameraOffsetType offsetType, float smoothTime) {
             //cinemachineTransposer.m_FollowOffset = CamOffsets[offsetType];
-            OffsetChangeRoutine = StartCoroutine (_ProcChangeOffset (CamOffsets[offsetType]));
+            if (OffsetChangeRoutine != null) {
+                StopCoroutine (OffsetChangeRoutine);
+            }
+
+            OffsetChangeRoutine = StartCoroutine (_ProcChangeOffset (CamOffsets[offsetType], smoothTime));
 
             if (offsetType == CameraOffsetType.ZOOM_ON_PLAYER_DEATH_LEFT_SIDE) {
                 postFX.m_FocusOffset = 0.3f;
@@ -46,7 +56,7 @@ namespace roundbeargames {
             }
         }
 
-        IEnumerator _ProcChangeOffset (Vector3 targetOffset) {
+        IEnumerator _ProcChangeOffset (Vector3 targetOffset, float smoothTime) {
             //CurrentLerpTime = 0f;
 
             while (true) {
@@ -66,7 +76,7 @@ namespace roundbeargames {
                 cinemachineTransposer.m_FollowOffset = Vector3.Lerp (cinemachineTransposer.m_FollowOffset, targetOffset, t);
                 */
 
-                cinemachineTransposer.m_FollowOffset = Vector3.SmoothDamp (cinemachineTransposer.m_FollowOffset, targetOffset, ref velocity, 0.2f);
+                cinemachineTransposer.m_FollowOffset = Vector3.SmoothDamp (cinemachineTransposer.m_FollowOffset, targetOffset, ref velocity, smoothTime);
                 yield return new WaitForEndOfFrame ();
             }
         }

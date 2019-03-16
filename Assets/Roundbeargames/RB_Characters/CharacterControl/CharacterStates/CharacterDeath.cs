@@ -21,7 +21,7 @@ namespace roundbeargames {
 
                 ANIMATION_DATA.characterAnimator.SetFloat (ParameterString, 1f);
             } else if (characterStateController.DeathCause.Contains ("Axe")) {
-                CAMERA_MANAGER.gameCam.SetOffset (CameraOffsetType.ZOOM_ON_PLAYER_DEATH_RIGHT_SIDE);
+                CAMERA_MANAGER.gameCam.SetOffset (CameraOffsetType.ZOOM_ON_PLAYER_DEATH_RIGHT_SIDE, 0.2f);
                 Time.timeScale = 0.35f;
                 ANIMATION_DATA.characterAnimator.SetFloat (ParameterString, 2f);
             } else if (characterStateController.DeathCause.Contains ("Collateral")) {
