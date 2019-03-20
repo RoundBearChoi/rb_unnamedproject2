@@ -21,7 +21,12 @@ namespace roundbeargames {
 
 			attack.AttackAnimationMotionTriggered = false;
 			CONTROL_MECHANISM.RIGIDBODY.AddForce (Vector3.up * 200f);
-			CAMERA_MANAGER.gameCam.SetOffset (CameraOffsetType.ZOOM_ON_GROUND_SHOCK_LEFT, 0.65f);
+
+			CameraOffsetType camOffsetType = CameraOffsetType.ZOOM_ON_GROUND_SHOCK_LEFT;
+			if (!CONTROL_MECHANISM.IsFacingForward ()) {
+				camOffsetType = CameraOffsetType.ZOOM_ON_GROUND_SHOCK_RIGHT;
+			}
+			CAMERA_MANAGER.gameCam.SetOffset (camOffsetType, 0.65f);
 			CAMERA_MANAGER.gameCam.playerFollow.SetFollow (PlayerFollowType.FOCUS_ON_HEAD);
 			Time.timeScale = 0.6f;
 		}
@@ -40,7 +45,6 @@ namespace roundbeargames {
 					if (!MOVEMENT_DATA.IsGrounded) {
 						if (ANIMATION_DATA.AnimationIsPlaying ()) {
 							ANIMATION_DATA.StopAnimation ();
-
 						}
 					}
 
@@ -50,10 +54,6 @@ namespace roundbeargames {
 						}
 					}
 				}
-
-				//if (ANIMATION_DATA.PlayTime > 0.5f) {
-				//	ResetCameraToNormal ();
-				//}
 
 				//show effect - motion, cam shake
 				if (ANIMATION_DATA.PlayTime > 0.515f) {
