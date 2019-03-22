@@ -28,7 +28,7 @@ namespace roundbeargames {
 			}
 			CAMERA_MANAGER.gameCam.SetOffset (camOffsetType, 0.65f);
 			CAMERA_MANAGER.gameCam.playerFollow.SetFollow (PlayerFollowType.FOCUS_ON_HEAD);
-			Time.timeScale = 0.6f;
+			Time.timeScale = 0.55f;
 		}
 
 		public override void RunFixedUpdate () {
