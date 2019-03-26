@@ -86,8 +86,10 @@ namespace roundbeargames {
             //}
             foreach (WayPoint n in Neighbors) {
                 int distance = 1;
-                if (pathFindMethod == PathFindMethod.JUMP) {
-                    distance = 10;
+                if (n.pathFindMethod == PathFindMethod.JUMP) {
+                    if (n.GroundName != GroundName) {
+                        distance = 10;
+                    }
                 }
                 //Debug.Log ("calculating " + this.gameObject.name + " to " + n.gameObject.name);
                 if (KnownDistance + distance < n.KnownDistance) {
