@@ -586,6 +586,7 @@ MonoBehaviour:
   cinemachineVirtualCam: {fileID: 114623720699310148}
   cinemachineTransposer: {fileID: 0}
   postFX: {fileID: 114209738360711830}
+  playerFollow: {fileID: 0}
 --- !u!114 &114431111465279322
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -707,5 +708,83 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 593d786bb1a83c74096d8a08707608a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Offset: {x: 0.25, y: 2.2, z: 0}
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: FollowDictionary
+      Entry: 7
+      Data: 0|System.Collections.Generic.Dictionary`2[[roundbeargames.PlayerFollowType,
+        Assembly-CSharp],[UnityEngine.Vector3, UnityEngine.CoreModule]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 1|System.Collections.Generic.EqualityComparer`1+DefaultComparer[[roundbeargames.PlayerFollowType,
+        Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 7
+      Data: UnityEngine.Vector3, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0.3
+    - Name: 
+      Entry: 4
+      Data: 1.6
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: UnityEngine.Vector3, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0.35
+    - Name: 
+      Entry: 4
+      Data: 5
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+  FollowOffset: {x: 0, y: 0, z: 0}
+  CurrentFollowType: 1
   Speed: 4

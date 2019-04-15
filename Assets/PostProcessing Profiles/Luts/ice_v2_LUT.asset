@@ -3,7 +3,7 @@
 --- !u!117 &11700000
 Texture3D:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: ice_v2_LUT
   m_ImageContentsHash:
