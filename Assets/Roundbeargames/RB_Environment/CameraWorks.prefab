@@ -166,8 +166,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1422919047748578}
-  m_LocalRotation: {x: -0.0057701636, y: 0.027609983, z: 0.00018386984, w: 0.99960214}
-  m_LocalPosition: {x: -0.71772736, y: -0.14999992, z: -12.982579}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4143627828906712}
@@ -198,7 +198,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1805725620270060}
-  m_LocalRotation: {x: -0.0057701636, y: 0.027609983, z: 0.00018386984, w: 0.99960214}
+  m_LocalRotation: {x: -0.0057649883, y: 0.027609985, z: 0.00018372705, w: 0.99960214}
   m_LocalPosition: {x: -0.71772736, y: -0.14999992, z: -12.982579}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -443,8 +443,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_NoiseProfile: {fileID: 11400000, guid: 5cdcfbe96a263b84581d6110c5ac48d9, type: 2}
-  m_AmplitudeGain: 0
-  m_FrequencyGain: 0
+  m_AmplitudeGain: -0.01222746
+  m_FrequencyGain: 0.4877723
 --- !u!114 &114195025680393020
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -523,7 +523,7 @@ MonoBehaviour:
       Data: -0.25
     - Name: 
       Entry: 4
-      Data: -0.15
+      Data: 1.5
     - Name: 
       Entry: 4
       Data: -13
@@ -635,11 +635,11 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  PostProc: {fileID: 0}
+  PostProc: {fileID: 114020147417900268}
   cinemachineVirtualCam: {fileID: 114361890918100490}
-  cinemachineTransposer: {fileID: 0}
+  cinemachineTransposer: {fileID: 114636490199641814}
   postFX: {fileID: 114772412729452504}
-  playerFollow: {fileID: 0}
+  playerFollow: {fileID: 114573069577379614}
 --- !u!114 &114361890918100490
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -791,7 +791,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 1
-  m_FollowOffset: {x: -0.25, y: -0.15, z: -13}
+  m_FollowOffset: {x: -0.25, y: 1.5, z: -13}
   m_XDamping: 5
   m_YDamping: 3
   m_ZDamping: 3
